@@ -14,20 +14,20 @@ Y_train = Y[(Y.strat_fold != validation_fold) & (Y.strat_fold != test_fold)].dro
 Y_validation = Y[Y.strat_fold == validation_fold].drop(columns=['strat_fold'])
 Y_test = Y[Y.strat_fold == test_fold].drop(columns=['strat_fold'])
 
-with open("./data/train_REC", 'w+') as f:
+with open("./ptbxldata/train_REC", 'w+') as f:
     for index, row in Y_train.iterrows():
         f.write(row['filename'] + "\n")
-    Y_train.to_csv("./data/train_db.csv")
+    Y_train.to_csv("./ptbxldata/train_db.csv")
 
-with open("./data/validation_REC", 'w+') as f:
+with open("./ptbxldata/validation_REC", 'w+') as f:
     for index, row in Y_validation.iterrows():
         f.write(row['filename'] + "\n")
-    Y_validation.to_csv("./data/validation_db.csv")
+    Y_validation.to_csv("./ptbxldata/validation_db.csv")
 
-with open("./data/test_REC", 'w+') as f:
+with open("./ptbxldata/test_REC", 'w+') as f:
     for index, row in Y_test.iterrows():
         f.write(row['filename'] + "\n")
-    Y_test.to_csv("./data/test_db.csv")
+    Y_test.to_csv("./ptbxldata/test_db.csv")
 
 os.system("python3 ./sergio/generate_h5.py ./data/test_REC ./data/test.hdf5 --root_dir ./ptbxl")
 os.system("python3 ./sergio/generate_h5.py ./data/train_REC ./data/train.hdf5 --root_dir ./ptbxl")
