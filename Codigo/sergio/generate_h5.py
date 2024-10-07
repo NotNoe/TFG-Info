@@ -1,12 +1,13 @@
 if __name__ == '__main__':
-    from ecgprep import preprocess, read_ecg
     import argparse
     import h5py
     import pandas as pd
     import tqdm
     import os
+    import sys
+    from ecgProcessing.ecgprep import read_ecg, preprocess
 
-    parser = argparse.ArgumentParser(description='Generate HDF5 from files')
+    parser = argparse.ArgumentParser(description='Generates hdf5 file.')
     parser.add_argument('input_file', type=str, help='path to RECORDS file.')
     parser.add_argument('out_file', type=str,
                         help='output file containing the plots. ')
@@ -31,12 +32,12 @@ if __name__ == '__main__':
     for i, f in enumerate(tqdm.tqdm(files)):
         ecg, sample_rate, leads = read_ecg.read_ecg(os.path.join(folder, f), format=args.fmt)
         ecg_preprocessed, new_rate, new_leads = preprocess.preprocess_ecg(ecg, sample_rate, leads,
-                                                                          new_freq=args.new_freq,
-                                                                          new_len=args.new_len,
-                                                                          scale=args.scale,
-                                                                          use_all_leads=args.use_all_leads,
-                                                                          remove_baseline=args.remove_baseline,
-                                                                          remove_powerline=args.remove_powerline)
+                                                                          new_freq=400,
+                                                                          new_len=4096,
+                                                                          scale=1,
+                                                                          use_all_leads=True,
+                                                                          remove_baseline=True,
+                                                                          remove_powerline=60)
         if x is None:
             n_leads, n_samples = ecg_preprocessed.shape
             x = h5f.create_dataset('tracings', (n, n_samples, n_leads), dtype='f8')

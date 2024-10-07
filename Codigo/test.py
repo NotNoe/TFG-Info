@@ -4,21 +4,19 @@ import wfdb
 import ast
 import ecg_plot
 from scipy.signal import ShortTimeFFT
+import h5py
 
 
 path = './ptbxl/'
 
 # load and convert annotation data
-Y = pd.read_csv(path+'ptbxl_database.csv', index_col='ecg_id')
-
-signals, fields = wfdb.rdsamp(path+'records100/00000/00001_lr')
-signals = np.array(signals)
-ecg_plot.plot(ecg=signals.transpose(), sample_rate=100, lead_index=fields['sig_name'], show_lead_name=True, show_grid=False, show_separate_line=True,title="ECG a 100Hz")
+#Y = pd.read_csv(path+'ptbxl_database.csv', index_col='ecg_id')
+signals = wfdb.rdsamp("./ptbxl/records500/00000/00001_hr")[0].transpose() #Devuelve un array de 5000x12
+ecg_plot.plot(signals, sample_rate=500, show_grid=False)
+with h5py.File("./ptbxl/records500.hdf5", 'r') as f:
+    processed_signals = f['tracings'][0,:,:].transpose()
+ecg_plot.plot(processed_signals, sample_rate=400, show_grid=False)
+with h5py.File("./ptbxl/recordsnotch.hdf5", 'r') as f:
+    processed_signals = f['tracings'][0,:,:].transpose()
+ecg_plot.plot(processed_signals, sample_rate=400, show_grid=False)
 ecg_plot.show()
-#ecg_plot.save_as_png("ecg100", "./out/")
-
-signals, fields = wfdb.rdsamp(path+'records500/00000/00001_hr')
-signals = np.array(signals)
-ecg_plot.plot(ecg=signals.transpose(), sample_rate=100, lead_index=fields['sig_name'], show_lead_name=True, show_grid=False, show_separate_line=True,title="ECG a 500Hz")
-ecg_plot.show()
-#ecg_plot.save_as_png("ecg500", "./out/")

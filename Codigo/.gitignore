@@ -565,6 +565,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-
-
+data/
+ribeiro/
 ptbxl/
