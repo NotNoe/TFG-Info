@@ -305,3 +305,5 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 /Codigo/.vscode
+Codigo/backup_model_best.hdf5
+Codigo/backup_model_last.hdf5
