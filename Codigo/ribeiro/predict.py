@@ -23,7 +23,6 @@ if __name__ == '__main__':
     args, unk = parser.parse_known_args()
     if unk:
         warnings.warn("Unknown arguments:" + str(unk) + ".")
-
     # Import data
     seq = ECGSequence(args.path_to_hdf5, args.dataset_name, batch_size=args.bs)
     # Import model
