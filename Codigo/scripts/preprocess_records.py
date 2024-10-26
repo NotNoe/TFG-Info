@@ -1,5 +1,22 @@
+import os
+import shutil
 # Ruta del archivo
 file_path = './ptbxl/RECORDS'
+
+# Lista de archivos a eliminar
+files_to_delete = ["LICENSE.txt", "SHA256SUMS.txt", "example_physionet.py", "ptbxl_v102_changelog.txt", "ptbxl_v103_changelog.txt"]
+for file in files_to_delete:
+    file_path = os.path.join("ptbxl", file)
+    if os.path.isfile(file_path):
+        os.remove(file_path)
+        print(f"El archivo {file} ha sido eliminado.")
+    else:
+        print(f"El archivo {file} no se encontró en la carpeta ptbxl.")
+if os.path.isdir('ptbxl/records100'):
+    shutil.rmtree('ptbxl/records100')  # Eliminamos la carpeta records100
+    print("La carpeta records100 ha sido eliminada.")
+else:
+    print("La carpeta records100 no se encontró en la carpeta ptbxl.")
 
 # Leemos el archivo original, procesamos las líneas y lo sobrescribimos
 with open(file_path, 'r') as infile:

@@ -32,7 +32,7 @@ def fill_columns(row:pd.Series) -> pd.Series:
     else:
         print(f"Tipo inesperado en la fila {index}: {type(row['scp_codes'])}")
         raise NotImplementedError("Tipo no reconocido")
-    dict_probs = {k: 1 if v >= 50 else 0 for k, v in dict_probs.items()}
+    dict_probs = {k: v/100 for k, v in dict_probs.items()}
     #dict_probs ahora es lo que queremos
 
     for super_class in super_classes:
