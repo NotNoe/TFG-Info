@@ -51,4 +51,7 @@ class ECGSequence(Sequence):
         return math.ceil((self.end_idx - self.start_idx) / self.batch_size)
 
     def __del__(self):
-        self.f.close()
+        try:
+            self.f.close()
+        except Exception:
+            pass
