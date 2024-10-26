@@ -25,7 +25,7 @@ class ECGSequence(Sequence):
         if path_to_csv is None:
             self.y = None
         else:
-            self.y = pd.read_csv(path_to_csv).values
+            self.y = pd.read_csv(path_to_csv, index_col=0).values
         # Get tracings
         self.f = h5py.File(path_to_hdf5, "r")
         self.x = self.f[hdf5_dset]
