@@ -17,8 +17,8 @@ def main():
     parser.add_argument('model', type=str, help='The name of the model to be used')
     parser.add_argument('--model-dir', type=str, default='./final_models', help='The directory where the model is located')
     parser.add_argument('--result-dir', type=str, default='./test', help='The directory where the results will be saved')
-    parser.add_argument('--use-cached', type=bool, help='Use cached predictions if available', default=True)
-    parser.add_argument('--show-cmatrix', type=bool, help='Show confusion matrix', default=False)
+    parser.add_argument('--use-cached', action="store_true", help='Use cached predictions if available')
+    parser.add_argument('--show-cmatrix', action="store_true", help='Show confusion matrix')
 
     
     args = parser.parse_args()
@@ -37,16 +37,16 @@ def main():
     if not os.path.exists(test_data_csv):
         print(f"No se ha podido encontrar el archivo de datos de etiquetas de los datos de prueba en la ruta {test_data_csv}")
         sys.exit(1)
-    if not args.use_cached:
+    if args.use_cached:
+        if not os.path.exists(os.path.join(results_path, 'tmp', 'predictions.npy')):
+            os.makedirs(os.path.join(results_path, 'tmp'), exist_ok=True)
+            get_predictions(model_path, test_data_hdf5, results_path)
+    else:
         if os.path.exists(os.path.join(results_path, 'tmp')):
             shutil.rmtree(os.path.join(results_path, 'tmp'))
         os.mkdir(os.path.join(results_path, 'tmp'))
         get_predictions(model_path, test_data_hdf5, results_path)
-    else:
-        if not os.path.exists(os.path.join(results_path, 'tmp', 'predictions.npy')):
-            os.makedirs(os.path.join(results_path, 'tmp'), exist_ok=True)
-            get_predictions(model_path, test_data_hdf5, results_path)
-  
+
     expected_values = np.array(pd.read_csv(test_data_csv, index_col='ecg_id').values.tolist())
     predicted_values = np.load(os.path.join(results_path, 'tmp', 'predictions.npy'))
     metrics = Metrics(expected_values, predicted_values)
