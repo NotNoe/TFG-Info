@@ -44,7 +44,9 @@ if __name__ == "__main__":
 
         # If you are continuing an interrupted section, uncomment line bellow:
         #   model = keras.models.load_model(PATH_TO_PREV_MODEL, compile=False)
-        model = get_model(train_seq.n_classes)
+        #Comprobamos la forma del primer valor de train_seq, y ese es el shape que le pasamos a get_model
+        shape = train_seq.__getitem__(0)[0].shape[1:]
+        model = get_model(train_seq.n_classes, shape=shape)
         model.compile(loss=loss, optimizer=opt)
         # Create log
         callbacks += [TensorBoard(log_dir='./logs', write_graph=False),
