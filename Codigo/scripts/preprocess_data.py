@@ -17,6 +17,7 @@ scp_statements = pd.read_csv('./ptbxl/scp_statements.csv', index_col=0)[['diagno
 super_classes = set(scp_statements['diagnostic_class'].unique())
 super_classes = {cls for cls in super_classes if pd.notna(cls)}
 super_classes.add('OTHER')
+super_classes = sorted(list(super_classes)) #Esto es necesario para que los datos sean iguales en todas las ejecuciones
 
 def fill_columns(row:pd.Series) -> pd.Series:
     if isinstance(row['scp_codes'], str):
