@@ -10,11 +10,12 @@ from Metrics import Metrics
 TEST_DATA = "./data/test"
 
 
-def get_predictions(model_path, test_data_hdf5, results_path):
-    os.system(f'python ./ribeiro/predict.py {test_data_hdf5} {model_path} --output_file ' + os.path.join(results_path, 'tmp', 'predictions.npy'))
+def get_predictions(model_path, test_data_hdf5, results_path, dataset_name):
+    os.system(f'python ./ribeiro/predict.py {test_data_hdf5} {model_path} --output_file ' + os.path.join(results_path, 'tmp', 'predictions.npy') + " --dataset_name " + dataset_name)
 def main():
     parser = argparse.ArgumentParser(description='Test a model.')
     parser.add_argument('model', type=str, help='The name of the model to be used')
+    parser.add_argument('dataset', type=str, help='The name of the dataset to be used')
     parser.add_argument('--model-dir', type=str, default='./final_models', help='The directory where the model is located')
     parser.add_argument('--result-dir', type=str, default='./test', help='The directory where the results will be saved')
     parser.add_argument('--use-cached', action="store_true", help='Use cached predictions if available')
@@ -40,12 +41,12 @@ def main():
     if args.use_cached:
         if not os.path.exists(os.path.join(results_path, 'tmp', 'predictions.npy')):
             os.makedirs(os.path.join(results_path, 'tmp'), exist_ok=True)
-            get_predictions(model_path, test_data_hdf5, results_path)
+            get_predictions(model_path, test_data_hdf5, results_path, args.dataset)
     else:
         if os.path.exists(os.path.join(results_path, 'tmp')):
             shutil.rmtree(os.path.join(results_path, 'tmp'))
         os.mkdir(os.path.join(results_path, 'tmp'))
-        get_predictions(model_path, test_data_hdf5, results_path)
+        get_predictions(model_path, test_data_hdf5, results_path, args.dataset)
 
     expected_values = np.array(pd.read_csv(test_data_csv, index_col='ecg_id').values.tolist())
     predicted_values = np.load(os.path.join(results_path, 'tmp', 'predictions.npy'))
