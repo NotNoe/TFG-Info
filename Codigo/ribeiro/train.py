@@ -9,17 +9,17 @@ from datasets import ECGSequence
 if __name__ == "__main__":
     # Get data and train
     parser = argparse.ArgumentParser(description='Train neural network.')
-    parser.add_argument('path_to_hdf5_train', type=str,
-                        help='path to hdf5 file containing train tracings')
-    parser.add_argument('path_to_hdf5_val', type=str,
-                        help='path to hdf5 file containing validation tracings')
-    parser.add_argument('path_to_csv_train', type=str,
-                        help='path to csv file containing train annotations')
-    parser.add_argument('path_to_csv_val', type=str,
-                        help='path to csv file containing validation annotations')
+    parser.add_argument('dataset_name', type=str,help='name of the hdf5 dataset containing tracings')
+    parser.add_argument('--path_to_hdf5_train', type=str,
+                        help='path to hdf5 file containing train tracings', default='data/train.hdf5')
+    parser.add_argument('--path_to_hdf5_val', type=str,
+                        help='path to hdf5 file containing validation tracings', default='data/validation.hdf5')
+    parser.add_argument('--path_to_csv_train', type=str,
+                        help='path to csv file containing train annotations', default='data/train_db.csv')
+    parser.add_argument('--path_to_csv_val', type=str,
+                        help='path to csv file containing validation annotations', default='data/validation_db.csv')
    
-    parser.add_argument('--dataset_name', type=str, default='tracings',
-                        help='name of the hdf5 dataset containing tracings')
+
     args = parser.parse_args()
 
     #Train with multiple GPUs
