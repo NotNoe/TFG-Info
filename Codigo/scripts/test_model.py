@@ -38,6 +38,8 @@ def main():
     if not os.path.exists(test_data_csv):
         print(f"No se ha podido encontrar el archivo de datos de etiquetas de los datos de prueba en la ruta {test_data_csv}")
         sys.exit(1)
+    else:
+        class_names = pd.read_csv(test_data_csv).columns[1:].tolist()
     if args.use_cached:
         if not os.path.exists(os.path.join(results_path, 'tmp', 'predictions.npy')):
             os.makedirs(os.path.join(results_path, 'tmp'), exist_ok=True)
@@ -50,7 +52,7 @@ def main():
 
     expected_values = np.array(pd.read_csv(test_data_csv, index_col='ecg_id').values.tolist())
     predicted_values = np.load(os.path.join(results_path, 'tmp', 'predictions.npy'))
-    metrics = Metrics(expected_values, predicted_values)
+    metrics = Metrics(expected_values, predicted_values, class_names=class_names)
     metrics.dump_to_json(os.path.join(results_path, 'metrics.json'))
     if args.show_cmatrix:
         metrics.plot_confusion_matrix()
