@@ -1,4 +1,4 @@
-from scipy.signal import stft
+from scipy.signal import stft, cwt, morlet
 import numpy as np
 
 
@@ -9,6 +9,24 @@ class Transformaciones:
     def __init__(self, ecgs):
         self.ecgs = ecgs
         self.n_cases = ecgs.shape[0]
+
+
+    def get_cwt_arrays(self, wavelet = "morl", scales = np.arange(8,800)):  
+        #Calculamos las dimensiones de la matriz de salida usando la primera matriz de entrada
+        f = 1 / scales
+        t = np.arange(0, self.ecgs[0].shape[0] / FREQ)
+        return f,t
+
+    def cwt(self, wavelet = morlet, scales = np.arange(8,800)):  
+        cwts = []
+        for i in range(self.n_cases):
+            ecg = self.ecgs[i]
+            cwt_i = np.zeros((len(scales) * ecg.shape[1], ecg.shape[0]))
+            for j in range(ecg.shape[1]): #Iteramos sobre las derivaciones
+                Zxx = np.abs(cwt(ecg[:,j], wavelet=wavelet, widths=scales))
+                cwt_i[j * len(scales):(j + 1) * len(scales), :] = Zxx
+            cwts.append(cwt_i)
+        return np.array(cwts)
 
     def get_stft_arrays(self, nperseg=256, noverlap=128):
         #Calculamos las dimensiones de la matriz de salida usando la primera matriz de entrada
