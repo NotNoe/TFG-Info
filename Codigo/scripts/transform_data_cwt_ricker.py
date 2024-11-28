@@ -9,7 +9,7 @@ for filename in files:
     #Abrimos el archivo y sacamos todos los datos en batches de 1000
     with h5py.File(filename, 'r+') as file:
         ecgs = file['tracings']
-        f, t = Transformaciones(ecgs[0:1]).get_stft_arrays()
+        f, t = Transformaciones(ecgs[0:1]).get_cwt_arrays()
         n_ecgs = ecgs.shape[0]
         #Si el dataset existe, lo borramos
         if destiny_dataset in file:
