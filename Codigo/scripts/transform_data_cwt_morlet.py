@@ -5,7 +5,7 @@ from scipy.signal import morlet2 as morlet
 import numpy as np
 
 destiny_dataset = "cwt_morlet"
-BATCH = 1000
+BATCH = 1
 files = ["data/train.hdf5", "data/test.hdf5", "data/validation.hdf5"]
 for filename in files:
     #Abrimos el archivo y sacamos todos los datos en batches de 1000

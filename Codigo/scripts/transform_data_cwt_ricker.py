@@ -3,7 +3,7 @@ from tqdm import tqdm
 from Transformaciones import Transformaciones
 
 destiny_dataset = "cwt_ricker"
-BATCH = 1000
+BATCH = 1
 files = ["data/train.hdf5", "data/test.hdf5", "data/validation.hdf5"]
 for filename in files:
     #Abrimos el archivo y sacamos todos los datos en batches de 1000
