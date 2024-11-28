@@ -10,7 +10,7 @@ class Transformaciones:
         self.n_cases = ecgs.shape[0]
 
 
-    def get_cwt_arrays(self, wavelet = ricker, scales = np.linspace(1,128,300)):  
+    def get_cwt_arrays(self, wavelet = ricker, scales = np.linspace(1,128,100)):  
         #Calculamos las dimensiones de la matriz de salida usando la primera matriz de entrada
         if wavelet == ricker:
             f = FREQ / (2*np.pi*scales)
@@ -22,7 +22,7 @@ class Transformaciones:
         t = np.arange(self.ecgs[0].shape[0]) / FREQ
         return f,t
 
-    def cwt(self, wavelet = ricker, scales = np.linspace(1,128, 300)):  
+    def cwt(self, wavelet = ricker, scales = np.linspace(1,128, 100)):  
         cwts = []
         for i in range(self.n_cases):
             ecg = self.ecgs[i]

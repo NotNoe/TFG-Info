@@ -11,7 +11,7 @@ for filename in files:
     #Abrimos el archivo y sacamos todos los datos en batches de 1000
     with h5py.File(filename, 'r+') as file:
         ecgs = file['tracings']
-        f, t = Transformaciones(ecgs[0:1]).get_cwt_arrays(morlet, scales=np.linspace(8, 637, 300))
+        f, t = Transformaciones(ecgs[0:1]).get_cwt_arrays(morlet, scales=np.linspace(8, 637, 100))
         n_ecgs = ecgs.shape[0]
         #Si el dataset existe, lo borramos
         if destiny_dataset in file:
@@ -21,7 +21,7 @@ for filename in files:
             end = min(i + BATCH, n_ecgs)
             batch_ecgs = ecgs[i:end,:,:]
             transformaciones = Transformaciones(batch_ecgs)
-            transformed_ecg = transformaciones.cwt(morlet, scales=np.linspace(8,637,300))
+            transformed_ecg = transformaciones.cwt(morlet, scales=np.linspace(8,637,100))
             procesed[i:end] = transformed_ecg
 
 
