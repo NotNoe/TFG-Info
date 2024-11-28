@@ -21,7 +21,7 @@ for filename in files:
             end = min(i + BATCH, n_ecgs)
             batch_ecgs = ecgs[i:end,:,:]
             transformaciones = Transformaciones(batch_ecgs)
-            transformed_ecg = transformaciones.cwt(morlet, scales=np.linspace(8,637,500))
+            transformed_ecg = transformaciones.cwt(morlet, scales=np.linspace(8,637,300))
             procesed[i:end] = transformed_ecg
 
 
