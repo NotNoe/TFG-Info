@@ -1,6 +1,5 @@
-from scipy.signal import stft, cwt, morlet
+from scipy.signal import stft, cwt, ricker, morlet2
 import numpy as np
-
 
 FREQ = 400
 #Creamos la clase para las transformaciones
@@ -11,13 +10,19 @@ class Transformaciones:
         self.n_cases = ecgs.shape[0]
 
 
-    def get_cwt_arrays(self, wavelet = "morl", scales = np.arange(8,800)):  
+    def get_cwt_arrays(self, wavelet = ricker, scales = np.linspace(1,128,500)):  
         #Calculamos las dimensiones de la matriz de salida usando la primera matriz de entrada
-        f = 1 / scales
-        t = np.arange(0, self.ecgs[0].shape[0] / FREQ)
+        if wavelet == ricker:
+            f = FREQ / (2*np.pi*scales)
+        elif wavelet == morlet2:
+            f = (5 * FREQ) / (2 * np.pi * scales)
+        else:
+            raise NotImplementedError("Wavelet no reconocido")
+
+        t = np.arange(self.ecgs[0].shape[0]) / FREQ
         return f,t
 
-    def cwt(self, wavelet = morlet, scales = np.arange(8,800)):  
+    def cwt(self, wavelet = ricker, scales = np.linspace(1,128, 500)):  
         cwts = []
         for i in range(self.n_cases):
             ecg = self.ecgs[i]
