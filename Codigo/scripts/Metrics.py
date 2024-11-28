@@ -19,7 +19,6 @@ class Metrics:
         self.y_pred_prob = y_pred
         self.class_names = class_names
         self.n_classes = y_true.shape[1]
-        self.metrics_dict = {}
 
         # Binarizar las etiquetas reales y predichas usando un umbral de 0.5
         self.y_true = (self.y_true_prob >= 0.5).astype(int)
@@ -42,6 +41,9 @@ class Metrics:
     def calculate_precision_recall_f1(self):
         """
         Calcula las métricas de precisión, recall y F1-score para cada clase y de manera global.
+
+        Returns:
+        dict: Diccionario con las métricas calculadas.
         """
         precision_dict = {}
         recall_dict = {}
@@ -80,27 +82,33 @@ class Metrics:
         global_recall = np.mean([r for r in recall_list if r is not None]) if recall_list else None
         global_f1 = np.mean([f for f in f1_list if f is not None]) if f1_list else None
 
-        self.metrics_dict['precision'] = {
-            'by_class': precision_dict,
-            'global_average': global_precision
-        }
-        self.metrics_dict['recall'] = {
-            'by_class': recall_dict,
-            'global_average': global_recall
-        }
-        self.metrics_dict['f1_score'] = {
-            'by_class': f1_dict,
-            'global_average': global_f1
+        metrics = {
+            'precision': {
+                'by_class': precision_dict,
+                'global_average': global_precision
+            },
+            'recall': {
+                'by_class': recall_dict,
+                'global_average': global_recall
+            },
+            'f1_score': {
+                'by_class': f1_dict,
+                'global_average': global_f1
+            }
         }
 
-    def calculate_custom_metric(self):
+        return metrics
+
+    def calculate_adjusted_f_score(self):
         """
-        Calcula la métrica personalizada combinando F0.5 para 'NORM' y F2 para las demás clases.
+        Calcula la métrica personalizada 'adjusted_f_score' combinando F0.5 para 'NORM' y F2 para las demás clases.
+
+        Returns:
+        float or None: Valor de la métrica personalizada.
         """
         if not self.class_names:
-            print("Advertencia: No se proporcionaron nombres de clases. No se puede calcular la métrica personalizada.")
-            self.metrics_dict['custom_metric'] = None
-            return
+            print("Advertencia: No se proporcionaron nombres de clases. No se puede calcular la métrica 'adjusted_f_score'.")
+            return None
 
         custom_metric_values = []
         for i in range(self.n_classes):
@@ -109,7 +117,7 @@ class Metrics:
             y_pred_class = self.y_pred[:, i]
 
             if class_name in self.classes_with_no_samples:
-                metric_value = None
+                continue  # Omitir esta clase en el cálculo de la métrica personalizada
             else:
                 if class_name == 'NORM':
                     _, _, metric_value, _ = precision_recall_fscore_support(
@@ -118,15 +126,14 @@ class Metrics:
                     _, _, metric_value, _ = precision_recall_fscore_support(
                         y_true_class, y_pred_class, average='binary', beta=2, zero_division=0)
 
-            if metric_value is not None:
                 custom_metric_values.append(metric_value)
 
         if custom_metric_values:
-            custom_metric = np.mean(custom_metric_values)
+            adjusted_f_score = np.mean(custom_metric_values)
         else:
-            custom_metric = None
+            adjusted_f_score = None
 
-        self.metrics_dict['custom_metric'] = custom_metric
+        return adjusted_f_score
 
     def dump_to_json(self, path):
         """
@@ -135,8 +142,17 @@ class Metrics:
         Parameters:
         path (str): Ruta al archivo JSON de salida.
         """
-        self.calculate_precision_recall_f1()
-        self.calculate_custom_metric()
+        # Crear un diccionario ordenado para asegurar el orden de las métricas
+        metrics = {}
 
+        # Calcular la métrica personalizada y agregarla primero
+        adjusted_f_score = self.calculate_adjusted_f_score()
+        metrics['adjusted_f_score'] = adjusted_f_score
+
+        # Calcular las demás métricas
+        prf_metrics = self.calculate_precision_recall_f1()
+        metrics.update(prf_metrics)
+
+        # Escribir en el archivo JSON
         with open(path, 'w') as json_file:
-            json.dump(self.metrics_dict, json_file, indent=4)
+            json.dump(metrics, json_file, indent=4)
