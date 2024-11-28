@@ -1,197 +1,142 @@
 import numpy as np
 import json
-from sklearn.metrics import precision_recall_fscore_support, average_precision_score
+from sklearn.metrics import precision_recall_fscore_support
 
 class Metrics:
-    def __init__(self, y_true, y_pred, threshold=0.5, class_names=None):
+    def __init__(self, y_true, y_pred, class_names=None):
         """
         Inicializa la clase Metrics con matrices de etiquetas reales y predicciones.
-        
+
         Parameters:
-        y_true (np.ndarray): Array de valores reales (ground truth).
-        y_pred (np.ndarray): Array de predicciones.
-        threshold (float): Umbral para binarizar las predicciones de probabilidad.
+        y_true (np.ndarray): Array de valores reales (probabilidades entre 0 y 1).
+                             Dimensión: (n_samples, n_classes)
+        y_pred (np.ndarray): Array de predicciones (probabilidades entre 0 y 1).
+                             Dimensión: (n_samples, n_classes)
+        class_names (list, opcional): Lista con los nombres de las clases.
+                                      Longitud: n_classes
         """
-        self.y_true = (y_true >= threshold).astype(int)  # Binariza según el umbral
-        self.y_pred = (y_pred >= threshold).astype(int)
         self.y_true_prob = y_true
         self.y_pred_prob = y_pred
-        if class_names is None:
-            self.class_names = [f"class_{i}" for i in range(y_true.shape[1])]
-        elif len(class_names) != y_true.shape[1]:
-            raise ValueError("El número de nombres de clase debe coincidir con el número de columnas en y_true.")
-        else:
-            self.class_names = class_names
+        self.class_names = class_names
+        self.n_classes = y_true.shape[1]
+        self.metrics_dict = {}
 
-    def recall(self):
-        """ 
-        Calcula el Recall por clase y su promedio (Macro Recall).
-        
-        - Qué significa: Mide la proporción de verdaderos positivos identificados correctamente para cada clase individualmente.
-        - Contexto de uso: Útil para entender el rendimiento del modelo en cada clase específica.
-        - Interpretación: Retorna un arreglo con el recall por clase y el promedio de recall.
+        # Binarizar las etiquetas reales y predichas usando un umbral de 0.5
+        self.y_true = (self.y_true_prob >= 0.5).astype(int)
+        self.y_pred = (self.y_pred_prob >= 0.5).astype(int)
+
+        # Verificar si alguna clase no tiene representantes en y_true
+        self.classes_with_no_samples = []
+        for i in range(self.n_classes):
+            y_true_sum = np.sum(self.y_true[:, i])
+            if y_true_sum == 0:
+                if self.class_names:
+                    class_name = self.class_names[i]
+                else:
+                    class_name = f'Clase_{i}'
+                self.classes_with_no_samples.append(class_name)
+
+        if self.classes_with_no_samples:
+            print(f"Advertencia: Las siguientes clases no tienen representantes en la muestra de test: {', '.join(self.classes_with_no_samples)}")
+
+    def calculate_precision_recall_f1(self):
         """
-        _, recall_per_class, _, _ = precision_recall_fscore_support(
-            self.y_true, self.y_pred, average=None
-        )
-        recall_avg = np.mean(recall_per_class)
-        return recall_per_class, recall_avg
-
-
-    def f2_score(self):
-        """ 
-        Calcula el F2 Score por clase y su promedio.
-        
-        - Qué significa: Mide el equilibrio entre precisión y recall para cada clase, dando más peso al recall.
-        - Contexto de uso: Útil para evaluar el rendimiento en cada clase y entender en cuáles el modelo tiene dificultades.
-        - Interpretación: Retorna un arreglo con el F2-Score por clase y el promedio de F2-Score.
+        Calcula las métricas de precisión, recall y F1-score para cada clase y de manera global.
         """
-        _, _, f2_per_class, _ = precision_recall_fscore_support(
-            self.y_true, self.y_pred, average=None, beta=2
-        )
-        f2_avg = np.mean(f2_per_class)
-        return f2_per_class, f2_avg
+        precision_dict = {}
+        recall_dict = {}
+        f1_dict = {}
+        precision_list = []
+        recall_list = []
+        f1_list = []
 
+        for i in range(self.n_classes):
+            if self.class_names:
+                class_name = self.class_names[i]
+            else:
+                class_name = f'Clase_{i}'
 
-    def auc_pr(self):
-        """ 
-        Calcula el AUC-PR por clase y su promedio.
-        
-        - Qué significa: Mide el área bajo la curva de precisión-recall para cada clase individualmente.
-        - Contexto de uso: Útil para evaluar la capacidad del modelo para detectar positivos en cada clase.
-        - Interpretación: Retorna un arreglo con el AUC-PR por clase y el promedio de AUC-PR.
-        """
-        auc_pr_per_class = average_precision_score(
-            self.y_true, self.y_pred_prob, average=None
-        )
-        auc_pr_avg = np.mean(auc_pr_per_class)
-        return auc_pr_per_class, auc_pr_avg
+            y_true_class = self.y_true[:, i]
+            y_pred_class = self.y_pred[:, i]
 
+            if class_name in self.classes_with_no_samples:
+                precision = None
+                recall = None
+                f1 = None
+            else:
+                precision, recall, f1, _ = precision_recall_fscore_support(
+                    y_true_class, y_pred_class, average='binary', zero_division=0)
 
-    def recall_at_k(self, k=2):
-        """ 
-        Calcula Recall@k para cada muestra, ignorando muestras sin etiquetas verdaderas.
-        Mide la proporción de verdaderas etiquetas entre las k etiquetas más probables.
-        Un valor alto indica que el modelo captura las etiquetas relevantes en sus predicciones principales.
-        """
-        total_recall = 0
-        valid_samples = 0  # Contador de muestras con al menos una etiqueta verdadera
-        for i in range(len(self.y_true)):
-            true_labels_count = np.sum(self.y_true[i])
-            if true_labels_count == 0:
-                continue  # Ignora muestras sin etiquetas verdaderas
-            
-            top_k_preds = np.argsort(-self.y_pred_prob[i])[:k]
-            total_recall += np.sum(self.y_true[i, top_k_preds]) / true_labels_count
-            valid_samples += 1
+                precision_list.append(precision)
+                recall_list.append(recall)
+                f1_list.append(f1)
 
-        return total_recall / valid_samples if valid_samples > 0 else 0
-    
-    def recall_at_k_all(self):
-        """ 
-        Calcula Recall@k para todos los valores de k entre 1 y el total de etiquetas y los devuelve como un diccionario.
-        Mide el recall para cada valor de k. Cuanto antes crezca el recall, menos etiquetas necesita para capturar las verdaderas.
-        Devuelve un diccionario con recall para cada k, que muestra cómo varía el recall en distintos valores de k.
-        """
-        recall_at_k_values = {}
-        recall_at_k_values = {f"{k}": self.recall_at_k(k) for k in range(1, self.y_true_prob.shape[1])}
-        return recall_at_k_values
-    
-    def f1_score(self):
-        """ 
-        Calcula el F1 Score por clase y su promedio.
-        
-        - Qué significa: Mide el equilibrio entre precisión y recall para cada clase.
-        - Contexto de uso: Útil para evaluar el rendimiento de cada clase, especialmente en casos con datos desbalanceados.
-        - Interpretación: Retorna un arreglo con el F1-Score por clase y el promedio de F1-Score.
-        """
-        _, _, f1_per_class, _ = precision_recall_fscore_support(
-            self.y_true, self.y_pred, average=None
-        )
-        f1_avg = np.mean(f1_per_class)
-        return f1_per_class, f1_avg
-    
-    def precision(self):
-        """ 
-        Calcula la Precisión por clase y su promedio.
-        
-        - Qué significa: Mide la proporción de verdaderos positivos entre todas las predicciones positivas para cada clase.
-        - Contexto de uso: Útil para entender la capacidad del modelo para evitar falsos positivos en cada clase.
-        - Interpretación: Retorna un arreglo con la precisión por clase y el promedio de precisión.
-        """
-        precision_per_class, _, _, _ = precision_recall_fscore_support(
-            self.y_true, self.y_pred, average=None
-        )
-        precision_avg = np.mean(precision_per_class)
-        return precision_per_class, precision_avg
+            precision_dict[class_name] = precision
+            recall_dict[class_name] = recall
+            f1_dict[class_name] = f1
 
+        # Calcular promedios globales (ignorando valores None)
+        global_precision = np.mean([p for p in precision_list if p is not None]) if precision_list else None
+        global_recall = np.mean([r for r in recall_list if r is not None]) if recall_list else None
+        global_f1 = np.mean([f for f in f1_list if f is not None]) if f1_list else None
 
-    
-    def coverage_error(self):
-        """ 
-        - Qué significa: Mide en promedio cuántas etiquetas necesita recorrer el modelo para cubrir todas las etiquetas verdaderas, normalizado por el número de verdaderos positivos de cada muestra.
-        - Contexto de uso: Útil para entender el esfuerzo relativo del modelo para cubrir todas las etiquetas verdaderas en cada muestra, especialmente cuando las muestras tienen diferentes cantidades de verdaderos positivos.
-        - Interpretación: Un valor bajo indica que el modelo puede capturar los verdaderos positivos rápidamente en las primeras posiciones.
-        """
-        coverage = 0
-        valid_samples = 0  # Contador de muestras con al menos una etiqueta verdadera
-        for i in range(len(self.y_true)):
-            true_labels = np.where(self.y_true[i] == 1)[0]
-            if len(true_labels) == 0:
-                continue  # Ignora muestras sin etiquetas verdaderas
-            
-            sorted_pred = np.argsort(-self.y_pred_prob[i])
-            # Calcula la cobertura necesaria para capturar todas las etiquetas verdaderas y normaliza
-            max_index = np.where(np.isin(sorted_pred, true_labels))[0].max() + 1
-            coverage += max_index / len(true_labels)
-            valid_samples += 1
-
-        return coverage / valid_samples if valid_samples > 0 else 0
-
-    def dump_to_json(self, path):
-        """ 
-        Guarda todas las métricas calculadas en un archivo JSON.
-
-        - Incluye las métricas por clase y sus promedios.
-        """
-        # Obtener métricas y sus promedios
-        recall_per_class, recall_avg = self.recall()
-        f2_per_class, f2_avg = self.f2_score()
-        f1_per_class, f1_avg = self.f1_score()
-        precision_per_class, precision_avg = self.precision()
-        auc_pr_per_class, auc_pr_avg = self.auc_pr()
-
-        # Crear diccionarios para las métricas por clase usando los nombres de las clases
-        recall_dict = {self.class_names[i]: recall_per_class[i] for i in range(len(self.class_names))}
-        recall_dict["average"] = recall_avg
-
-        f2_dict = {self.class_names[i]: f2_per_class[i] for i in range(len(self.class_names))}
-        f2_dict["average"] = f2_avg
-
-        f1_dict = {self.class_names[i]: f1_per_class[i] for i in range(len(self.class_names))}
-        f1_dict["average"] = f1_avg
-
-        precision_dict = {self.class_names[i]: precision_per_class[i] for i in range(len(self.class_names))}
-        precision_dict["average"] = precision_avg
-
-        auc_pr_dict = {self.class_names[i]: auc_pr_per_class[i] for i in range(len(self.class_names))}
-        auc_pr_dict["average"] = auc_pr_avg
-
-        # Obtener Recall@k y Coverage Error
-        recall_at_k = self.recall_at_k_all()
-        coverage_error = self.coverage_error()
-
-        # Crear el diccionario final de métricas
-        metrics_dict = {
-            "recall": recall_dict,
-            "precision": precision_dict,
-            "f1_score": f1_dict,
-            "f2_score": f2_dict,
-            "auc_pr": auc_pr_dict,
-            "recall_at_k": recall_at_k,
-            "coverage_error": coverage_error
+        self.metrics_dict['precision'] = {
+            'by_class': precision_dict,
+            'global_average': global_precision
+        }
+        self.metrics_dict['recall'] = {
+            'by_class': recall_dict,
+            'global_average': global_recall
+        }
+        self.metrics_dict['f1_score'] = {
+            'by_class': f1_dict,
+            'global_average': global_f1
         }
 
-        # Guardar en un archivo JSON
+    def calculate_custom_metric(self):
+        """
+        Calcula la métrica personalizada combinando F0.5 para 'NORM' y F2 para las demás clases.
+        """
+        if not self.class_names:
+            print("Advertencia: No se proporcionaron nombres de clases. No se puede calcular la métrica personalizada.")
+            self.metrics_dict['custom_metric'] = None
+            return
+
+        custom_metric_values = []
+        for i in range(self.n_classes):
+            class_name = self.class_names[i]
+            y_true_class = self.y_true[:, i]
+            y_pred_class = self.y_pred[:, i]
+
+            if class_name in self.classes_with_no_samples:
+                metric_value = None
+            else:
+                if class_name == 'NORM':
+                    _, _, metric_value, _ = precision_recall_fscore_support(
+                        y_true_class, y_pred_class, average='binary', beta=0.5, zero_division=0)
+                else:
+                    _, _, metric_value, _ = precision_recall_fscore_support(
+                        y_true_class, y_pred_class, average='binary', beta=2, zero_division=0)
+
+            if metric_value is not None:
+                custom_metric_values.append(metric_value)
+
+        if custom_metric_values:
+            custom_metric = np.mean(custom_metric_values)
+        else:
+            custom_metric = None
+
+        self.metrics_dict['custom_metric'] = custom_metric
+
+    def dump_to_json(self, path):
+        """
+        Escribe las métricas calculadas en un archivo JSON.
+
+        Parameters:
+        path (str): Ruta al archivo JSON de salida.
+        """
+        self.calculate_precision_recall_f1()
+        self.calculate_custom_metric()
+
         with open(path, 'w') as json_file:
-            json.dump(metrics_dict, json_file, indent=4)
+            json.dump(self.metrics_dict, json_file, indent=4)
