@@ -69,17 +69,17 @@ Y_test = generate_diagnostic_probs(Y_test)
 with open("./data/train_REC", 'w+') as f:
     for index, row in Y_train.iterrows():
         f.write(row['filename'] + "\n")
-    Y_train.drop(columns=['filename']).to_csv("./data/train_db.csv")
+    Y_train.drop(columns=['filename', "OTHER"]).to_csv("./data/train_db.csv")
 
 with open("./data/validation_REC", 'w+') as f:
     for index, row in Y_validation.iterrows():
         f.write(row['filename'] + "\n")
-    Y_validation.drop(columns=['filename']).to_csv("./data/validation_db.csv")
+    Y_validation.drop(columns=['filename', "OTHER"]).to_csv("./data/validation_db.csv")
 
 with open("./data/test_REC", 'w+') as f:
     for index, row in Y_test.iterrows():
         f.write(row['filename'] + "\n")
-    Y_test.drop(columns=['filename']).to_csv("./data/test_db.csv")
+    Y_test.drop(columns=['filename', "OTHER"]).to_csv("./data/test_db.csv")
 
 os.system("python3 ./sergio/generate_h5.py ./data/test_REC ./data/test.hdf5 --root_dir ./ptbxl")
 os.system("python3 ./sergio/generate_h5.py ./data/train_REC ./data/train.hdf5 --root_dir ./ptbxl")
