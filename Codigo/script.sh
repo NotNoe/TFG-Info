@@ -58,7 +58,7 @@ for tracing_name in "${tracings[@]}"; do
     ./send_telegram.sh "🚀 Iniciando entrenamiento para tracing: <code>${escaped_tracing_name}</code>"
 
     # Ejecutar el script de Python y capturar el código de salida
-    output=$(python "$python_script" --output_file "$tracing_name" "$output_path" 2>&1 | tee /dev/fd/3)
+    output=$(python "$python_script" "$tracing_name" --output_file "$output_path" 2>&1 | tee /dev/fd/3)
     exit_status=$?
 
     # Verificar si el entrenamiento fue exitoso
