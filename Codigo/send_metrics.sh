@@ -1,8 +1,31 @@
 #!/bin/bash
 
-# Archivo: enviar_metrics.sh
+# Función para escapar caracteres especiales en HTML
+escape_html() {
+    echo "$1" | awk '
+    {
+        while (match($0, /<[^>]+>/)) {
+            # Capturar texto antes, la etiqueta HTML, y el texto después
+            before = substr($0, 1, RSTART - 1)
+            tag = substr($0, RSTART, RLENGTH)
+            $0 = substr($0, RSTART + RLENGTH)
 
-# Uso: ./enviar_metrics.sh <ruta_al_metrics.json> <nombre_del_modelo>
+            # Escapar el texto antes de la etiqueta
+            gsub("&", "&amp;", before)
+            gsub("<", "&lt;", before)
+            gsub(">", "&gt;", before)
+
+            # Reconstruir la línea
+            printf "%s%s", before, tag
+        }
+
+        # Procesar el resto del texto (sin etiquetas)
+        gsub("&", "&amp;")
+        gsub("<", "&lt;")
+        gsub(">", "&gt;")
+        printf "%s\n", $0
+    }'
+}
 
 # Verificar si se proporcionaron los argumentos necesarios
 if [ $# -ne 2 ]; then
@@ -12,6 +35,7 @@ fi
 
 metrics_file="$1"
 model_name="$2"
+escaped_model_name=$(escape_html "$model_name")
 
 # Verificar que el archivo metrics.json existe
 if [ ! -f "$metrics_file" ]; then
@@ -19,10 +43,6 @@ if [ ! -f "$metrics_file" ]; then
     exit 1
 fi
 
-# Leer el contenido del archivo metrics.json
-metrics_content=$(cat "$metrics_file")
-
-# Formatear el contenido del JSON para enviarlo por Telegram
 # Usaremos jq para formatear el JSON (asegúrate de que jq está instalado)
 
 if ! command -v jq &> /dev/null; then
@@ -30,14 +50,17 @@ if ! command -v jq &> /dev/null; then
     exit 1
 fi
 
-# Formatear el JSON
-formatted_metrics=$(jq '.' "$metrics_file")
+# Leer y formatear el contenido del archivo JSON
+METRICS=$(cat "$JSON_FILE" | jq -r 'to_entries | map("\(.key): \(.value)") | join("\n")')
 
-# Escapar caracteres especiales para MarkdownV2
-escaped_metrics=$(echo "$formatted_metrics" | sed -E 's/([_*[\]()~`>#+\-=|{}.!])/\\\1/g')
+if [ -z "$METRICS" ]; then
+    echo "Error: El archivo JSON está vacío o tiene un formato inválido."
+    exit 1
+fi
+ESCAPED_METRICS=$(escape_html "$METRICS")
 
 # Construir el mensaje
-message="📊 *Resultados de las métricas para el modelo:* \`${model_name}\`\n\`\`\`\n$escaped_metrics\n\`\`\`"
+message="📊 <b>Métricas para el modelo:</b> <code>${escaped_model_name}</code>\n<pre>${ESCAPED_METRICS}</pre>"
 
 # Enviar el mensaje por Telegram
 ./send_telegram.sh "$message"
