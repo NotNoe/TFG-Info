@@ -10,6 +10,7 @@ if __name__ == "__main__":
     # Get data and train
     parser = argparse.ArgumentParser(description='Train neural network.')
     parser.add_argument('dataset_name', type=str,help='name of the hdf5 dataset containing tracings')
+    parser.add_argument('--output_file', type=str, help='path of the output model', default='./final_model.hdf5')
     parser.add_argument('--path_to_hdf5_train', type=str,
                         help='path to hdf5 file containing train tracings', default='data/train.hdf5')
     parser.add_argument('--path_to_hdf5_val', type=str,
@@ -62,4 +63,4 @@ if __name__ == "__main__":
                             validation_data=valid_seq,
                             verbose=1)
         # Save final result
-        model.save("./final_model.hdf5")
+        model.save(args.output_file)
