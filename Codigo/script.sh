@@ -1,4 +1,5 @@
 #!/bin/bash
+exec 3>&1
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 tracings=("stft" "cwt_morlet" "cwt_ricker")
@@ -12,33 +13,52 @@ if [ ! -f "$python_script" ]; then
     echo "Error: No se encontró el script de Python '$python_script'."
     exit 1
 fi
-escape_html() {
-    echo "$1" | sed -e 's/&/\&amp;/g' \
-                    -e 's/</\&lt;/g' \
-                    -e 's/>/\&gt;/g' \
-                    -e 's/"/\&quot;/g' \
-                    -e "s/'/\&#39;/g"
-}
 
 cd "$DIR"
 source /home/noebg2009/miniconda3/etc/profile.d/conda.sh
 conda activate py38
 
+# Función para escapar caracteres especiales en HTML
+escape_html() {
+    echo "$1" | awk '
+    {
+        while (match($0, /<[^>]+>/)) {
+            # Capturar texto antes, la etiqueta HTML, y el texto después
+            before = substr($0, 1, RSTART - 1)
+            tag = substr($0, RSTART, RLENGTH)
+            $0 = substr($0, RSTART + RLENGTH)
+
+            # Escapar el texto antes de la etiqueta
+            gsub("&", "&amp;", before)
+            gsub("<", "&lt;", before)
+            gsub(">", "&gt;", before)
+
+            # Reconstruir la línea
+            printf "%s%s", before, tag
+        }
+
+        # Procesar el resto del texto (sin etiquetas)
+        gsub("&", "&amp;")
+        gsub("<", "&lt;")
+        gsub(">", "&gt;")
+        printf "%s\n", $0
+    }'
+}
+
 for tracing_name in "${tracings[@]}"; do
     # Construir el path de salida para el modelo
     model_name="${tracing_name}_model"
     output_path="${output_dir}/${model_name}.hdf5"
-
-    # Escapar nombres para HTML
-    escaped_tracing_name=$(escape_html "$tracing_name")
     escaped_model_name=$(escape_html "$model_name")
+    escaped_tracing_name=$(escape_html "$tracing_name")
+
 
     # Enviar mensaje indicando que se inicia el entrenamiento
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Iniciando entrenamiento para tracing: ${tracing_name}"
     ./send_telegram.sh "🚀 Iniciando entrenamiento para tracing: <code>${escaped_tracing_name}</code>"
 
     # Ejecutar el script de Python y capturar el código de salida
-    output=$(python "$python_script" "$tracing_name" "$output_path" 2>&1 | tee /dev/tty)
+    output=$(python "$python_script" --output_file "$tracing_name" "$output_path" 2>&1 | tee /dev/fd/3)
     exit_status=$?
 
     # Verificar si el entrenamiento fue exitoso
@@ -48,13 +68,13 @@ for tracing_name in "${tracings[@]}"; do
         # Log: Iniciando pruebas del modelo
         echo "[$(date '+%Y-%m-%d %H:%M:%S')] Iniciando pruebas para el modelo: ${model_name}"
         # Ejecutar el script test_model.py
-        test_output=$(python scripts/test_model.py "$model_name" "$tracing_name" 2>&1 | tee /dev/tyy)
+        test_output=$(python scripts/test_model.py "$model_name" "$tracing_name" 2>&1 | tee /dev/fd/3)
         test_exit_status=$?
 
         if [ $test_exit_status -eq 0 ]; then
             echo "[$(date '+%Y-%m-%d %H:%M:%S')] Pruebas completadas para el modelo: ${model_name}"
 
-            message+="\n🔍 <b>Pruebas completadas para el modelo:</b> <code>${escaped_model_name}</code>"
+            message+="<br>🔍 <b>Pruebas completadas para el modelo:</b> <code>${escaped_model_name}</code>"
 
             # Enviar mensaje de éxito
             ./send_telegram.sh "$message"
@@ -78,8 +98,7 @@ for tracing_name in "${tracings[@]}"; do
             echo "[$(date '+%Y-%m-%d %H:%M:%S')] Error al ejecutar test_model.py para el modelo: ${model_name}"
 
             test_output_truncated=$(echo "$test_output" | head -c 3500)
-            escaped_test_output=$(escape_html "$test_output_truncated")
-            message+="\n❌ <b>Error al ejecutar test_model.py:</b>\n<pre>${escaped_test_output}</pre>"
+            message+="<br>❌ <b>Error al ejecutar test_model.py:</b><br><pre>${test_output_truncated}</pre>"
             ./send_telegram.sh "$message"
         fi
 
