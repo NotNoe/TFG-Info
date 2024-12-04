@@ -1,7 +1,7 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-training_data=("stft" "cwt_morlet" "cwt_ricker")
+tracings=("stft" "cwt_morlet" "cwt_ricker")
 output_dir="./final_models"
 
 # Ruta al script de Python que entrena el modelo
