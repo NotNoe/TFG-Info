@@ -51,7 +51,8 @@ if ! command -v jq &> /dev/null; then
 fi
 
 # Leer y formatear el contenido del archivo JSON
-METRICS=$(cat "$JSON_FILE" | jq -r 'to_entries | map("\(.key): \(.value)") | join("\n")')
+METRICS=$(python format_metrics.py "$metrics_file")
+
 
 if [ -z "$METRICS" ]; then
     echo "Error: El archivo JSON está vacío o tiene un formato inválido."
@@ -60,7 +61,7 @@ fi
 ESCAPED_METRICS=$(escape_html "$METRICS")
 
 # Construir el mensaje
-message="📊 <b>Métricas para el modelo:</b> <code>${escaped_model_name}</code>\n<pre>${ESCAPED_METRICS}</pre>"
+message="📊 <b>Métricas para el modelo:</b> <code>${escaped_model_name}</code><pre>${ESCAPED_METRICS}</pre>"
 
 # Enviar el mensaje por Telegram
 ./send_telegram.sh "$message"
