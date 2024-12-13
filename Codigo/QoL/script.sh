@@ -12,6 +12,16 @@ source /home/mardia35/miniconda3/etc/profile.d/conda.sh
 conda activate py38
 
 ./QoL/send_telegram.sh "🚀 Iniciando script."
+
+#Descargamos ptbxl
+./QoL/send_telegram.sh "🚀 Descargando ptbxl."
+wget -r -N -c -np -i QoL/index.txt -P ptbxl
+./QoL/send_telegram.sh "🚀 Descarga de ptbxl completada."
+mv ptbxl/physionet.org/files/ptb-xl/1.0.3/* ptbxl/
+rm -r ptbxl/physionet.org
+rm ptbxl/index.html
+
+
 # Primero corremos preprocess_records.py
 ./QoL/send_telegram.sh "🚀 Iniciando preprocesamiento de registros."
 python scripts/preprocess_records.py 2>&1 | tee "$tmp_output"
