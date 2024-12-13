@@ -1,4 +1,134 @@
-\chapter{Preprocesamiento de los datos}
+\chapter{Cuestiones previas}
 \label{cap:pre_datos}
-Antes de poder trabajar
+Antes de empezar a entrenar modelos tenemos que decidir una serie de detalles que serán de gran importancia a lo largo del trabajo.
 
+\section{Análisis de los datos}
+El mayor problema de PTB-XL \citep{ptbxldb}, además de su tamaño relativamente pequeño, es el balanceo de clases, en la tabla \ref{tab:dist} podemos ver la distribución de las mismas. Esto puede causar varios problemas en el modelo, como por ejemplo:
+
+\begin{table}[htbp] 
+\centering
+\begin{tabular}{|lllr|}
+	\hline
+	Número de registros & Superclase & Descripción & Porcentaje \\
+	\hline
+	9514 & NORM & ECG Normal & 43.64\% \\
+	5469 & MI & Infarto de Miocardio & 25.08\% \\
+	5235 & STTC & Cambio ST/T & 24.01\% \\
+	4898 & CD & Transtorno de la conducción & 22.46\% \\
+	2649 & HYP & Hipertrofia & 12.15\% \\
+	\hline
+
+\end{tabular}
+\caption{Distribución de las superclases en PTB-XL}
+\label{tab:dist}
+\begin{tablenotes}
+	\small
+	\item La información de esta tabla ha sido extraída directamente del \href{https://physionet.org/content/ptb-xl/1.0.3/}{repositorio de PTB-XL}.
+\end{tablenotes}
+\end{table}
+
+\begin{enumerate}
+	\item \textbf{Sobreajuste hacia la clase mayoritaria:} Al haber bastantes más datos de entrenamiento de una clase (NORM) y menos de otra (HYP), el modelo puede aprender mejor los patrones que identifican las clases mayoritarias, haciendo que sepa distinguir peor las minoritarias, lo que en este caso podría reducir notablemente su capacidad de predicción de anomalías raras \citep{IData}.
+	
+	\item \textbf{Métricas no representativas:} Las métricas más comunes, como la exactitud, pueden ser poco informativas cuando hay un desbalance en los datos de prueba, ya que un modelo que predice siempre la clase mayoritaria puede tener una exactitud alta. Esto puede dificultar la evaluación real del rendimiento del modelo \citep{ClassOfIData}.
+	
+	\item \textbf{Dificultad en el entrenamiento:} Las redes neuronales profundas requieren de grandes cantidades de datos de entrenamiento para poder entender patrones complejos. Si una de las clases tiene muy pocos ejemplos, es muy probable que el modelo no sea capaz de predecirla correctamente \citep{Leevy}
+\end{enumerate}
+
+Para abordar estos problemas se podrían considerar varias estrategias, como hacer \emph{oversampling} o \emph{undersampling}. El \emph{oversampling} consiste en generar datos sintéticos a partir de los que ya tenemos para balancear las clases, pero esto no es una buena técnica cuándo los datos son complejos (como es el caso de un ECH), ya que no hay una técnica clara para crear datos sintéticos coherentes.
+
+Por otro lado, el \emph{undersampling} hace que todas las clases se queden con el mismo número de candidatos que la clase minoritaria, lo que no es una técnica adecuada cuándo los datos de entrenamiento son reducidos desde un principio.
+
+\section{Procesamiento de los datos}
+
+Como es habitual en el campo de la inteligencia artificial, antes de poder utilizar unos datos hay que hacer cierto procesamiento para asegurarnos que son adecuados.
+
+Lo primero que habría que hacer es quitar los datos repetidos o con valores inválidos, incompletos o corruptos, pero afortunadamente la base de datos que estamos utilizando ya ha sido revisada por sus creadores, por lo que podemos obviar este paso.
+
+En procesamiento de señales (especialmente en señales que son muy sensibles a determinadas perturbaciones, como es el caso de los \ac{ECG}s) es muy importante aplicar determinados filtros antes de trabajar con las señales. En este trabajo utilizaremos los scripts que se utilizaron en el trabajo de \cite{TFGSergio} (que nos han sido facilitados por el autor). En concreto, los datos se pre-procesan de la siguiente manera:
+\begin{itemize}
+	\item Se normalizan todos para tener una frecuencia de 400Hz, que es con la que se entrenó al modelo original. Por tanto, tras hacer este procesamiento previo estaremos trabajando con vectores de 4096
+	\item Se elimina el desplazamiento de la línea base. Como podemos ver en \cite{baseline}, es muy importante hacer esto antes de analizar un \ac{ECG}.
+	\item Se elimina la interferencia de la línea de alimentación, lo que también es importante como podemos ver en \cite{powerline}
+\end{itemize}
+
+Por último, separamos los datos en tres conjuntos, siguiendo la división recomendada por la propia base de datos:
+\begin{itemize}
+	\item \textbf{Entrenamiento (\emph{train}):} El conjunto mayoritario (con un 80\% de los datos), que será usado para entrenar al modelo
+	\item \textbf{Validación (\emph{validation}):} Este conjunto (que representa el 10\% de los datos) se utilizará para ajustar los parámetros del modelo en el entrenamiento del mismo.
+	\item \textbf{Pruebas (\emph{test}):} Este conjunto (que está formado por el 10\% restante de los datos) es el que utilizaremos para obtener las diversas métricas de rendimiento del modelo.
+\end{itemize}
+
+\section{Métricas}
+Antes de entrenar diversos modelos, tenemos que tener claro qué métricas estamos intentando maximizar, ya que no hay una métrica objetivamente mejor que las demás.
+
+\subsection{Métricas habituales}
+Entre las métricas más habituales podemos encontrar la \emph{F-$\beta$ Score}, \emph{precision} y \emph{recall}.
+
+\subsubsection{Precision (Precisión)}
+La precisión es la proporción de predicciones positivas que son realmente positivas, o más concretamente:
+\[
+\text{precision} = \frac{\text{Verdaderos positivos}}{\text{Verdaderos positivos + falsos positivos}}.
+\]
+
+Un valor alto de esta métrica indica que el modelo es bueno minimizando falsos positivos, es decir, cuándo el modelo predice que un dato no pertenece a una clase, esa predicción es fiable.
+
+\subsubsection{Recall (Sensibilidad)}
+La sensibilidad mide la proporción de casos positivos que el modelo predice correctamente, o más concretamente:
+\[
+\text{recall} = \frac{\text{Verdaderos positivos}}{\text{Verdaderos positivos + falsos negativos}}.
+\]
+
+Un valor alto de esta métrica indica que el modelo es bueno minimizando falsos positivos, es decir, cuándo el modelo predice que un dato pertenece a una clase, esa predicción es fiable.
+
+\subsubsection{F-$\beta$ Score}
+El F-$\beta$ Score es una media entre la precisión y el recall, la fórmula concreta es:
+\[
+F_\beta = (1+\beta^2)\times \frac{\text{precision} \times \text{recall}}{\beta^2\times\text{precision} + \text{recall}}.
+\]
+El valor más habitual para esto es $\beta=1$, que nos da la media armónica y permite valorar tanto la fiabilidad del modelo cuando predice positivo como negativo.
+
+Esto es adecuado cuándo, por la naturaleza de un problema, el coste de los falsos positivos es similar al de los falsos negativos, pero no es nuestro caso. En modelos aplicados a la salud, es mucho más importante predecir las anomalías correctamente (ya que de esto puede depende la salud de una persona) que predecir correctamente la ausencia de anomalías.
+
+Los valores de $\beta=0.5,2$ hacen que tenga más peso la precisión y el recall respectivamente, por lo que la primera es más adecuada para cuándo los falsos positivos tienen un coste muy alto y la segunda para cuándo son los falsos negativos los que tienen el coste más alto.
+
+\subsection{Cálculo por clase vs. Promedio binario}
+Todas las métricas que hemos listado anteriormente están definidas para clasificadores binarios, pero nuestro clasificador es multietiqueta, por lo que es necesario adaptarlas. En este trabajo consideraremos dos enfoques, el cálculo por clase y el promedio binario.
+
+\subsubsection{Cálculo por clase}
+Este es el enfoque más sencillo de todos. Consideramos nuestro clasificador multietiqueta como uno binario para cada una de sus etiquetas, y calculamos las métricas para cada una de las clases.
+
+Este enfoque permite ver el desempeño del modelo en cada una de sus clases, lo que permite entender mejor cuáles son sus debilidades y fortalezas. El principal problema que presenta este método es que no da un único valor para comparar modelos, por lo que puede ser difícil determinar qué modelo es el óptimo.
+
+\subsubsection{Promedio binario}
+Este enfoque (también conocido como \emph{one-vs-rest}) consiste en hacer el promedio de las métricas obtenidas en el enfoque anterior para cada clase.
+
+\subsection{Métricas para nuestro problema}
+Tras realizar el análisis de las posibles métricas que implementar, hemos decidido calcular y mostrar varias métricas para cada modelo, y elegir una que consideramos mejor para afirmar qué modelo es el mejor. Las métricas que mostraremos son las siguientes:
+
+\begin{itemize}
+	\item Para cada una de las clases:
+	\begin{itemize}
+		\item Precisión.
+		\item Recall.
+		\item F-1 Score.
+	\end{itemize}
+	\item Precisión global calculada como promedio binario.
+	\item Recall global calculado como promedio binario.
+	\item F-1 Score global calculado como promedio binario.
+	\item F Score ajustada, una métrica personalizada que definiremos a continuación.
+\end{itemize}
+
+Todas las métricas que mostraremos, salvo la personalizada, tienen el objetivo de entender mejor cómo funciona el modelo, pero no de compararlo. La F Score ajustada será la que utilizaremos para determinar qué modelo consideramos óptimo.
+
+En nuestro problema tenemos cinco etiquetas. Una de ellas representa un \ac{ECH} normal, mientras que las demás representan diversas anomalías. Dado que nuestro objetivo es que el modelo identifique lo mejor posible las anomalías (cuándo las haya), el coste de los falsos negativos en las etiquetas de anomalías es muy alto, mientras que el coste de los falsos positivos en la etiqueta normal es muy alto.
+
+Por ello, definiremos la F Score ajustada como la media de la F-0.5 Score de la clase normal y las  F-2 Score del resto de etiquetas. Esto nos permite tener una métrica que tiene en cuenta tanto reducir falsos negativos como falsos positivos en todas las etiquetas, pero dando más peso a los falsos negativos o positivos dependiendo de la etiqueta concreta.
+
+La fórmula concreta de la métrica sería:
+\begin{equation*}
+	\text{F Score ajustada} = \frac{F-0.5(\text{NORM}) + \sum_{i \neq \text{NORM}}F-2(i)}{\text{Número de clases}}
+\end{equation*}
+
+
+\section{Transformaciones}

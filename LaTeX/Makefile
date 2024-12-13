@@ -25,7 +25,7 @@
 #
 #----------------------------------------------------------
 
-NOMBRE_LATEX = TFG-INFO
+NOMBRE_LATEX = TFG-Info
 FICHEROS_GLOSARIO = acronimos.gdf
 # NO deberia ser igual que NOMBRE_LATEX
 # (es decir, si NOMBRE_LATEX es
@@ -40,11 +40,10 @@ FICHEROS_GLOSARIO = acronimos.gdf
 # Genera el documento utilizando pdflatex
 # 
 pdflatex:
-	pdflatex -synctex=1 -interaction=nonstopmode $(NOMBRE_LATEX)
+	pdflatex -interaction=nonstopmode $(NOMBRE_LATEX)
 	-bibtex $(NOMBRE_LATEX)
 	-glosstex $(NOMBRE_LATEX) $(FICHEROS_GLOSARIO)
 	-makeindex $(NOMBRE_LATEX).gxs -o $(NOMBRE_LATEX).glx -s glosstex.ist
-#	-makeindex $(NOMBRE_LATEX)   Si tuvieras �ndice de palabras (mira preambulo.tex)
 	pdflatex -interaction=nonstopmode $(NOMBRE_LATEX)
 	pdflatex -synctex=1 -interaction=nonstopmode $(NOMBRE_LATEX)
 # El gui�n en cualquier comando indica que si dicho comando falla

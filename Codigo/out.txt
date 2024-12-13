@@ -1,0 +1,13 @@
+El ecg de la línea 24 es bueno para la eitqueta CD
+	Valor predicho: [ True False False False False]
+	Valor real: [1. 0. 0. 0. 0.]
+No se ha encontrado ninguna muestra con la etiqueta HYP
+El ecg de la línea 70 es bueno para la eitqueta MI
+	Valor predicho: [False False  True False False]
+	Valor real: [0. 0. 1. 0. 0.]
+El ecg de la línea 2 es bueno para la eitqueta NORM
+	Valor predicho: [False False False  True False]
+	Valor real: [0. 0. 0. 1. 0.]
+El ecg de la línea 21 es bueno para la eitqueta STTC
+	Valor predicho: [False False False False  True]
+	Valor real: [0. 0. 0. 0. 1.]

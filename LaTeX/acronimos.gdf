@@ -20,8 +20,8 @@
 % tienes ninguno  referenciado, basta con que no  definas la constante
 % \acronimosEnRelease en config.tex
 
-@entry{CVS, , \emph{Control Version System}, Sistema de Control de Versiones}
+@entry{STFT, , \emph{Short-Time Fourier Transform}, Transformada de Fourier de tiempo reducido}
 
-@entry{GPL, , \emph{General Public License}, Licencia Pública General de GNU}
+@entry{CWT, , \emph{Continuous Wavelet Transform}, Transformada de ondícula continua}
 
-@entry{PC2, PC$^2$, \emph{Programming Contest Control}}
+@entry{ECG, , Electrocardiograma}

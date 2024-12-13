@@ -5,25 +5,28 @@
 \end{resumen}
 
 \section{Motivación}
-El auge de la inteligencia artificial ha hecho posible crear aplicaciones que hace unos años nos parecían imposibles. Como no podía ser de otro modo, uno de los campos que ha conseguido avances gracias a esto ha sido el de la medicina, ya que los avances en este campo permiten mejorar la calidad de vida de todo el mundo.
+El auge de la inteligencia artificial ha hecho posible crear aplicaciones que hace unos años nos parecían imposibles. Como es natural, uno de los campos que ha conseguido avances gracias a esto ha sido el de la medicina, ya que los avances en este campo permiten mejorar la calidad de vida de todo el mundo.
 
-Una de las aplicaciones médicas de la inteligencia artificial que se han trabajado es el procesamiento automatizado de mediciones, creando algoritmos que permitan detectar si estas son normales o no, y quitar carga de trabajo a los médicos.
+Una de las aplicaciones médicas de la inteligencia artificial que se han trabajado es el procesamiento automatizado de mediciones, creando algoritmos que permitan detectar si estas son normales o no con el fin de reducir la carga laboral de los profesionales de la salud.
 
-Este trabajo se centrará en estudiar las posibilidades de un algoritmo que, a partir de las mediciones que se toman en un electrocardiograma (ECG), detectar posibles anomalías.
+Este trabajo se centrará en estudiar las posibilidades de un algoritmo que, a partir de las mediciones que se toman en un \ac{ECG}, detectar posibles anomalías.
 
-Además de todo esto, la comunidad científica lleva un tiempo dándole importancia a la explicabilidad de los algoritmos, por lo que en este trabajo no solo veremos cómo de eficientes son las distintas aproximaciones, si no también cómo de explicables son nuestros modelos.
+Además de todo esto, la comunidad científica lleva un tiempo dándole importancia a la explicabilidad de los algoritmos, por lo que en este trabajo no solo veremos cómo de eficientes son las distintas aproximaciones, sino que también evaluaremos el grado de explicabilidad de los modelos empleados.
+
 \section{Aproximaciones al problema}
-El modelo más conocido es el de \cite{ribeiro}, que toma como entrada los datos del electrocardiograma tal como se recogen, que en esencia son doce mediciones de la actividad eléctrica en distintos puntos del cuerpo (expandiremos más en este tópico en la siguiente sección).
+El modelo más conocido es el de \cite{ribeiro}, que toma como entrada los datos del \ac{ECG} tal como se recogen, que en esencia son doce mediciones de la actividad eléctrica en distintos puntos del cuerpo (expandiremos más en este tópico en la siguiente sección).
 
-Nosotros exploraremos la posibilidad de convertir el electrocardiograma en diagramas de frecuencia-tiempo, y aplicarle diferentes transformadas antes de entrenar a los modelos, y estudiaremos si esto mejora su eficiencia, así como su explicabilidad.
+Nosotros exploraremos la posibilidad de convertir el \ac{ECG} en diagramas de frecuencia-tiempo, y aplicarle diferentes transformadas antes de entrenar a los modelos, y estudiaremos si esto mejora su eficiencia, así como su explicabilidad.
 
 \section{Objetivos}
 
-El objetivo de este trabajo es modificar distintos modelos de predicción para que tomen como entrada imágenes en lugar de los datos del electrocardiograma, y ver como esto afecta a su rendimiento y explicabilidad.
+El objetivo de este trabajo es modificar distintos modelos de predicción para que tomen como entrada imágenes en lugar de los datos del \ac{ECG}, y ver como esto afecta a su rendimiento y explicabilidad.
 
 \section{Plan de trabajo}
-En el siguiente capítulo tendremos que familiarizarnos con los datos que proporciona un electrocardiograma, así como con los modelos ya existentes que tendremos que modificar y con los datos que hay disponibles de manera pública.
+En el siguiente capítulo tendremos que familiarizarnos con los datos que proporciona un \ac{ECG}, así como con los modelos ya existentes que tendremos que modificar y con los datos que hay disponibles de manera pública.
 
 Luego modificaremos los modelos para que acepten como entrada imágenes y los volveremos a entrenar con los datos transformados de varias maneras diferentes.
 
 Una vez entrenados los modelos modificados, evaluaremos su rendimiento y explicabilidad, y los compararemos con los modelos originales para ver si hemos conseguido una mejora.
+
+\todo{Expandir esta sección cuándo haya hecho más cosas}
