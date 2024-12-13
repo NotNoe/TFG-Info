@@ -51,7 +51,7 @@ if ! command -v jq &> /dev/null; then
 fi
 
 # Leer y formatear el contenido del archivo JSON
-METRICS=$(python format_metrics.py "$metrics_file")
+METRICS=$(python ./QoL/format_metrics.py "$metrics_file")
 
 
 if [ -z "$METRICS" ]; then

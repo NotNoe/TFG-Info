@@ -11,30 +11,30 @@ cd ..
 source /home/mardia35/miniconda3/etc/profile.d/conda.sh
 conda activate py38
 
-./send_telegram.sh "🚀 Iniciando script."
+./QoL/send_telegram.sh "🚀 Iniciando script."
 # Primero corremos preprocess_records.py
-./send_telegram.sh "🚀 Iniciando preprocesamiento de registros."
+./QoL/send_telegram.sh "🚀 Iniciando preprocesamiento de registros."
 python scripts/preprocess_records.py 2>&1 | tee "$tmp_output"
-./send_telegram.sh "🚀 Preprocesamiento de registros completado."
-./send_telegram.sh "🚀 Iniciando preprocesamiento de datos."
+./QoL/send_telegram.sh "🚀 Preprocesamiento de registros completado."
+./QoL/send_telegram.sh "🚀 Iniciando preprocesamiento de datos."
 python scripts/preprocess_data.py 2>&1 | tee "$tmp_output"
-./send_telegram.sh "🚀 Preprocesamiento de datos completado."
+./QoL/send_telegram.sh "🚀 Preprocesamiento de datos completado."
 
 #Hacemos las transformaciones
-./send_telegram.sh "🚀 Iniciando transformaciones."
+./QoL/send_telegram.sh "🚀 Iniciando transformaciones."
 python scripts/transform_data_stft.py 2>&1 | tee "$tmp_output"
-./send_telegram.sh "🚀 Stft completada."
+./QoL/send_telegram.sh "🚀 Stft completada."
 python scripts/transform_data_cwt_morlet.py 2>&1 | tee "$tmp_output"
-./send_telegram.sh "🚀 Cwt morlet completada."
+./QoL/send_telegram.sh "🚀 Cwt morlet completada."
 python scripts/transform_data_cwt_ricker.py 2>&1 | tee "$tmp_output"
-./send_telegram.sh "🚀 Cwt ricker completada."
+./QoL/send_telegram.sh "🚀 Cwt ricker completada."
 
 #Hacemos aux para sacar las explicaciones que queriamos
-./send_telegram.sh "🚀 Iniciando explicaciones."
+./QoL/send_telegram.sh "🚀 Iniciando explicaciones."
 python aux.py 2>&1 | tee "$tmp_output"
-./send_telegram.sh "🚀 Explicaciones completadas."
+./QoL/send_telegram.sh "🚀 Explicaciones completadas."
 
-./send_telegram.sh "🚀 Iniciando entrenamiento de modelos transformados."
+./QoL/send_telegram.sh "🚀 Iniciando entrenamiento de modelos transformados."
 
 # Ruta al script de Python que entrena el modelo
 python_script="ribeiro/train.py"
@@ -84,7 +84,7 @@ for tracing_name in "${tracings[@]}"; do
 
     # Enviar mensaje indicando que se inicia el entrenamiento
     echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] Iniciando entrenamiento para tracing: ${tracing_name}"
-    ./send_telegram.sh "🚀 Iniciando entrenamiento para tracing: <code>${escaped_tracing_name}</code>"
+    ./QoL/send_telegram.sh "🚀 Iniciando entrenamiento para tracing: <code>${escaped_tracing_name}</code>"
 
     # Ejecutar el script de Python y capturar el código de salida
     python "$python_script" "$tracing_name" --output_file "$output_path" 2>&1 | tee "$tmp_output"
@@ -106,7 +106,7 @@ for tracing_name in "${tracings[@]}"; do
             message+="%0A🔍 <b>Pruebas completadas para el modelo:</b> <code>${escaped_model_name}</code>"
 
             # Enviar mensaje de éxito
-            ./send_telegram.sh "$message"
+            ./QoL/send_telegram.sh "$message"
 
             # Ruta al archivo metrics.json
             metrics_file="./test/${model_name}/metrics.json"
@@ -115,12 +115,12 @@ for tracing_name in "${tracings[@]}"; do
             if [ -f "$metrics_file" ]; then
                 echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] Enviando métricas para el modelo: ${model_name}"
                 # Llamar al script que formatea y envía el JSON
-                ./send_metrics.sh "$metrics_file" "$model_name"
+                ./QoL/send_metrics.sh "$metrics_file" "$model_name"
             else
                 echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] No se encontró metrics.json para el modelo: ${model_name}"
 
                 # Enviar advertencia si no se encuentra metrics.json
-                ./send_telegram.sh "⚠️ No se encontró el archivo <code>metrics.json</code> para el modelo <code>${escaped_model_name}</code>"
+                ./QoL/send_telegram.sh "⚠️ No se encontró el archivo <code>metrics.json</code> para el modelo <code>${escaped_model_name}</code>"
             fi
         else
             # Hubo un error al ejecutar test_model.py
@@ -128,7 +128,7 @@ for tracing_name in "${tracings[@]}"; do
             cat "$tmp_output"
             test_output_truncated=$(cat "$tmp_output" | head -c 3500)
             message+="%0A❌ <b>Error al ejecutar test_model.py:</b>%0A<pre>${test_output_truncated}</pre>"
-            ./send_telegram.sh "$message"
+            ./QoL/send_telegram.sh "$message"
         fi
 
     else
@@ -136,7 +136,7 @@ for tracing_name in "${tracings[@]}"; do
         echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] Error en el entrenamiento para tracing: ${tracing_name}"
         message="❌ <b>Error en el entrenamiento para tracing:</b> <code>${escaped_tracing_name}</code>"
         # Enviar mensaje con el error
-        ./send_telegram.sh "$message"
+        ./QoL/send_telegram.sh "$message"
     fi
 done
 # Log: Finalización de todas las tareas
