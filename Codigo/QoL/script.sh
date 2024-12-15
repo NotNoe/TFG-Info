@@ -19,7 +19,7 @@ conda activate py38
 #./QoL/send_telegram.sh "🚀 Descarga de ptbxl completada."
 #mv ptbxl/physionet.org/files/ptb-xl/1.0.3/* ptbxl/
 #rm -r ptbxl/physionet.org
-#rm ptbxl/index.html
+#rm QoL/index.html
 
 
 # Primero corremos preprocess_records.py

@@ -1,4 +1,0 @@
-https://physionet.org/files/ptb-xl/1.0.3/records500/
-https://physionet.org/files/ptb-xl/1.0.3/ptbxl_database.csv
-https://physionet.org/files/ptb-xl/1.0.3/scp_statements.csv
-https://physionet.org/files/ptb-xl/1.0.3/RECORDS
