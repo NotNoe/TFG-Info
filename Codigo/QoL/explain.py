@@ -26,7 +26,7 @@ for label in ETIQUETAS:
         model = load_model("./final_models/original_model.hdf5")
 
 
-        with tf.device('/CPU:0'):
+        with tf.device('/GPU:0'):
             explainer = TSR(model, test_x.shape[-2], test_x.shape[-1], mode="time", method="IG", device="cuda")
             item = test_x[ITEM_IDX:ITEM_IDX+1, :, :]
             prediction = model.predict(item)[0]
