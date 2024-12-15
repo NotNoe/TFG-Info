@@ -41,7 +41,7 @@ python scripts/transform_data_cwt_ricker.py 2>&1 | tee "$tmp_output"
 
 #Hacemos aux para sacar las explicaciones que queriamos
 ./QoL/send_telegram.sh "🚀 Iniciando explicaciones."
-python aux.py 2>&1 | tee "$tmp_output"
+python QoL/explain.py 2>&1 | tee "$tmp_output"
 ./QoL/send_telegram.sh "🚀 Explicaciones completadas."
 
 ./QoL/send_telegram.sh "🚀 Iniciando entrenamiento de modelos transformados."
