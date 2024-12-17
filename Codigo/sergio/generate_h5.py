@@ -35,7 +35,7 @@ if __name__ == '__main__':
                                                                           new_freq=400,
                                                                           new_len=4096,
                                                                           scale=1,
-                                                                          use_all_leads=True,
+                                                                          use_all_leads=args.use_all_leads,
                                                                           remove_baseline=True,
                                                                           remove_powerline=60)
         if x is None:

@@ -40,6 +40,6 @@ with open("out.json", "w") as f:
         lista_de_indices[label_names[label_idx]] = []
         for i in range(predictions.shape[0]):
             if np.array_equal(test_y[i], desired_real) and np.array_equal(predictions[i], desired_predictions):
-                lista_de_indices[label_names[label_idx]].append({"linea": i, "ecg_id": int(df.iloc[i]['ecg_id'])})
+                lista_de_indices[label_names[label_idx]].append({"linea": i + 2, "ecg_id": int(df.iloc[i]['ecg_id'])})
     json.dump(lista_de_indices, f, indent=4)
 os.remove("./tmp.npy")

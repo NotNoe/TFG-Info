@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.signal as sgn
 
-reduced_leads = ['I', 'II', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6']
+reduced_leads = ['I', 'II', 'V1']
 all_leads = ['I', 'II', 'III', 'aVR', 'aVL', 'aVF', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6']
 
 
