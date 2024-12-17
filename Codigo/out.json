@@ -1,3642 +1,3642 @@
 {
     "CD": [
         {
-            "linea": 22,
+            "linea": 24,
             "ecg_id": 157
         },
         {
-            "linea": 28,
+            "linea": 30,
             "ecg_id": 180
         },
         {
-            "linea": 59,
+            "linea": 61,
             "ecg_id": 448
         },
         {
-            "linea": 81,
+            "linea": 83,
             "ecg_id": 598
         },
         {
-            "linea": 83,
+            "linea": 85,
             "ecg_id": 618
         },
         {
-            "linea": 102,
+            "linea": 104,
             "ecg_id": 789
         },
         {
-            "linea": 145,
+            "linea": 147,
             "ecg_id": 1120
         },
         {
-            "linea": 197,
+            "linea": 199,
             "ecg_id": 1564
         },
         {
-            "linea": 270,
+            "linea": 272,
             "ecg_id": 2153
         },
         {
-            "linea": 290,
+            "linea": 292,
             "ecg_id": 2281
         },
         {
-            "linea": 304,
+            "linea": 306,
             "ecg_id": 2375
         },
         {
-            "linea": 318,
+            "linea": 320,
             "ecg_id": 2433
         },
         {
-            "linea": 341,
+            "linea": 343,
             "ecg_id": 2626
         },
         {
-            "linea": 406,
+            "linea": 408,
             "ecg_id": 3201
         },
         {
-            "linea": 435,
+            "linea": 437,
             "ecg_id": 3479
         },
         {
-            "linea": 512,
+            "linea": 514,
             "ecg_id": 3947
         },
         {
-            "linea": 519,
+            "linea": 521,
             "ecg_id": 4016
         },
         {
-            "linea": 523,
+            "linea": 525,
             "ecg_id": 4070
         },
         {
-            "linea": 538,
+            "linea": 540,
             "ecg_id": 4220
         },
         {
-            "linea": 545,
+            "linea": 547,
             "ecg_id": 4238
         },
         {
-            "linea": 548,
+            "linea": 550,
             "ecg_id": 4254
         },
         {
-            "linea": 566,
+            "linea": 568,
             "ecg_id": 4432
         },
         {
-            "linea": 567,
+            "linea": 569,
             "ecg_id": 4444
         },
         {
-            "linea": 579,
+            "linea": 581,
             "ecg_id": 4560
         },
         {
-            "linea": 598,
+            "linea": 600,
             "ecg_id": 4758
         },
         {
-            "linea": 600,
+            "linea": 602,
             "ecg_id": 4771
         },
         {
-            "linea": 608,
+            "linea": 610,
             "ecg_id": 4825
         },
         {
-            "linea": 613,
+            "linea": 615,
             "ecg_id": 4893
         },
         {
-            "linea": 734,
+            "linea": 736,
             "ecg_id": 6096
         },
         {
-            "linea": 743,
+            "linea": 745,
             "ecg_id": 6174
         },
         {
-            "linea": 769,
+            "linea": 771,
             "ecg_id": 6284
         },
         {
-            "linea": 837,
+            "linea": 839,
             "ecg_id": 7075
         },
         {
-            "linea": 888,
+            "linea": 890,
             "ecg_id": 7811
         },
         {
-            "linea": 897,
+            "linea": 899,
             "ecg_id": 7865
         },
         {
-            "linea": 914,
+            "linea": 916,
             "ecg_id": 7967
         },
         {
-            "linea": 979,
+            "linea": 981,
             "ecg_id": 8504
         },
         {
-            "linea": 990,
+            "linea": 992,
             "ecg_id": 8622
         },
         {
-            "linea": 992,
+            "linea": 994,
             "ecg_id": 8632
         },
         {
-            "linea": 998,
+            "linea": 1000,
             "ecg_id": 8712
         },
         {
-            "linea": 1046,
+            "linea": 1048,
             "ecg_id": 9183
         },
         {
-            "linea": 1078,
+            "linea": 1080,
             "ecg_id": 9562
         },
         {
-            "linea": 1119,
+            "linea": 1121,
             "ecg_id": 9962
         },
         {
-            "linea": 1133,
+            "linea": 1135,
             "ecg_id": 10130
         },
         {
-            "linea": 1134,
+            "linea": 1136,
             "ecg_id": 10131
         },
         {
-            "linea": 1159,
+            "linea": 1161,
             "ecg_id": 10283
         },
         {
-            "linea": 1167,
+            "linea": 1169,
             "ecg_id": 10359
         },
         {
-            "linea": 1169,
+            "linea": 1171,
             "ecg_id": 10383
         },
         {
-            "linea": 1175,
+            "linea": 1177,
             "ecg_id": 10501
         },
         {
-            "linea": 1225,
+            "linea": 1227,
             "ecg_id": 11103
         },
         {
-            "linea": 1252,
+            "linea": 1254,
             "ecg_id": 11418
         },
         {
-            "linea": 1257,
+            "linea": 1259,
             "ecg_id": 11474
         },
         {
-            "linea": 1332,
+            "linea": 1334,
             "ecg_id": 12178
         },
         {
-            "linea": 1385,
+            "linea": 1387,
             "ecg_id": 12552
         },
         {
-            "linea": 1405,
+            "linea": 1407,
             "ecg_id": 12703
         },
         {
-            "linea": 1485,
+            "linea": 1487,
             "ecg_id": 13711
         },
         {
-            "linea": 1510,
+            "linea": 1512,
             "ecg_id": 13926
         },
         {
-            "linea": 1513,
+            "linea": 1515,
             "ecg_id": 13955
         },
         {
-            "linea": 1526,
+            "linea": 1528,
             "ecg_id": 14123
         },
         {
-            "linea": 1588,
+            "linea": 1590,
             "ecg_id": 14678
         },
         {
-            "linea": 1622,
+            "linea": 1624,
             "ecg_id": 15101
         },
         {
-            "linea": 1640,
+            "linea": 1642,
             "ecg_id": 15438
         },
         {
-            "linea": 1642,
+            "linea": 1644,
             "ecg_id": 15447
         },
         {
-            "linea": 1648,
+            "linea": 1650,
             "ecg_id": 15526
         },
         {
-            "linea": 1649,
+            "linea": 1651,
             "ecg_id": 15532
         },
         {
-            "linea": 1673,
+            "linea": 1675,
             "ecg_id": 15798
         },
         {
-            "linea": 1678,
+            "linea": 1680,
             "ecg_id": 15817
         },
         {
-            "linea": 1692,
+            "linea": 1694,
             "ecg_id": 15899
         },
         {
-            "linea": 1714,
+            "linea": 1716,
             "ecg_id": 16100
         },
         {
-            "linea": 1736,
+            "linea": 1738,
             "ecg_id": 16260
         },
         {
-            "linea": 1754,
+            "linea": 1756,
             "ecg_id": 16529
         },
         {
-            "linea": 1775,
+            "linea": 1777,
             "ecg_id": 16674
         },
         {
-            "linea": 1796,
+            "linea": 1798,
             "ecg_id": 16883
         },
         {
-            "linea": 1819,
+            "linea": 1821,
             "ecg_id": 17202
         },
         {
-            "linea": 1822,
+            "linea": 1824,
             "ecg_id": 17244
         },
         {
-            "linea": 1823,
+            "linea": 1825,
             "ecg_id": 17247
         },
         {
-            "linea": 1828,
+            "linea": 1830,
             "ecg_id": 17297
         },
         {
-            "linea": 1895,
+            "linea": 1897,
             "ecg_id": 17906
         },
         {
-            "linea": 1900,
+            "linea": 1902,
             "ecg_id": 17920
         },
         {
-            "linea": 1903,
+            "linea": 1905,
             "ecg_id": 17936
         },
         {
-            "linea": 1927,
+            "linea": 1929,
             "ecg_id": 18202
         },
         {
-            "linea": 1930,
+            "linea": 1932,
             "ecg_id": 18240
         },
         {
-            "linea": 1949,
+            "linea": 1951,
             "ecg_id": 18499
         },
         {
-            "linea": 1954,
+            "linea": 1956,
             "ecg_id": 18548
         },
         {
-            "linea": 1958,
+            "linea": 1960,
             "ecg_id": 18638
         },
         {
-            "linea": 1963,
+            "linea": 1965,
             "ecg_id": 18671
         },
         {
-            "linea": 1979,
+            "linea": 1981,
             "ecg_id": 18777
         },
         {
-            "linea": 1988,
+            "linea": 1990,
             "ecg_id": 18891
         },
         {
-            "linea": 1989,
+            "linea": 1991,
             "ecg_id": 18914
         },
         {
-            "linea": 1990,
+            "linea": 1992,
             "ecg_id": 18916
         },
         {
-            "linea": 2004,
+            "linea": 2006,
             "ecg_id": 19134
         },
         {
-            "linea": 2025,
+            "linea": 2027,
             "ecg_id": 19305
         },
         {
-            "linea": 2033,
+            "linea": 2035,
             "ecg_id": 19345
         },
         {
-            "linea": 2069,
+            "linea": 2071,
             "ecg_id": 19858
         },
         {
-            "linea": 2100,
+            "linea": 2102,
             "ecg_id": 20120
         },
         {
-            "linea": 2102,
+            "linea": 2104,
             "ecg_id": 20141
         },
         {
-            "linea": 2114,
+            "linea": 2116,
             "ecg_id": 20252
         },
         {
-            "linea": 2139,
+            "linea": 2141,
             "ecg_id": 20674
         },
         {
-            "linea": 2152,
+            "linea": 2154,
             "ecg_id": 20893
         },
         {
-            "linea": 2159,
+            "linea": 2161,
             "ecg_id": 20966
         },
         {
-            "linea": 2168,
+            "linea": 2170,
             "ecg_id": 21085
         },
         {
-            "linea": 2169,
+            "linea": 2171,
             "ecg_id": 21093
         },
         {
-            "linea": 2172,
+            "linea": 2174,
             "ecg_id": 21111
         },
         {
-            "linea": 2173,
+            "linea": 2175,
             "ecg_id": 21148
         },
         {
-            "linea": 2177,
+            "linea": 2179,
             "ecg_id": 21181
         },
         {
-            "linea": 2194,
+            "linea": 2196,
             "ecg_id": 21812
         },
         {
-            "linea": 2196,
+            "linea": 2198,
             "ecg_id": 21819
         }
     ],
     "HYP": [],
     "MI": [
         {
-            "linea": 68,
+            "linea": 70,
             "ecg_id": 514
         },
         {
-            "linea": 179,
+            "linea": 181,
             "ecg_id": 1405
         },
         {
-            "linea": 213,
+            "linea": 215,
             "ecg_id": 1737
         },
         {
-            "linea": 226,
+            "linea": 228,
             "ecg_id": 1812
         },
         {
-            "linea": 232,
+            "linea": 234,
             "ecg_id": 1853
         },
         {
-            "linea": 247,
+            "linea": 249,
             "ecg_id": 1950
         },
         {
-            "linea": 315,
+            "linea": 317,
             "ecg_id": 2422
         },
         {
-            "linea": 339,
+            "linea": 341,
             "ecg_id": 2605
         },
         {
-            "linea": 502,
+            "linea": 504,
             "ecg_id": 3908
         },
         {
-            "linea": 537,
+            "linea": 539,
             "ecg_id": 4203
         },
         {
-            "linea": 552,
+            "linea": 554,
             "ecg_id": 4269
         },
         {
-            "linea": 581,
+            "linea": 583,
             "ecg_id": 4576
         },
         {
-            "linea": 643,
+            "linea": 645,
             "ecg_id": 5251
         },
         {
-            "linea": 795,
+            "linea": 797,
             "ecg_id": 6552
         },
         {
-            "linea": 806,
+            "linea": 808,
             "ecg_id": 6683
         },
         {
-            "linea": 814,
+            "linea": 816,
             "ecg_id": 6817
         },
         {
-            "linea": 824,
+            "linea": 826,
             "ecg_id": 6962
         },
         {
-            "linea": 881,
+            "linea": 883,
             "ecg_id": 7751
         },
         {
-            "linea": 981,
+            "linea": 983,
             "ecg_id": 8509
         },
         {
-            "linea": 1100,
+            "linea": 1102,
             "ecg_id": 9819
         },
         {
-            "linea": 1111,
+            "linea": 1113,
             "ecg_id": 9891
         },
         {
-            "linea": 1118,
+            "linea": 1120,
             "ecg_id": 9953
         },
         {
-            "linea": 1219,
+            "linea": 1221,
             "ecg_id": 11010
         },
         {
-            "linea": 1229,
+            "linea": 1231,
             "ecg_id": 11125
         },
         {
-            "linea": 1242,
+            "linea": 1244,
             "ecg_id": 11285
         },
         {
-            "linea": 1328,
+            "linea": 1330,
             "ecg_id": 12156
         },
         {
-            "linea": 1336,
+            "linea": 1338,
             "ecg_id": 12190
         },
         {
-            "linea": 1339,
+            "linea": 1341,
             "ecg_id": 12197
         },
         {
-            "linea": 1346,
+            "linea": 1348,
             "ecg_id": 12224
         },
         {
-            "linea": 1393,
+            "linea": 1395,
             "ecg_id": 12618
         },
         {
-            "linea": 1420,
+            "linea": 1422,
             "ecg_id": 12841
         },
         {
-            "linea": 1421,
+            "linea": 1423,
             "ecg_id": 12870
         },
         {
-            "linea": 1427,
+            "linea": 1429,
             "ecg_id": 12941
         },
         {
-            "linea": 1437,
+            "linea": 1439,
             "ecg_id": 13078
         },
         {
-            "linea": 1559,
+            "linea": 1561,
             "ecg_id": 14382
         },
         {
-            "linea": 1564,
+            "linea": 1566,
             "ecg_id": 14424
         },
         {
-            "linea": 1585,
+            "linea": 1587,
             "ecg_id": 14667
         },
         {
-            "linea": 1626,
+            "linea": 1628,
             "ecg_id": 15180
         },
         {
-            "linea": 1630,
+            "linea": 1632,
             "ecg_id": 15227
         },
         {
-            "linea": 1631,
+            "linea": 1633,
             "ecg_id": 15235
         },
         {
-            "linea": 1687,
+            "linea": 1689,
             "ecg_id": 15865
         },
         {
-            "linea": 1747,
+            "linea": 1749,
             "ecg_id": 16463
         },
         {
-            "linea": 1877,
+            "linea": 1879,
             "ecg_id": 17744
         },
         {
-            "linea": 1955,
+            "linea": 1957,
             "ecg_id": 18592
         },
         {
-            "linea": 1969,
+            "linea": 1971,
             "ecg_id": 18737
         },
         {
-            "linea": 1997,
+            "linea": 1999,
             "ecg_id": 19054
         },
         {
-            "linea": 1998,
+            "linea": 2000,
             "ecg_id": 19067
         },
         {
-            "linea": 2027,
+            "linea": 2029,
             "ecg_id": 19316
         },
         {
-            "linea": 2035,
+            "linea": 2037,
             "ecg_id": 19353
         },
         {
-            "linea": 2039,
+            "linea": 2041,
             "ecg_id": 19396
         },
         {
-            "linea": 2042,
+            "linea": 2044,
             "ecg_id": 19409
         },
         {
-            "linea": 2049,
+            "linea": 2051,
             "ecg_id": 19507
         },
         {
-            "linea": 2054,
+            "linea": 2056,
             "ecg_id": 19572
         },
         {
-            "linea": 2071,
+            "linea": 2073,
             "ecg_id": 19877
         },
         {
-            "linea": 2119,
+            "linea": 2121,
             "ecg_id": 20317
         },
         {
-            "linea": 2165,
+            "linea": 2167,
             "ecg_id": 21028
         },
         {
-            "linea": 2178,
+            "linea": 2180,
             "ecg_id": 21205
         }
     ],
     "NORM": [
         {
-            "linea": 0,
+            "linea": 2,
             "ecg_id": 9
         },
         {
-            "linea": 1,
+            "linea": 3,
             "ecg_id": 38
         },
         {
-            "linea": 3,
+            "linea": 5,
             "ecg_id": 57
         },
         {
-            "linea": 4,
+            "linea": 6,
             "ecg_id": 59
         },
         {
-            "linea": 7,
+            "linea": 9,
             "ecg_id": 75
         },
         {
-            "linea": 9,
+            "linea": 11,
             "ecg_id": 79
         },
         {
-            "linea": 10,
+            "linea": 12,
             "ecg_id": 93
         },
         {
-            "linea": 13,
+            "linea": 15,
             "ecg_id": 115
         },
         {
-            "linea": 15,
+            "linea": 17,
             "ecg_id": 117
         },
         {
-            "linea": 17,
+            "linea": 19,
             "ecg_id": 121
         },
         {
-            "linea": 20,
+            "linea": 22,
             "ecg_id": 129
         },
         {
-            "linea": 29,
+            "linea": 31,
             "ecg_id": 201
         },
         {
-            "linea": 30,
+            "linea": 32,
             "ecg_id": 203
         },
         {
-            "linea": 31,
+            "linea": 33,
             "ecg_id": 208
         },
         {
-            "linea": 35,
+            "linea": 37,
             "ecg_id": 241
         },
         {
-            "linea": 36,
+            "linea": 38,
             "ecg_id": 243
         },
         {
-            "linea": 38,
+            "linea": 40,
             "ecg_id": 252
         },
         {
-            "linea": 43,
+            "linea": 45,
             "ecg_id": 334
         },
         {
-            "linea": 46,
+            "linea": 48,
             "ecg_id": 361
         },
         {
-            "linea": 47,
+            "linea": 49,
             "ecg_id": 364
         },
         {
-            "linea": 52,
+            "linea": 54,
             "ecg_id": 397
         },
         {
-            "linea": 54,
+            "linea": 56,
             "ecg_id": 405
         },
         {
-            "linea": 55,
+            "linea": 57,
             "ecg_id": 417
         },
         {
-            "linea": 58,
+            "linea": 60,
             "ecg_id": 440
         },
         {
-            "linea": 62,
+            "linea": 64,
             "ecg_id": 472
         },
         {
-            "linea": 63,
+            "linea": 65,
             "ecg_id": 473
         },
         {
-            "linea": 66,
+            "linea": 68,
             "ecg_id": 504
         },
         {
-            "linea": 73,
+            "linea": 75,
             "ecg_id": 559
         },
         {
-            "linea": 76,
+            "linea": 78,
             "ecg_id": 570
         },
         {
-            "linea": 79,
+            "linea": 81,
             "ecg_id": 582
         },
         {
-            "linea": 82,
+            "linea": 84,
             "ecg_id": 611
         },
         {
-            "linea": 84,
+            "linea": 86,
             "ecg_id": 619
         },
         {
-            "linea": 87,
+            "linea": 89,
             "ecg_id": 687
         },
         {
-            "linea": 89,
+            "linea": 91,
             "ecg_id": 694
         },
         {
-            "linea": 94,
+            "linea": 96,
             "ecg_id": 732
         },
         {
-            "linea": 95,
+            "linea": 97,
             "ecg_id": 751
         },
         {
-            "linea": 97,
+            "linea": 99,
             "ecg_id": 758
         },
         {
-            "linea": 98,
+            "linea": 100,
             "ecg_id": 764
         },
         {
-            "linea": 100,
+            "linea": 102,
             "ecg_id": 775
         },
         {
-            "linea": 101,
+            "linea": 103,
             "ecg_id": 779
         },
         {
-            "linea": 108,
+            "linea": 110,
             "ecg_id": 848
         },
         {
-            "linea": 111,
+            "linea": 113,
             "ecg_id": 886
         },
         {
-            "linea": 113,
+            "linea": 115,
             "ecg_id": 911
         },
         {
-            "linea": 114,
+            "linea": 116,
             "ecg_id": 917
         },
         {
-            "linea": 115,
+            "linea": 117,
             "ecg_id": 928
         },
         {
-            "linea": 117,
+            "linea": 119,
             "ecg_id": 935
         },
         {
-            "linea": 120,
+            "linea": 122,
             "ecg_id": 949
         },
         {
-            "linea": 122,
+            "linea": 124,
             "ecg_id": 952
         },
         {
-            "linea": 123,
+            "linea": 125,
             "ecg_id": 958
         },
         {
-            "linea": 131,
+            "linea": 133,
             "ecg_id": 1016
         },
         {
-            "linea": 132,
+            "linea": 134,
             "ecg_id": 1031
         },
         {
-            "linea": 133,
+            "linea": 135,
             "ecg_id": 1051
         },
         {
-            "linea": 134,
+            "linea": 136,
             "ecg_id": 1054
         },
         {
-            "linea": 138,
+            "linea": 140,
             "ecg_id": 1078
         },
         {
-            "linea": 141,
+            "linea": 143,
             "ecg_id": 1094
         },
         {
-            "linea": 142,
+            "linea": 144,
             "ecg_id": 1100
         },
         {
-            "linea": 143,
+            "linea": 145,
             "ecg_id": 1101
         },
         {
-            "linea": 144,
+            "linea": 146,
             "ecg_id": 1113
         },
         {
-            "linea": 146,
+            "linea": 148,
             "ecg_id": 1133
         },
         {
-            "linea": 147,
+            "linea": 149,
             "ecg_id": 1147
         },
         {
-            "linea": 151,
+            "linea": 153,
             "ecg_id": 1169
         },
         {
-            "linea": 155,
+            "linea": 157,
             "ecg_id": 1197
         },
         {
-            "linea": 159,
+            "linea": 161,
             "ecg_id": 1246
         },
         {
-            "linea": 161,
+            "linea": 163,
             "ecg_id": 1266
         },
         {
-            "linea": 164,
+            "linea": 166,
             "ecg_id": 1280
         },
         {
-            "linea": 166,
+            "linea": 168,
             "ecg_id": 1287
         },
         {
-            "linea": 168,
+            "linea": 170,
             "ecg_id": 1311
         },
         {
-            "linea": 169,
+            "linea": 171,
             "ecg_id": 1315
         },
         {
-            "linea": 172,
+            "linea": 174,
             "ecg_id": 1351
         },
         {
-            "linea": 174,
+            "linea": 176,
             "ecg_id": 1355
         },
         {
-            "linea": 187,
+            "linea": 189,
             "ecg_id": 1468
         },
         {
-            "linea": 188,
+            "linea": 190,
             "ecg_id": 1479
         },
         {
-            "linea": 190,
+            "linea": 192,
             "ecg_id": 1487
         },
         {
-            "linea": 191,
+            "linea": 193,
             "ecg_id": 1491
         },
         {
-            "linea": 192,
+            "linea": 194,
             "ecg_id": 1494
         },
         {
-            "linea": 193,
+            "linea": 195,
             "ecg_id": 1498
         },
         {
-            "linea": 201,
+            "linea": 203,
             "ecg_id": 1618
         },
         {
-            "linea": 204,
+            "linea": 206,
             "ecg_id": 1632
         },
         {
-            "linea": 205,
+            "linea": 207,
             "ecg_id": 1639
         },
         {
-            "linea": 206,
+            "linea": 208,
             "ecg_id": 1655
         },
         {
-            "linea": 208,
+            "linea": 210,
             "ecg_id": 1700
         },
         {
-            "linea": 209,
+            "linea": 211,
             "ecg_id": 1705
         },
         {
-            "linea": 210,
+            "linea": 212,
             "ecg_id": 1708
         },
         {
-            "linea": 214,
+            "linea": 216,
             "ecg_id": 1741
         },
         {
-            "linea": 219,
+            "linea": 221,
             "ecg_id": 1757
         },
         {
-            "linea": 221,
+            "linea": 223,
             "ecg_id": 1775
         },
         {
-            "linea": 222,
+            "linea": 224,
             "ecg_id": 1780
         },
         {
-            "linea": 224,
+            "linea": 226,
             "ecg_id": 1790
         },
         {
-            "linea": 227,
+            "linea": 229,
             "ecg_id": 1825
         },
         {
-            "linea": 228,
+            "linea": 230,
             "ecg_id": 1835
         },
         {
-            "linea": 231,
+            "linea": 233,
             "ecg_id": 1850
         },
         {
-            "linea": 233,
+            "linea": 235,
             "ecg_id": 1857
         },
         {
-            "linea": 234,
+            "linea": 236,
             "ecg_id": 1860
         },
         {
-            "linea": 236,
+            "linea": 238,
             "ecg_id": 1867
         },
         {
-            "linea": 237,
+            "linea": 239,
             "ecg_id": 1870
         },
         {
-            "linea": 238,
+            "linea": 240,
             "ecg_id": 1885
         },
         {
-            "linea": 242,
+            "linea": 244,
             "ecg_id": 1933
         },
         {
-            "linea": 243,
+            "linea": 245,
             "ecg_id": 1938
         },
         {
-            "linea": 246,
+            "linea": 248,
             "ecg_id": 1946
         },
         {
-            "linea": 248,
+            "linea": 250,
             "ecg_id": 1958
         },
         {
-            "linea": 251,
+            "linea": 253,
             "ecg_id": 1988
         },
         {
-            "linea": 257,
+            "linea": 259,
             "ecg_id": 2045
         },
         {
-            "linea": 261,
+            "linea": 263,
             "ecg_id": 2083
         },
         {
-            "linea": 267,
+            "linea": 269,
             "ecg_id": 2144
         },
         {
-            "linea": 276,
+            "linea": 278,
             "ecg_id": 2193
         },
         {
-            "linea": 277,
+            "linea": 279,
             "ecg_id": 2203
         },
         {
-            "linea": 282,
+            "linea": 284,
             "ecg_id": 2226
         },
         {
-            "linea": 284,
+            "linea": 286,
             "ecg_id": 2238
         },
         {
-            "linea": 286,
+            "linea": 288,
             "ecg_id": 2267
         },
         {
-            "linea": 287,
+            "linea": 289,
             "ecg_id": 2270
         },
         {
-            "linea": 291,
+            "linea": 293,
             "ecg_id": 2282
         },
         {
-            "linea": 298,
+            "linea": 300,
             "ecg_id": 2341
         },
         {
-            "linea": 300,
+            "linea": 302,
             "ecg_id": 2355
         },
         {
-            "linea": 302,
+            "linea": 304,
             "ecg_id": 2369
         },
         {
-            "linea": 305,
+            "linea": 307,
             "ecg_id": 2379
         },
         {
-            "linea": 307,
+            "linea": 309,
             "ecg_id": 2386
         },
         {
-            "linea": 312,
+            "linea": 314,
             "ecg_id": 2416
         },
         {
-            "linea": 316,
+            "linea": 318,
             "ecg_id": 2427
         },
         {
-            "linea": 317,
+            "linea": 319,
             "ecg_id": 2432
         },
         {
-            "linea": 322,
+            "linea": 324,
             "ecg_id": 2476
         },
         {
-            "linea": 324,
+            "linea": 326,
             "ecg_id": 2507
         },
         {
-            "linea": 327,
+            "linea": 329,
             "ecg_id": 2551
         },
         {
-            "linea": 329,
+            "linea": 331,
             "ecg_id": 2560
         },
         {
-            "linea": 333,
+            "linea": 335,
             "ecg_id": 2579
         },
         {
-            "linea": 336,
+            "linea": 338,
             "ecg_id": 2596
         },
         {
-            "linea": 344,
+            "linea": 346,
             "ecg_id": 2649
         },
         {
-            "linea": 350,
+            "linea": 352,
             "ecg_id": 2764
         },
         {
-            "linea": 354,
+            "linea": 356,
             "ecg_id": 2785
         },
         {
-            "linea": 355,
+            "linea": 357,
             "ecg_id": 2786
         },
         {
-            "linea": 357,
+            "linea": 359,
             "ecg_id": 2791
         },
         {
-            "linea": 360,
+            "linea": 362,
             "ecg_id": 2819
         },
         {
-            "linea": 361,
+            "linea": 363,
             "ecg_id": 2830
         },
         {
-            "linea": 362,
+            "linea": 364,
             "ecg_id": 2839
         },
         {
-            "linea": 363,
+            "linea": 365,
             "ecg_id": 2848
         },
         {
-            "linea": 364,
+            "linea": 366,
             "ecg_id": 2854
         },
         {
-            "linea": 367,
+            "linea": 369,
             "ecg_id": 2871
         },
         {
-            "linea": 371,
+            "linea": 373,
             "ecg_id": 2913
         },
         {
-            "linea": 372,
+            "linea": 374,
             "ecg_id": 2920
         },
         {
-            "linea": 373,
+            "linea": 375,
             "ecg_id": 2921
         },
         {
-            "linea": 375,
+            "linea": 377,
             "ecg_id": 2928
         },
         {
-            "linea": 376,
+            "linea": 378,
             "ecg_id": 2929
         },
         {
-            "linea": 379,
+            "linea": 381,
             "ecg_id": 2939
         },
         {
-            "linea": 381,
+            "linea": 383,
             "ecg_id": 2942
         },
         {
-            "linea": 382,
+            "linea": 384,
             "ecg_id": 2963
         },
         {
-            "linea": 384,
+            "linea": 386,
             "ecg_id": 2987
         },
         {
-            "linea": 386,
+            "linea": 388,
             "ecg_id": 3022
         },
         {
-            "linea": 390,
+            "linea": 392,
             "ecg_id": 3043
         },
         {
-            "linea": 392,
+            "linea": 394,
             "ecg_id": 3060
         },
         {
-            "linea": 393,
+            "linea": 395,
             "ecg_id": 3073
         },
         {
-            "linea": 396,
+            "linea": 398,
             "ecg_id": 3103
         },
         {
-            "linea": 398,
+            "linea": 400,
             "ecg_id": 3112
         },
         {
-            "linea": 401,
+            "linea": 403,
             "ecg_id": 3148
         },
         {
-            "linea": 402,
+            "linea": 404,
             "ecg_id": 3159
         },
         {
-            "linea": 403,
+            "linea": 405,
             "ecg_id": 3164
         },
         {
-            "linea": 404,
+            "linea": 406,
             "ecg_id": 3165
         },
         {
-            "linea": 405,
+            "linea": 407,
             "ecg_id": 3174
         },
         {
-            "linea": 410,
+            "linea": 412,
             "ecg_id": 3235
         },
         {
-            "linea": 429,
+            "linea": 431,
             "ecg_id": 3384
         },
         {
-            "linea": 439,
+            "linea": 441,
             "ecg_id": 3497
         },
         {
-            "linea": 443,
+            "linea": 445,
             "ecg_id": 3521
         },
         {
-            "linea": 444,
+            "linea": 446,
             "ecg_id": 3522
         },
         {
-            "linea": 445,
+            "linea": 447,
             "ecg_id": 3537
         },
         {
-            "linea": 447,
+            "linea": 449,
             "ecg_id": 3558
         },
         {
-            "linea": 452,
+            "linea": 454,
             "ecg_id": 3585
         },
         {
-            "linea": 460,
+            "linea": 462,
             "ecg_id": 3615
         },
         {
-            "linea": 461,
+            "linea": 463,
             "ecg_id": 3618
         },
         {
-            "linea": 462,
+            "linea": 464,
             "ecg_id": 3625
         },
         {
-            "linea": 465,
+            "linea": 467,
             "ecg_id": 3634
         },
         {
-            "linea": 468,
+            "linea": 470,
             "ecg_id": 3652
         },
         {
-            "linea": 472,
+            "linea": 474,
             "ecg_id": 3669
         },
         {
-            "linea": 478,
+            "linea": 480,
             "ecg_id": 3702
         },
         {
-            "linea": 485,
+            "linea": 487,
             "ecg_id": 3756
         },
         {
-            "linea": 493,
+            "linea": 495,
             "ecg_id": 3863
         },
         {
-            "linea": 499,
+            "linea": 501,
             "ecg_id": 3892
         },
         {
-            "linea": 503,
+            "linea": 505,
             "ecg_id": 3909
         },
         {
-            "linea": 507,
+            "linea": 509,
             "ecg_id": 3918
         },
         {
-            "linea": 508,
+            "linea": 510,
             "ecg_id": 3923
         },
         {
-            "linea": 510,
+            "linea": 512,
             "ecg_id": 3926
         },
         {
-            "linea": 511,
+            "linea": 513,
             "ecg_id": 3937
         },
         {
-            "linea": 516,
+            "linea": 518,
             "ecg_id": 3984
         },
         {
-            "linea": 517,
+            "linea": 519,
             "ecg_id": 3986
         },
         {
-            "linea": 526,
+            "linea": 528,
             "ecg_id": 4090
         },
         {
-            "linea": 528,
+            "linea": 530,
             "ecg_id": 4103
         },
         {
-            "linea": 544,
+            "linea": 546,
             "ecg_id": 4235
         },
         {
-            "linea": 550,
+            "linea": 552,
             "ecg_id": 4261
         },
         {
-            "linea": 554,
+            "linea": 556,
             "ecg_id": 4295
         },
         {
-            "linea": 558,
+            "linea": 560,
             "ecg_id": 4342
         },
         {
-            "linea": 559,
+            "linea": 561,
             "ecg_id": 4354
         },
         {
-            "linea": 564,
+            "linea": 566,
             "ecg_id": 4414
         },
         {
-            "linea": 575,
+            "linea": 577,
             "ecg_id": 4542
         },
         {
-            "linea": 583,
+            "linea": 585,
             "ecg_id": 4609
         },
         {
-            "linea": 595,
+            "linea": 597,
             "ecg_id": 4747
         },
         {
-            "linea": 604,
+            "linea": 606,
             "ecg_id": 4805
         },
         {
-            "linea": 609,
+            "linea": 611,
             "ecg_id": 4836
         },
         {
-            "linea": 614,
+            "linea": 616,
             "ecg_id": 4900
         },
         {
-            "linea": 622,
+            "linea": 624,
             "ecg_id": 5000
         },
         {
-            "linea": 627,
+            "linea": 629,
             "ecg_id": 5099
         },
         {
-            "linea": 632,
+            "linea": 634,
             "ecg_id": 5151
         },
         {
-            "linea": 638,
+            "linea": 640,
             "ecg_id": 5182
         },
         {
-            "linea": 646,
+            "linea": 648,
             "ecg_id": 5269
         },
         {
-            "linea": 647,
+            "linea": 649,
             "ecg_id": 5275
         },
         {
-            "linea": 650,
+            "linea": 652,
             "ecg_id": 5281
         },
         {
-            "linea": 652,
+            "linea": 654,
             "ecg_id": 5298
         },
         {
-            "linea": 654,
+            "linea": 656,
             "ecg_id": 5304
         },
         {
-            "linea": 663,
+            "linea": 665,
             "ecg_id": 5370
         },
         {
-            "linea": 664,
+            "linea": 666,
             "ecg_id": 5373
         },
         {
-            "linea": 665,
+            "linea": 667,
             "ecg_id": 5383
         },
         {
-            "linea": 670,
+            "linea": 672,
             "ecg_id": 5428
         },
         {
-            "linea": 671,
+            "linea": 673,
             "ecg_id": 5452
         },
         {
-            "linea": 675,
+            "linea": 677,
             "ecg_id": 5519
         },
         {
-            "linea": 676,
+            "linea": 678,
             "ecg_id": 5530
         },
         {
-            "linea": 678,
+            "linea": 680,
             "ecg_id": 5566
         },
         {
-            "linea": 681,
+            "linea": 683,
             "ecg_id": 5600
         },
         {
-            "linea": 686,
+            "linea": 688,
             "ecg_id": 5725
         },
         {
-            "linea": 689,
+            "linea": 691,
             "ecg_id": 5743
         },
         {
-            "linea": 690,
+            "linea": 692,
             "ecg_id": 5753
         },
         {
-            "linea": 693,
+            "linea": 695,
             "ecg_id": 5784
         },
         {
-            "linea": 697,
+            "linea": 699,
             "ecg_id": 5816
         },
         {
-            "linea": 701,
+            "linea": 703,
             "ecg_id": 5831
         },
         {
-            "linea": 702,
+            "linea": 704,
             "ecg_id": 5835
         },
         {
-            "linea": 705,
+            "linea": 707,
             "ecg_id": 5855
         },
         {
-            "linea": 712,
+            "linea": 714,
             "ecg_id": 5914
         },
         {
-            "linea": 713,
+            "linea": 715,
             "ecg_id": 5915
         },
         {
-            "linea": 714,
+            "linea": 716,
             "ecg_id": 5916
         },
         {
-            "linea": 715,
+            "linea": 717,
             "ecg_id": 5918
         },
         {
-            "linea": 716,
+            "linea": 718,
             "ecg_id": 5924
         },
         {
-            "linea": 718,
+            "linea": 720,
             "ecg_id": 5947
         },
         {
-            "linea": 721,
+            "linea": 723,
             "ecg_id": 5973
         },
         {
-            "linea": 722,
+            "linea": 724,
             "ecg_id": 5975
         },
         {
-            "linea": 723,
+            "linea": 725,
             "ecg_id": 5977
         },
         {
-            "linea": 724,
+            "linea": 726,
             "ecg_id": 5992
         },
         {
-            "linea": 726,
+            "linea": 728,
             "ecg_id": 6004
         },
         {
-            "linea": 728,
+            "linea": 730,
             "ecg_id": 6046
         },
         {
-            "linea": 729,
+            "linea": 731,
             "ecg_id": 6047
         },
         {
-            "linea": 730,
+            "linea": 732,
             "ecg_id": 6050
         },
         {
-            "linea": 736,
+            "linea": 738,
             "ecg_id": 6103
         },
         {
-            "linea": 738,
+            "linea": 740,
             "ecg_id": 6131
         },
         {
-            "linea": 741,
+            "linea": 743,
             "ecg_id": 6151
         },
         {
-            "linea": 746,
+            "linea": 748,
             "ecg_id": 6188
         },
         {
-            "linea": 750,
+            "linea": 752,
             "ecg_id": 6200
         },
         {
-            "linea": 752,
+            "linea": 754,
             "ecg_id": 6207
         },
         {
-            "linea": 753,
+            "linea": 755,
             "ecg_id": 6208
         },
         {
-            "linea": 756,
+            "linea": 758,
             "ecg_id": 6222
         },
         {
-            "linea": 762,
+            "linea": 764,
             "ecg_id": 6235
         },
         {
-            "linea": 763,
+            "linea": 765,
             "ecg_id": 6239
         },
         {
-            "linea": 765,
+            "linea": 767,
             "ecg_id": 6262
         },
         {
-            "linea": 766,
+            "linea": 768,
             "ecg_id": 6265
         },
         {
-            "linea": 777,
+            "linea": 779,
             "ecg_id": 6341
         },
         {
-            "linea": 785,
+            "linea": 787,
             "ecg_id": 6381
         },
         {
-            "linea": 789,
+            "linea": 791,
             "ecg_id": 6437
         },
         {
-            "linea": 805,
+            "linea": 807,
             "ecg_id": 6672
         },
         {
-            "linea": 807,
+            "linea": 809,
             "ecg_id": 6728
         },
         {
-            "linea": 823,
+            "linea": 825,
             "ecg_id": 6951
         },
         {
-            "linea": 827,
+            "linea": 829,
             "ecg_id": 7007
         },
         {
-            "linea": 832,
+            "linea": 834,
             "ecg_id": 7034
         },
         {
-            "linea": 836,
+            "linea": 838,
             "ecg_id": 7069
         },
         {
-            "linea": 839,
+            "linea": 841,
             "ecg_id": 7080
         },
         {
-            "linea": 841,
+            "linea": 843,
             "ecg_id": 7161
         },
         {
-            "linea": 842,
+            "linea": 844,
             "ecg_id": 7170
         },
         {
-            "linea": 843,
+            "linea": 845,
             "ecg_id": 7190
         },
         {
-            "linea": 844,
+            "linea": 846,
             "ecg_id": 7213
         },
         {
-            "linea": 845,
+            "linea": 847,
             "ecg_id": 7217
         },
         {
-            "linea": 848,
+            "linea": 850,
             "ecg_id": 7258
         },
         {
-            "linea": 849,
+            "linea": 851,
             "ecg_id": 7323
         },
         {
-            "linea": 855,
+            "linea": 857,
             "ecg_id": 7376
         },
         {
-            "linea": 861,
+            "linea": 863,
             "ecg_id": 7491
         },
         {
-            "linea": 863,
+            "linea": 865,
             "ecg_id": 7530
         },
         {
-            "linea": 866,
+            "linea": 868,
             "ecg_id": 7560
         },
         {
-            "linea": 868,
+            "linea": 870,
             "ecg_id": 7597
         },
         {
-            "linea": 872,
+            "linea": 874,
             "ecg_id": 7644
         },
         {
-            "linea": 884,
+            "linea": 886,
             "ecg_id": 7770
         },
         {
-            "linea": 886,
+            "linea": 888,
             "ecg_id": 7793
         },
         {
-            "linea": 887,
+            "linea": 889,
             "ecg_id": 7797
         },
         {
-            "linea": 891,
+            "linea": 893,
             "ecg_id": 7819
         },
         {
-            "linea": 894,
+            "linea": 896,
             "ecg_id": 7842
         },
         {
-            "linea": 895,
+            "linea": 897,
             "ecg_id": 7848
         },
         {
-            "linea": 905,
+            "linea": 907,
             "ecg_id": 7892
         },
         {
-            "linea": 907,
+            "linea": 909,
             "ecg_id": 7905
         },
         {
-            "linea": 923,
+            "linea": 925,
             "ecg_id": 8076
         },
         {
-            "linea": 926,
+            "linea": 928,
             "ecg_id": 8116
         },
         {
-            "linea": 933,
+            "linea": 935,
             "ecg_id": 8138
         },
         {
-            "linea": 935,
+            "linea": 937,
             "ecg_id": 8140
         },
         {
-            "linea": 938,
+            "linea": 940,
             "ecg_id": 8164
         },
         {
-            "linea": 939,
+            "linea": 941,
             "ecg_id": 8170
         },
         {
-            "linea": 954,
+            "linea": 956,
             "ecg_id": 8246
         },
         {
-            "linea": 955,
+            "linea": 957,
             "ecg_id": 8254
         },
         {
-            "linea": 960,
+            "linea": 962,
             "ecg_id": 8277
         },
         {
-            "linea": 966,
+            "linea": 968,
             "ecg_id": 8410
         },
         {
-            "linea": 977,
+            "linea": 979,
             "ecg_id": 8496
         },
         {
-            "linea": 985,
+            "linea": 987,
             "ecg_id": 8538
         },
         {
-            "linea": 993,
+            "linea": 995,
             "ecg_id": 8645
         },
         {
-            "linea": 994,
+            "linea": 996,
             "ecg_id": 8663
         },
         {
-            "linea": 996,
+            "linea": 998,
             "ecg_id": 8688
         },
         {
-            "linea": 1003,
+            "linea": 1005,
             "ecg_id": 8765
         },
         {
-            "linea": 1005,
+            "linea": 1007,
             "ecg_id": 8774
         },
         {
-            "linea": 1007,
+            "linea": 1009,
             "ecg_id": 8778
         },
         {
-            "linea": 1012,
+            "linea": 1014,
             "ecg_id": 8833
         },
         {
-            "linea": 1014,
+            "linea": 1016,
             "ecg_id": 8844
         },
         {
-            "linea": 1015,
+            "linea": 1017,
             "ecg_id": 8853
         },
         {
-            "linea": 1021,
+            "linea": 1023,
             "ecg_id": 8902
         },
         {
-            "linea": 1022,
+            "linea": 1024,
             "ecg_id": 8916
         },
         {
-            "linea": 1024,
+            "linea": 1026,
             "ecg_id": 8963
         },
         {
-            "linea": 1027,
+            "linea": 1029,
             "ecg_id": 9010
         },
         {
-            "linea": 1030,
+            "linea": 1032,
             "ecg_id": 9036
         },
         {
-            "linea": 1031,
+            "linea": 1033,
             "ecg_id": 9056
         },
         {
-            "linea": 1040,
+            "linea": 1042,
             "ecg_id": 9164
         },
         {
-            "linea": 1042,
+            "linea": 1044,
             "ecg_id": 9174
         },
         {
-            "linea": 1044,
+            "linea": 1046,
             "ecg_id": 9178
         },
         {
-            "linea": 1047,
+            "linea": 1049,
             "ecg_id": 9187
         },
         {
-            "linea": 1048,
+            "linea": 1050,
             "ecg_id": 9196
         },
         {
-            "linea": 1051,
+            "linea": 1053,
             "ecg_id": 9229
         },
         {
-            "linea": 1061,
+            "linea": 1063,
             "ecg_id": 9303
         },
         {
-            "linea": 1067,
+            "linea": 1069,
             "ecg_id": 9396
         },
         {
-            "linea": 1071,
+            "linea": 1073,
             "ecg_id": 9449
         },
         {
-            "linea": 1075,
+            "linea": 1077,
             "ecg_id": 9475
         },
         {
-            "linea": 1080,
+            "linea": 1082,
             "ecg_id": 9582
         },
         {
-            "linea": 1082,
+            "linea": 1084,
             "ecg_id": 9589
         },
         {
-            "linea": 1085,
+            "linea": 1087,
             "ecg_id": 9689
         },
         {
-            "linea": 1086,
+            "linea": 1088,
             "ecg_id": 9702
         },
         {
-            "linea": 1089,
+            "linea": 1091,
             "ecg_id": 9740
         },
         {
-            "linea": 1090,
+            "linea": 1092,
             "ecg_id": 9744
         },
         {
-            "linea": 1092,
+            "linea": 1094,
             "ecg_id": 9752
         },
         {
-            "linea": 1093,
+            "linea": 1095,
             "ecg_id": 9753
         },
         {
-            "linea": 1096,
+            "linea": 1098,
             "ecg_id": 9773
         },
         {
-            "linea": 1099,
+            "linea": 1101,
             "ecg_id": 9803
         },
         {
-            "linea": 1106,
+            "linea": 1108,
             "ecg_id": 9865
         },
         {
-            "linea": 1117,
+            "linea": 1119,
             "ecg_id": 9952
         },
         {
-            "linea": 1120,
+            "linea": 1122,
             "ecg_id": 9979
         },
         {
-            "linea": 1121,
+            "linea": 1123,
             "ecg_id": 9981
         },
         {
-            "linea": 1122,
+            "linea": 1124,
             "ecg_id": 9982
         },
         {
-            "linea": 1123,
+            "linea": 1125,
             "ecg_id": 9992
         },
         {
-            "linea": 1125,
+            "linea": 1127,
             "ecg_id": 9995
         },
         {
-            "linea": 1126,
+            "linea": 1128,
             "ecg_id": 10029
         },
         {
-            "linea": 1135,
+            "linea": 1137,
             "ecg_id": 10141
         },
         {
-            "linea": 1136,
+            "linea": 1138,
             "ecg_id": 10143
         },
         {
-            "linea": 1138,
+            "linea": 1140,
             "ecg_id": 10152
         },
         {
-            "linea": 1154,
+            "linea": 1156,
             "ecg_id": 10250
         },
         {
-            "linea": 1156,
+            "linea": 1158,
             "ecg_id": 10261
         },
         {
-            "linea": 1157,
+            "linea": 1159,
             "ecg_id": 10268
         },
         {
-            "linea": 1158,
+            "linea": 1160,
             "ecg_id": 10272
         },
         {
-            "linea": 1161,
+            "linea": 1163,
             "ecg_id": 10327
         },
         {
-            "linea": 1166,
+            "linea": 1168,
             "ecg_id": 10358
         },
         {
-            "linea": 1172,
+            "linea": 1174,
             "ecg_id": 10431
         },
         {
-            "linea": 1173,
+            "linea": 1175,
             "ecg_id": 10484
         },
         {
-            "linea": 1177,
+            "linea": 1179,
             "ecg_id": 10519
         },
         {
-            "linea": 1179,
+            "linea": 1181,
             "ecg_id": 10547
         },
         {
-            "linea": 1181,
+            "linea": 1183,
             "ecg_id": 10585
         },
         {
-            "linea": 1182,
+            "linea": 1184,
             "ecg_id": 10589
         },
         {
-            "linea": 1184,
+            "linea": 1186,
             "ecg_id": 10596
         },
         {
-            "linea": 1193,
+            "linea": 1195,
             "ecg_id": 10687
         },
         {
-            "linea": 1194,
+            "linea": 1196,
             "ecg_id": 10691
         },
         {
-            "linea": 1195,
+            "linea": 1197,
             "ecg_id": 10731
         },
         {
-            "linea": 1203,
+            "linea": 1205,
             "ecg_id": 10824
         },
         {
-            "linea": 1207,
+            "linea": 1209,
             "ecg_id": 10847
         },
         {
-            "linea": 1216,
+            "linea": 1218,
             "ecg_id": 10970
         },
         {
-            "linea": 1218,
+            "linea": 1220,
             "ecg_id": 10990
         },
         {
-            "linea": 1222,
+            "linea": 1224,
             "ecg_id": 11055
         },
         {
-            "linea": 1223,
+            "linea": 1225,
             "ecg_id": 11077
         },
         {
-            "linea": 1228,
+            "linea": 1230,
             "ecg_id": 11124
         },
         {
-            "linea": 1230,
+            "linea": 1232,
             "ecg_id": 11126
         },
         {
-            "linea": 1231,
+            "linea": 1233,
             "ecg_id": 11129
         },
         {
-            "linea": 1237,
+            "linea": 1239,
             "ecg_id": 11182
         },
         {
-            "linea": 1247,
+            "linea": 1249,
             "ecg_id": 11364
         },
         {
-            "linea": 1249,
+            "linea": 1251,
             "ecg_id": 11372
         },
         {
-            "linea": 1260,
+            "linea": 1262,
             "ecg_id": 11489
         },
         {
-            "linea": 1261,
+            "linea": 1263,
             "ecg_id": 11490
         },
         {
-            "linea": 1265,
+            "linea": 1267,
             "ecg_id": 11532
         },
         {
-            "linea": 1266,
+            "linea": 1268,
             "ecg_id": 11533
         },
         {
-            "linea": 1268,
+            "linea": 1270,
             "ecg_id": 11564
         },
         {
-            "linea": 1270,
+            "linea": 1272,
             "ecg_id": 11601
         },
         {
-            "linea": 1276,
+            "linea": 1278,
             "ecg_id": 11679
         },
         {
-            "linea": 1284,
+            "linea": 1286,
             "ecg_id": 11739
         },
         {
-            "linea": 1291,
+            "linea": 1293,
             "ecg_id": 11803
         },
         {
-            "linea": 1292,
+            "linea": 1294,
             "ecg_id": 11805
         },
         {
-            "linea": 1295,
+            "linea": 1297,
             "ecg_id": 11842
         },
         {
-            "linea": 1296,
+            "linea": 1298,
             "ecg_id": 11843
         },
         {
-            "linea": 1301,
+            "linea": 1303,
             "ecg_id": 11884
         },
         {
-            "linea": 1302,
+            "linea": 1304,
             "ecg_id": 11885
         },
         {
-            "linea": 1308,
+            "linea": 1310,
             "ecg_id": 11933
         },
         {
-            "linea": 1309,
+            "linea": 1311,
             "ecg_id": 11934
         },
         {
-            "linea": 1311,
+            "linea": 1313,
             "ecg_id": 11956
         },
         {
-            "linea": 1317,
+            "linea": 1319,
             "ecg_id": 12034
         },
         {
-            "linea": 1318,
+            "linea": 1320,
             "ecg_id": 12074
         },
         {
-            "linea": 1326,
+            "linea": 1328,
             "ecg_id": 12144
         },
         {
-            "linea": 1340,
+            "linea": 1342,
             "ecg_id": 12199
         },
         {
-            "linea": 1354,
+            "linea": 1356,
             "ecg_id": 12277
         },
         {
-            "linea": 1358,
+            "linea": 1360,
             "ecg_id": 12310
         },
         {
-            "linea": 1360,
+            "linea": 1362,
             "ecg_id": 12336
         },
         {
-            "linea": 1363,
+            "linea": 1365,
             "ecg_id": 12345
         },
         {
-            "linea": 1364,
+            "linea": 1366,
             "ecg_id": 12348
         },
         {
-            "linea": 1366,
+            "linea": 1368,
             "ecg_id": 12355
         },
         {
-            "linea": 1369,
+            "linea": 1371,
             "ecg_id": 12407
         },
         {
-            "linea": 1372,
+            "linea": 1374,
             "ecg_id": 12451
         },
         {
-            "linea": 1373,
+            "linea": 1375,
             "ecg_id": 12475
         },
         {
-            "linea": 1374,
+            "linea": 1376,
             "ecg_id": 12478
         },
         {
-            "linea": 1375,
+            "linea": 1377,
             "ecg_id": 12480
         },
         {
-            "linea": 1380,
+            "linea": 1382,
             "ecg_id": 12528
         },
         {
-            "linea": 1381,
+            "linea": 1383,
             "ecg_id": 12529
         },
         {
-            "linea": 1391,
+            "linea": 1393,
             "ecg_id": 12607
         },
         {
-            "linea": 1392,
+            "linea": 1394,
             "ecg_id": 12609
         },
         {
-            "linea": 1394,
+            "linea": 1396,
             "ecg_id": 12619
         },
         {
-            "linea": 1400,
+            "linea": 1402,
             "ecg_id": 12677
         },
         {
-            "linea": 1403,
+            "linea": 1405,
             "ecg_id": 12699
         },
         {
-            "linea": 1404,
+            "linea": 1406,
             "ecg_id": 12702
         },
         {
-            "linea": 1406,
+            "linea": 1408,
             "ecg_id": 12709
         },
         {
-            "linea": 1409,
+            "linea": 1411,
             "ecg_id": 12715
         },
         {
-            "linea": 1422,
+            "linea": 1424,
             "ecg_id": 12886
         },
         {
-            "linea": 1424,
+            "linea": 1426,
             "ecg_id": 12925
         },
         {
-            "linea": 1429,
+            "linea": 1431,
             "ecg_id": 12999
         },
         {
-            "linea": 1432,
+            "linea": 1434,
             "ecg_id": 13014
         },
         {
-            "linea": 1433,
+            "linea": 1435,
             "ecg_id": 13025
         },
         {
-            "linea": 1434,
+            "linea": 1436,
             "ecg_id": 13035
         },
         {
-            "linea": 1438,
+            "linea": 1440,
             "ecg_id": 13092
         },
         {
-            "linea": 1444,
+            "linea": 1446,
             "ecg_id": 13145
         },
         {
-            "linea": 1448,
+            "linea": 1450,
             "ecg_id": 13212
         },
         {
-            "linea": 1455,
+            "linea": 1457,
             "ecg_id": 13268
         },
         {
-            "linea": 1456,
+            "linea": 1458,
             "ecg_id": 13282
         },
         {
-            "linea": 1464,
+            "linea": 1466,
             "ecg_id": 13349
         },
         {
-            "linea": 1466,
+            "linea": 1468,
             "ecg_id": 13370
         },
         {
-            "linea": 1467,
+            "linea": 1469,
             "ecg_id": 13380
         },
         {
-            "linea": 1470,
+            "linea": 1472,
             "ecg_id": 13400
         },
         {
-            "linea": 1471,
+            "linea": 1473,
             "ecg_id": 13404
         },
         {
-            "linea": 1480,
+            "linea": 1482,
             "ecg_id": 13595
         },
         {
-            "linea": 1482,
+            "linea": 1484,
             "ecg_id": 13630
         },
         {
-            "linea": 1483,
+            "linea": 1485,
             "ecg_id": 13642
         },
         {
-            "linea": 1486,
+            "linea": 1488,
             "ecg_id": 13712
         },
         {
-            "linea": 1487,
+            "linea": 1489,
             "ecg_id": 13717
         },
         {
-            "linea": 1490,
+            "linea": 1492,
             "ecg_id": 13786
         },
         {
-            "linea": 1499,
+            "linea": 1501,
             "ecg_id": 13860
         },
         {
-            "linea": 1501,
+            "linea": 1503,
             "ecg_id": 13879
         },
         {
-            "linea": 1502,
+            "linea": 1504,
             "ecg_id": 13887
         },
         {
-            "linea": 1503,
+            "linea": 1505,
             "ecg_id": 13895
         },
         {
-            "linea": 1508,
+            "linea": 1510,
             "ecg_id": 13918
         },
         {
-            "linea": 1509,
+            "linea": 1511,
             "ecg_id": 13923
         },
         {
-            "linea": 1514,
+            "linea": 1516,
             "ecg_id": 13959
         },
         {
-            "linea": 1515,
+            "linea": 1517,
             "ecg_id": 13971
         },
         {
-            "linea": 1516,
+            "linea": 1518,
             "ecg_id": 13993
         },
         {
-            "linea": 1522,
+            "linea": 1524,
             "ecg_id": 14027
         },
         {
-            "linea": 1523,
+            "linea": 1525,
             "ecg_id": 14071
         },
         {
-            "linea": 1528,
+            "linea": 1530,
             "ecg_id": 14138
         },
         {
-            "linea": 1530,
+            "linea": 1532,
             "ecg_id": 14145
         },
         {
-            "linea": 1536,
+            "linea": 1538,
             "ecg_id": 14170
         },
         {
-            "linea": 1537,
+            "linea": 1539,
             "ecg_id": 14177
         },
         {
-            "linea": 1539,
+            "linea": 1541,
             "ecg_id": 14187
         },
         {
-            "linea": 1545,
+            "linea": 1547,
             "ecg_id": 14220
         },
         {
-            "linea": 1550,
+            "linea": 1552,
             "ecg_id": 14256
         },
         {
-            "linea": 1552,
+            "linea": 1554,
             "ecg_id": 14301
         },
         {
-            "linea": 1557,
+            "linea": 1559,
             "ecg_id": 14356
         },
         {
-            "linea": 1563,
+            "linea": 1565,
             "ecg_id": 14409
         },
         {
-            "linea": 1568,
+            "linea": 1570,
             "ecg_id": 14457
         },
         {
-            "linea": 1569,
+            "linea": 1571,
             "ecg_id": 14459
         },
         {
-            "linea": 1572,
+            "linea": 1574,
             "ecg_id": 14565
         },
         {
-            "linea": 1576,
+            "linea": 1578,
             "ecg_id": 14613
         },
         {
-            "linea": 1577,
+            "linea": 1579,
             "ecg_id": 14620
         },
         {
-            "linea": 1581,
+            "linea": 1583,
             "ecg_id": 14637
         },
         {
-            "linea": 1584,
+            "linea": 1586,
             "ecg_id": 14662
         },
         {
-            "linea": 1593,
+            "linea": 1595,
             "ecg_id": 14746
         },
         {
-            "linea": 1596,
+            "linea": 1598,
             "ecg_id": 14775
         },
         {
-            "linea": 1600,
+            "linea": 1602,
             "ecg_id": 14814
         },
         {
-            "linea": 1602,
+            "linea": 1604,
             "ecg_id": 14851
         },
         {
-            "linea": 1607,
+            "linea": 1609,
             "ecg_id": 14938
         },
         {
-            "linea": 1608,
+            "linea": 1610,
             "ecg_id": 14944
         },
         {
-            "linea": 1609,
+            "linea": 1611,
             "ecg_id": 14946
         },
         {
-            "linea": 1611,
+            "linea": 1613,
             "ecg_id": 14976
         },
         {
-            "linea": 1616,
+            "linea": 1618,
             "ecg_id": 15057
         },
         {
-            "linea": 1619,
+            "linea": 1621,
             "ecg_id": 15074
         },
         {
-            "linea": 1620,
+            "linea": 1622,
             "ecg_id": 15090
         },
         {
-            "linea": 1621,
+            "linea": 1623,
             "ecg_id": 15094
         },
         {
-            "linea": 1623,
+            "linea": 1625,
             "ecg_id": 15136
         },
         {
-            "linea": 1635,
+            "linea": 1637,
             "ecg_id": 15377
         },
         {
-            "linea": 1637,
+            "linea": 1639,
             "ecg_id": 15391
         },
         {
-            "linea": 1643,
+            "linea": 1645,
             "ecg_id": 15461
         },
         {
-            "linea": 1645,
+            "linea": 1647,
             "ecg_id": 15487
         },
         {
-            "linea": 1650,
+            "linea": 1652,
             "ecg_id": 15548
         },
         {
-            "linea": 1653,
+            "linea": 1655,
             "ecg_id": 15575
         },
         {
-            "linea": 1656,
+            "linea": 1658,
             "ecg_id": 15638
         },
         {
-            "linea": 1663,
+            "linea": 1665,
             "ecg_id": 15723
         },
         {
-            "linea": 1665,
+            "linea": 1667,
             "ecg_id": 15732
         },
         {
-            "linea": 1671,
+            "linea": 1673,
             "ecg_id": 15796
         },
         {
-            "linea": 1675,
+            "linea": 1677,
             "ecg_id": 15803
         },
         {
-            "linea": 1679,
+            "linea": 1681,
             "ecg_id": 15821
         },
         {
-            "linea": 1690,
+            "linea": 1692,
             "ecg_id": 15897
         },
         {
-            "linea": 1691,
+            "linea": 1693,
             "ecg_id": 15898
         },
         {
-            "linea": 1693,
+            "linea": 1695,
             "ecg_id": 15900
         },
         {
-            "linea": 1697,
+            "linea": 1699,
             "ecg_id": 15930
         },
         {
-            "linea": 1698,
+            "linea": 1700,
             "ecg_id": 15948
         },
         {
-            "linea": 1702,
+            "linea": 1704,
             "ecg_id": 15959
         },
         {
-            "linea": 1703,
+            "linea": 1705,
             "ecg_id": 15988
         },
         {
-            "linea": 1704,
+            "linea": 1706,
             "ecg_id": 16003
         },
         {
-            "linea": 1706,
+            "linea": 1708,
             "ecg_id": 16024
         },
         {
-            "linea": 1718,
+            "linea": 1720,
             "ecg_id": 16129
         },
         {
-            "linea": 1721,
+            "linea": 1723,
             "ecg_id": 16144
         },
         {
-            "linea": 1722,
+            "linea": 1724,
             "ecg_id": 16147
         },
         {
-            "linea": 1723,
+            "linea": 1725,
             "ecg_id": 16149
         },
         {
-            "linea": 1728,
+            "linea": 1730,
             "ecg_id": 16187
         },
         {
-            "linea": 1729,
+            "linea": 1731,
             "ecg_id": 16193
         },
         {
-            "linea": 1734,
+            "linea": 1736,
             "ecg_id": 16233
         },
         {
-            "linea": 1737,
+            "linea": 1739,
             "ecg_id": 16261
         },
         {
-            "linea": 1740,
+            "linea": 1742,
             "ecg_id": 16288
         },
         {
-            "linea": 1742,
+            "linea": 1744,
             "ecg_id": 16355
         },
         {
-            "linea": 1744,
+            "linea": 1746,
             "ecg_id": 16407
         },
         {
-            "linea": 1751,
+            "linea": 1753,
             "ecg_id": 16499
         },
         {
-            "linea": 1756,
+            "linea": 1758,
             "ecg_id": 16534
         },
         {
-            "linea": 1758,
+            "linea": 1760,
             "ecg_id": 16537
         },
         {
-            "linea": 1759,
+            "linea": 1761,
             "ecg_id": 16542
         },
         {
-            "linea": 1761,
+            "linea": 1763,
             "ecg_id": 16563
         },
         {
-            "linea": 1771,
+            "linea": 1773,
             "ecg_id": 16637
         },
         {
-            "linea": 1773,
+            "linea": 1775,
             "ecg_id": 16651
         },
         {
-            "linea": 1783,
+            "linea": 1785,
             "ecg_id": 16780
         },
         {
-            "linea": 1786,
+            "linea": 1788,
             "ecg_id": 16792
         },
         {
-            "linea": 1787,
+            "linea": 1789,
             "ecg_id": 16803
         },
         {
-            "linea": 1789,
+            "linea": 1791,
             "ecg_id": 16815
         },
         {
-            "linea": 1790,
+            "linea": 1792,
             "ecg_id": 16817
         },
         {
-            "linea": 1793,
+            "linea": 1795,
             "ecg_id": 16865
         },
         {
-            "linea": 1804,
+            "linea": 1806,
             "ecg_id": 16955
         },
         {
-            "linea": 1805,
+            "linea": 1807,
             "ecg_id": 16975
         },
         {
-            "linea": 1827,
+            "linea": 1829,
             "ecg_id": 17290
         },
         {
-            "linea": 1834,
+            "linea": 1836,
             "ecg_id": 17358
         },
         {
-            "linea": 1845,
+            "linea": 1847,
             "ecg_id": 17455
         },
         {
-            "linea": 1847,
+            "linea": 1849,
             "ecg_id": 17511
         },
         {
-            "linea": 1848,
+            "linea": 1850,
             "ecg_id": 17525
         },
         {
-            "linea": 1851,
+            "linea": 1853,
             "ecg_id": 17547
         },
         {
-            "linea": 1853,
+            "linea": 1855,
             "ecg_id": 17577
         },
         {
-            "linea": 1855,
+            "linea": 1857,
             "ecg_id": 17592
         },
         {
-            "linea": 1856,
+            "linea": 1858,
             "ecg_id": 17593
         },
         {
-            "linea": 1859,
+            "linea": 1861,
             "ecg_id": 17621
         },
         {
-            "linea": 1860,
+            "linea": 1862,
             "ecg_id": 17623
         },
         {
-            "linea": 1862,
+            "linea": 1864,
             "ecg_id": 17641
         },
         {
-            "linea": 1866,
+            "linea": 1868,
             "ecg_id": 17661
         },
         {
-            "linea": 1867,
+            "linea": 1869,
             "ecg_id": 17676
         },
         {
-            "linea": 1872,
+            "linea": 1874,
             "ecg_id": 17711
         },
         {
-            "linea": 1874,
+            "linea": 1876,
             "ecg_id": 17731
         },
         {
-            "linea": 1875,
+            "linea": 1877,
             "ecg_id": 17737
         },
         {
-            "linea": 1879,
+            "linea": 1881,
             "ecg_id": 17749
         },
         {
-            "linea": 1880,
+            "linea": 1882,
             "ecg_id": 17780
         },
         {
-            "linea": 1884,
+            "linea": 1886,
             "ecg_id": 17827
         },
         {
-            "linea": 1887,
+            "linea": 1889,
             "ecg_id": 17865
         },
         {
-            "linea": 1893,
+            "linea": 1895,
             "ecg_id": 17891
         },
         {
-            "linea": 1898,
+            "linea": 1900,
             "ecg_id": 17918
         },
         {
-            "linea": 1902,
+            "linea": 1904,
             "ecg_id": 17935
         },
         {
-            "linea": 1907,
+            "linea": 1909,
             "ecg_id": 17970
         },
         {
-            "linea": 1910,
+            "linea": 1912,
             "ecg_id": 17996
         },
         {
-            "linea": 1913,
+            "linea": 1915,
             "ecg_id": 18055
         },
         {
-            "linea": 1916,
+            "linea": 1918,
             "ecg_id": 18068
         },
         {
-            "linea": 1917,
+            "linea": 1919,
             "ecg_id": 18111
         },
         {
-            "linea": 1920,
+            "linea": 1922,
             "ecg_id": 18132
         },
         {
-            "linea": 1921,
+            "linea": 1923,
             "ecg_id": 18134
         },
         {
-            "linea": 1924,
+            "linea": 1926,
             "ecg_id": 18172
         },
         {
-            "linea": 1925,
+            "linea": 1927,
             "ecg_id": 18175
         },
         {
-            "linea": 1926,
+            "linea": 1928,
             "ecg_id": 18200
         },
         {
-            "linea": 1928,
+            "linea": 1930,
             "ecg_id": 18232
         },
         {
-            "linea": 1932,
+            "linea": 1934,
             "ecg_id": 18266
         },
         {
-            "linea": 1938,
+            "linea": 1940,
             "ecg_id": 18365
         },
         {
-            "linea": 1939,
+            "linea": 1941,
             "ecg_id": 18367
         },
         {
-            "linea": 1940,
+            "linea": 1942,
             "ecg_id": 18392
         },
         {
-            "linea": 1947,
+            "linea": 1949,
             "ecg_id": 18473
         },
         {
-            "linea": 1950,
+            "linea": 1952,
             "ecg_id": 18501
         },
         {
-            "linea": 1956,
+            "linea": 1958,
             "ecg_id": 18612
         },
         {
-            "linea": 1959,
+            "linea": 1961,
             "ecg_id": 18639
         },
         {
-            "linea": 1961,
+            "linea": 1963,
             "ecg_id": 18656
         },
         {
-            "linea": 1962,
+            "linea": 1964,
             "ecg_id": 18661
         },
         {
-            "linea": 1976,
+            "linea": 1978,
             "ecg_id": 18761
         },
         {
-            "linea": 1981,
+            "linea": 1983,
             "ecg_id": 18802
         },
         {
-            "linea": 1984,
+            "linea": 1986,
             "ecg_id": 18847
         },
         {
-            "linea": 1986,
+            "linea": 1988,
             "ecg_id": 18882
         },
         {
-            "linea": 1987,
+            "linea": 1989,
             "ecg_id": 18888
         },
         {
-            "linea": 1995,
+            "linea": 1997,
             "ecg_id": 19042
         },
         {
-            "linea": 2000,
+            "linea": 2002,
             "ecg_id": 19077
         },
         {
-            "linea": 2008,
+            "linea": 2010,
             "ecg_id": 19208
         },
         {
-            "linea": 2011,
+            "linea": 2013,
             "ecg_id": 19217
         },
         {
-            "linea": 2020,
+            "linea": 2022,
             "ecg_id": 19271
         },
         {
-            "linea": 2021,
+            "linea": 2023,
             "ecg_id": 19286
         },
         {
-            "linea": 2022,
+            "linea": 2024,
             "ecg_id": 19287
         },
         {
-            "linea": 2034,
+            "linea": 2036,
             "ecg_id": 19350
         },
         {
-            "linea": 2044,
+            "linea": 2046,
             "ecg_id": 19424
         },
         {
-            "linea": 2048,
+            "linea": 2050,
             "ecg_id": 19466
         },
         {
-            "linea": 2055,
+            "linea": 2057,
             "ecg_id": 19605
         },
         {
-            "linea": 2059,
+            "linea": 2061,
             "ecg_id": 19670
         },
         {
-            "linea": 2063,
+            "linea": 2065,
             "ecg_id": 19703
         },
         {
-            "linea": 2064,
+            "linea": 2066,
             "ecg_id": 19723
         },
         {
-            "linea": 2068,
+            "linea": 2070,
             "ecg_id": 19853
         },
         {
-            "linea": 2070,
+            "linea": 2072,
             "ecg_id": 19867
         },
         {
-            "linea": 2078,
+            "linea": 2080,
             "ecg_id": 19924
         },
         {
-            "linea": 2079,
+            "linea": 2081,
             "ecg_id": 19929
         },
         {
-            "linea": 2083,
+            "linea": 2085,
             "ecg_id": 19955
         },
         {
-            "linea": 2085,
+            "linea": 2087,
             "ecg_id": 19959
         },
         {
-            "linea": 2087,
+            "linea": 2089,
             "ecg_id": 19981
         },
         {
-            "linea": 2090,
+            "linea": 2092,
             "ecg_id": 20023
         },
         {
-            "linea": 2092,
+            "linea": 2094,
             "ecg_id": 20037
         },
         {
-            "linea": 2099,
+            "linea": 2101,
             "ecg_id": 20117
         },
         {
-            "linea": 2103,
+            "linea": 2105,
             "ecg_id": 20149
         },
         {
-            "linea": 2105,
+            "linea": 2107,
             "ecg_id": 20198
         },
         {
-            "linea": 2108,
+            "linea": 2110,
             "ecg_id": 20220
         },
         {
-            "linea": 2112,
+            "linea": 2114,
             "ecg_id": 20241
         },
         {
-            "linea": 2115,
+            "linea": 2117,
             "ecg_id": 20280
         },
         {
-            "linea": 2121,
+            "linea": 2123,
             "ecg_id": 20356
         },
         {
-            "linea": 2124,
+            "linea": 2126,
             "ecg_id": 20401
         },
         {
-            "linea": 2125,
+            "linea": 2127,
             "ecg_id": 20402
         },
         {
-            "linea": 2128,
+            "linea": 2130,
             "ecg_id": 20523
         },
         {
-            "linea": 2133,
+            "linea": 2135,
             "ecg_id": 20576
         },
         {
-            "linea": 2135,
+            "linea": 2137,
             "ecg_id": 20603
         },
         {
-            "linea": 2136,
+            "linea": 2138,
             "ecg_id": 20624
         },
         {
-            "linea": 2138,
+            "linea": 2140,
             "ecg_id": 20671
         },
         {
-            "linea": 2140,
+            "linea": 2142,
             "ecg_id": 20684
         },
         {
-            "linea": 2147,
+            "linea": 2149,
             "ecg_id": 20831
         },
         {
-            "linea": 2150,
+            "linea": 2152,
             "ecg_id": 20887
         },
         {
-            "linea": 2154,
+            "linea": 2156,
             "ecg_id": 20905
         },
         {
-            "linea": 2156,
+            "linea": 2158,
             "ecg_id": 20943
         },
         {
-            "linea": 2166,
+            "linea": 2168,
             "ecg_id": 21036
         },
         {
-            "linea": 2176,
+            "linea": 2178,
             "ecg_id": 21177
         },
         {
-            "linea": 2182,
+            "linea": 2184,
             "ecg_id": 21385
         },
         {
-            "linea": 2185,
+            "linea": 2187,
             "ecg_id": 21444
         }
     ],
     "STTC": [
         {
-            "linea": 19,
+            "linea": 21,
             "ecg_id": 128
         },
         {
-            "linea": 51,
+            "linea": 53,
             "ecg_id": 388
         },
         {
-            "linea": 53,
+            "linea": 55,
             "ecg_id": 400
         },
         {
-            "linea": 56,
+            "linea": 58,
             "ecg_id": 427
         },
         {
-            "linea": 65,
+            "linea": 67,
             "ecg_id": 499
         },
         {
-            "linea": 125,
+            "linea": 127,
             "ecg_id": 963
         },
         {
-            "linea": 128,
+            "linea": 130,
             "ecg_id": 1009
         },
         {
-            "linea": 153,
+            "linea": 155,
             "ecg_id": 1175
         },
         {
-            "linea": 183,
+            "linea": 185,
             "ecg_id": 1429
         },
         {
-            "linea": 185,
+            "linea": 187,
             "ecg_id": 1456
         },
         {
-            "linea": 202,
+            "linea": 204,
             "ecg_id": 1624
         },
         {
-            "linea": 253,
+            "linea": 255,
             "ecg_id": 1994
         },
         {
-            "linea": 256,
+            "linea": 258,
             "ecg_id": 2039
         },
         {
-            "linea": 260,
+            "linea": 262,
             "ecg_id": 2064
         },
         {
-            "linea": 262,
+            "linea": 264,
             "ecg_id": 2101
         },
         {
-            "linea": 269,
+            "linea": 271,
             "ecg_id": 2151
         },
         {
-            "linea": 272,
+            "linea": 274,
             "ecg_id": 2160
         },
         {
-            "linea": 273,
+            "linea": 275,
             "ecg_id": 2170
         },
         {
-            "linea": 274,
+            "linea": 276,
             "ecg_id": 2180
         },
         {
-            "linea": 278,
+            "linea": 280,
             "ecg_id": 2210
         },
         {
-            "linea": 293,
+            "linea": 295,
             "ecg_id": 2293
         },
         {
-            "linea": 309,
+            "linea": 311,
             "ecg_id": 2390
         },
         {
-            "linea": 310,
+            "linea": 312,
             "ecg_id": 2403
         },
         {
-            "linea": 365,
+            "linea": 367,
             "ecg_id": 2865
         },
         {
-            "linea": 366,
+            "linea": 368,
             "ecg_id": 2867
         },
         {
-            "linea": 374,
+            "linea": 376,
             "ecg_id": 2922
         },
         {
-            "linea": 388,
+            "linea": 390,
             "ecg_id": 3033
         },
         {
-            "linea": 409,
+            "linea": 411,
             "ecg_id": 3220
         },
         {
-            "linea": 417,
+            "linea": 419,
             "ecg_id": 3282
         },
         {
-            "linea": 420,
+            "linea": 422,
             "ecg_id": 3317
         },
         {
-            "linea": 424,
+            "linea": 426,
             "ecg_id": 3342
         },
         {
-            "linea": 427,
+            "linea": 429,
             "ecg_id": 3363
         },
         {
-            "linea": 453,
+            "linea": 455,
             "ecg_id": 3590
         },
         {
-            "linea": 532,
+            "linea": 534,
             "ecg_id": 4149
         },
         {
-            "linea": 543,
+            "linea": 545,
             "ecg_id": 4230
         },
         {
-            "linea": 555,
+            "linea": 557,
             "ecg_id": 4329
         },
         {
-            "linea": 571,
+            "linea": 573,
             "ecg_id": 4501
         },
         {
-            "linea": 592,
+            "linea": 594,
             "ecg_id": 4687
         },
         {
-            "linea": 599,
+            "linea": 601,
             "ecg_id": 4769
         },
         {
-            "linea": 601,
+            "linea": 603,
             "ecg_id": 4785
         },
         {
-            "linea": 605,
+            "linea": 607,
             "ecg_id": 4809
         },
         {
-            "linea": 616,
+            "linea": 618,
             "ecg_id": 4926
         },
         {
-            "linea": 629,
+            "linea": 631,
             "ecg_id": 5122
         },
         {
-            "linea": 649,
+            "linea": 651,
             "ecg_id": 5278
         },
         {
-            "linea": 666,
+            "linea": 668,
             "ecg_id": 5384
         },
         {
-            "linea": 672,
+            "linea": 674,
             "ecg_id": 5465
         },
         {
-            "linea": 704,
+            "linea": 706,
             "ecg_id": 5841
         },
         {
-            "linea": 739,
+            "linea": 741,
             "ecg_id": 6132
         },
         {
-            "linea": 748,
+            "linea": 750,
             "ecg_id": 6190
         },
         {
-            "linea": 771,
+            "linea": 773,
             "ecg_id": 6304
         },
         {
-            "linea": 775,
+            "linea": 777,
             "ecg_id": 6314
         },
         {
-            "linea": 800,
+            "linea": 802,
             "ecg_id": 6590
         },
         {
-            "linea": 808,
+            "linea": 810,
             "ecg_id": 6735
         },
         {
-            "linea": 813,
+            "linea": 815,
             "ecg_id": 6796
         },
         {
-            "linea": 819,
+            "linea": 821,
             "ecg_id": 6912
         },
         {
-            "linea": 830,
+            "linea": 832,
             "ecg_id": 7024
         },
         {
-            "linea": 831,
+            "linea": 833,
             "ecg_id": 7025
         },
         {
-            "linea": 834,
+            "linea": 836,
             "ecg_id": 7054
         },
         {
-            "linea": 854,
+            "linea": 856,
             "ecg_id": 7374
         },
         {
-            "linea": 912,
+            "linea": 914,
             "ecg_id": 7951
         },
         {
-            "linea": 917,
+            "linea": 919,
             "ecg_id": 8000
         },
         {
-            "linea": 919,
+            "linea": 921,
             "ecg_id": 8036
         },
         {
-            "linea": 925,
+            "linea": 927,
             "ecg_id": 8114
         },
         {
-            "linea": 946,
+            "linea": 948,
             "ecg_id": 8212
         },
         {
-            "linea": 970,
+            "linea": 972,
             "ecg_id": 8450
         },
         {
-            "linea": 991,
+            "linea": 993,
             "ecg_id": 8625
         },
         {
-            "linea": 1001,
+            "linea": 1003,
             "ecg_id": 8736
         },
         {
-            "linea": 1037,
+            "linea": 1039,
             "ecg_id": 9115
         },
         {
-            "linea": 1049,
+            "linea": 1051,
             "ecg_id": 9211
         },
         {
-            "linea": 1054,
+            "linea": 1056,
             "ecg_id": 9260
         },
         {
-            "linea": 1060,
+            "linea": 1062,
             "ecg_id": 9301
         },
         {
-            "linea": 1087,
+            "linea": 1089,
             "ecg_id": 9730
         },
         {
-            "linea": 1091,
+            "linea": 1093,
             "ecg_id": 9749
         },
         {
-            "linea": 1097,
+            "linea": 1099,
             "ecg_id": 9791
         },
         {
-            "linea": 1102,
+            "linea": 1104,
             "ecg_id": 9833
         },
         {
-            "linea": 1105,
+            "linea": 1107,
             "ecg_id": 9863
         },
         {
-            "linea": 1116,
+            "linea": 1118,
             "ecg_id": 9943
         },
         {
-            "linea": 1131,
+            "linea": 1133,
             "ecg_id": 10102
         },
         {
-            "linea": 1143,
+            "linea": 1145,
             "ecg_id": 10196
         },
         {
-            "linea": 1196,
+            "linea": 1198,
             "ecg_id": 10743
         },
         {
-            "linea": 1213,
+            "linea": 1215,
             "ecg_id": 10925
         },
         {
-            "linea": 1221,
+            "linea": 1223,
             "ecg_id": 11030
         },
         {
-            "linea": 1267,
+            "linea": 1269,
             "ecg_id": 11550
         },
         {
-            "linea": 1273,
+            "linea": 1275,
             "ecg_id": 11644
         },
         {
-            "linea": 1286,
+            "linea": 1288,
             "ecg_id": 11758
         },
         {
-            "linea": 1287,
+            "linea": 1289,
             "ecg_id": 11788
         },
         {
-            "linea": 1299,
+            "linea": 1301,
             "ecg_id": 11868
         },
         {
-            "linea": 1386,
+            "linea": 1388,
             "ecg_id": 12568
         },
         {
-            "linea": 1443,
+            "linea": 1445,
             "ecg_id": 13143
         },
         {
-            "linea": 1452,
+            "linea": 1454,
             "ecg_id": 13238
         },
         {
-            "linea": 1465,
+            "linea": 1467,
             "ecg_id": 13361
         },
         {
-            "linea": 1474,
+            "linea": 1476,
             "ecg_id": 13479
         },
         {
-            "linea": 1547,
+            "linea": 1549,
             "ecg_id": 14238
         },
         {
-            "linea": 1560,
+            "linea": 1562,
             "ecg_id": 14384
         },
         {
-            "linea": 1561,
+            "linea": 1563,
             "ecg_id": 14392
         },
         {
-            "linea": 1624,
+            "linea": 1626,
             "ecg_id": 15139
         },
         {
-            "linea": 1664,
+            "linea": 1666,
             "ecg_id": 15729
         },
         {
-            "linea": 1667,
+            "linea": 1669,
             "ecg_id": 15744
         },
         {
-            "linea": 1674,
+            "linea": 1676,
             "ecg_id": 15800
         },
         {
-            "linea": 1689,
+            "linea": 1691,
             "ecg_id": 15874
         },
         {
-            "linea": 1696,
+            "linea": 1698,
             "ecg_id": 15926
         },
         {
-            "linea": 1715,
+            "linea": 1717,
             "ecg_id": 16101
         },
         {
-            "linea": 1716,
+            "linea": 1718,
             "ecg_id": 16119
         },
         {
-            "linea": 1735,
+            "linea": 1737,
             "ecg_id": 16239
         },
         {
-            "linea": 1752,
+            "linea": 1754,
             "ecg_id": 16511
         },
         {
-            "linea": 1757,
+            "linea": 1759,
             "ecg_id": 16535
         },
         {
-            "linea": 1765,
+            "linea": 1767,
             "ecg_id": 16591
         },
         {
-            "linea": 1774,
+            "linea": 1776,
             "ecg_id": 16658
         },
         {
-            "linea": 1778,
+            "linea": 1780,
             "ecg_id": 16707
         },
         {
-            "linea": 1782,
+            "linea": 1784,
             "ecg_id": 16750
         },
         {
-            "linea": 1799,
+            "linea": 1801,
             "ecg_id": 16908
         },
         {
-            "linea": 1814,
+            "linea": 1816,
             "ecg_id": 17140
         },
         {
-            "linea": 1849,
+            "linea": 1851,
             "ecg_id": 17536
         },
         {
-            "linea": 1864,
+            "linea": 1866,
             "ecg_id": 17655
         },
         {
-            "linea": 1883,
+            "linea": 1885,
             "ecg_id": 17818
         },
         {
-            "linea": 1885,
+            "linea": 1887,
             "ecg_id": 17839
         },
         {
-            "linea": 1906,
+            "linea": 1908,
             "ecg_id": 17959
         },
         {
-            "linea": 1934,
+            "linea": 1936,
             "ecg_id": 18296
         },
         {
-            "linea": 1944,
+            "linea": 1946,
             "ecg_id": 18425
         },
         {
-            "linea": 1982,
+            "linea": 1984,
             "ecg_id": 18808
         },
         {
-            "linea": 1991,
+            "linea": 1993,
             "ecg_id": 18937
         },
         {
-            "linea": 2009,
+            "linea": 2011,
             "ecg_id": 19209
         },
         {
-            "linea": 2012,
+            "linea": 2014,
             "ecg_id": 19226
         },
         {
-            "linea": 2015,
+            "linea": 2017,
             "ecg_id": 19251
         },
         {
-            "linea": 2045,
+            "linea": 2047,
             "ecg_id": 19427
         },
         {
-            "linea": 2052,
+            "linea": 2054,
             "ecg_id": 19547
         },
         {
-            "linea": 2076,
+            "linea": 2078,
             "ecg_id": 19914
         },
         {
-            "linea": 2091,
+            "linea": 2093,
             "ecg_id": 20024
         },
         {
-            "linea": 2094,
+            "linea": 2096,
             "ecg_id": 20068
         },
         {
-            "linea": 2096,
+            "linea": 2098,
             "ecg_id": 20084
         },
         {
-            "linea": 2143,
+            "linea": 2145,
             "ecg_id": 20753
         },
         {
-            "linea": 2145,
+            "linea": 2147,
             "ecg_id": 20776
         },
         {
-            "linea": 2146,
+            "linea": 2148,
             "ecg_id": 20801
         }
     ]

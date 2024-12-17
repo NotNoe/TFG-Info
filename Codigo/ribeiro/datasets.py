@@ -5,30 +5,37 @@ from tensorflow.keras.utils import Sequence
 import numpy as np
 
 
-import h5py
-import math
-import pandas as pd
-from tensorflow.keras.utils import Sequence
-import numpy as np
-
-
 class ECGSequence(Sequence):
     @classmethod
-    def get_train_and_val(cls, path_to_hdf5_train, path_to_hdf5_val, hdf5_dset, path_to_csv_train, path_to_csv_val, batch_size=8):
-        train_seq = cls(path_to_hdf5_train, hdf5_dset, path_to_csv_train, batch_size)
-        valid_seq = cls(path_to_hdf5_val, hdf5_dset, path_to_csv_val, batch_size)
+    def get_train_and_val(cls, path_to_hdf5_train, path_to_hdf5_val, hdf5_dset, path_to_csv_train, path_to_csv_val, batch_size=8, labels = None, dataset_labels = 12):
+        train_seq = cls(path_to_hdf5_train, hdf5_dset, path_to_csv_train, batch_size, labels = labels, dataset_labels = dataset_labels)
+        valid_seq = cls(path_to_hdf5_val, hdf5_dset, path_to_csv_val, batch_size, labels = labels, dataset_labels = dataset_labels)
         return train_seq, valid_seq
 
 
     def __init__(self, path_to_hdf5, hdf5_dset, path_to_csv=None, batch_size=8,
-                 start_idx=0, end_idx=None):
+                 start_idx=0, end_idx=None, labels = None, dataset_labels = 12):
         if path_to_csv is None:
             self.y = None
         else:
             self.y = pd.read_csv(path_to_csv, index_col=0).values
         # Get tracings
         self.f = h5py.File(path_to_hdf5, "r")
-        self.x = self.f[hdf5_dset]
+        data = self.f[hdf5_dset]
+        if labels is None:
+            self.x = self.f[hdf5_dset]
+        else:
+            M = data.shape[1]
+            #Si M no es divisible por dataset_labels, hay un error
+            if M % dataset_labels != 0:
+                raise ValueError("The number of labels is not a multiple of dataset_labels")
+            block_size = M//dataset_labels
+            submatrices = []
+            for i in labels:
+                start = (i-1)*block_size
+                end = i*block_size
+                submatrices.append(data[:,start:end,:])
+            self.x = np.concatenate(submatrices, axis=1)
         self.batch_size = batch_size
         if end_idx is None:
             end_idx = len(self.x)

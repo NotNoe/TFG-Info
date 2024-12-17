@@ -1,6 +1,7 @@
 from tensorflow.keras.layers import (
-    Input, Conv1D, MaxPooling1D, Dropout, BatchNormalization, Activation, Add, Flatten, Dense)
+    Input, Conv2D, MaxPooling2D, Dropout, BatchNormalization, Activation, Add, Flatten, Dense, Concatenate)
 from tensorflow.keras.models import Model
+from tensorflow import expand_dims
 import numpy as np
 
 
@@ -56,7 +57,7 @@ class ResidualUnit(object):
         """Implement skip connection."""
         # Deal with downsampling
         if downsample > 1:
-            y = MaxPooling1D(downsample, strides=downsample, padding='same')(y)
+            y = MaxPooling2D(pool_size=(2,2), strides=downsample, padding='same')(y)
         elif downsample == 1:
             y = y
         else:
@@ -65,7 +66,7 @@ class ResidualUnit(object):
         if n_filters_in != self.n_filters_out:
             # This is one of the two alternatives presented in ResNet paper
             # Other option is to just fill the matrix with zeros.
-            y = Conv1D(self.n_filters_out, 1, padding='same',
+            y = Conv2D(self.n_filters_out, (1,1), padding='same',
                        use_bias=False, kernel_initializer=self.kernel_initializer)(y)
         return y
 
@@ -86,14 +87,14 @@ class ResidualUnit(object):
         n_filters_in = y.shape[2]
         y = self._skip_connection(y, downsample, n_filters_in)
         # 1st layer
-        x = Conv1D(self.n_filters_out, self.kernel_size, padding='same',
+        x = Conv2D(self.n_filters_out, self.kernel_size, padding='same',
                    use_bias=False, kernel_initializer=self.kernel_initializer)(x)
         x = self._batch_norm_plus_activation(x)
         if self.dropout_rate > 0:
             x = Dropout(self.dropout_rate)(x)
 
         # 2nd layer
-        x = Conv1D(self.n_filters_out, self.kernel_size, strides=downsample,
+        x = Conv2D(self.n_filters_out, self.kernel_size, strides=downsample,
                    padding='same', use_bias=False,
                    kernel_initializer=self.kernel_initializer)(x)
         if self.preactivation:
@@ -112,26 +113,32 @@ class ResidualUnit(object):
         return [x, y]
 
 
-def get_model(n_classes, shape=(4096, 12), last_layer='sigmoid'):
-    kernel_size = 16
+def get_model(n_classes, shape , last_layer='sigmoid'):#shape = (matrix_size, matrix_size, channels)
+    kernel_size = (3,3)
     kernel_initializer = 'he_normal'
-    signal = Input(shape=shape, dtype=np.float32, name='signal')
-    x = signal
-    x = Conv1D(64, kernel_size, padding='same', use_bias=False,
-               kernel_initializer=kernel_initializer)(x)
-    x = BatchNormalization()(x)
-    x = Activation('relu')(x)
-    x, y = ResidualUnit(1024, 128, kernel_size=kernel_size,
-                        kernel_initializer=kernel_initializer)([x, x])
-    x, y = ResidualUnit(256, 196, kernel_size=kernel_size,
-                        kernel_initializer=kernel_initializer)([x, y])
-    x, y = ResidualUnit(64, 256, kernel_size=kernel_size,
-                        kernel_initializer=kernel_initializer)([x, y])
-    x, _ = ResidualUnit(16, 320, kernel_size=kernel_size,
-                        kernel_initializer=kernel_initializer)([x, y])
-    x = Flatten()(x)
+    channels = shape[2]
+    inputs = [Input(shape=shape[0:2], name=f"input_channel_{i+1}") for i in range(channels)]
+    processed_channels = []
+    for input_image in inputs:
+        x = input_image        
+        x = Conv2D(64, kernel_size, padding='same', use_bias=False,
+                kernel_initializer=kernel_initializer)(x)
+        x = BatchNormalization()(x)
+        x = Activation('relu')(x)
+        x, y = ResidualUnit(1024, 128, kernel_size=kernel_size,
+                            kernel_initializer=kernel_initializer)([x, x])
+        x, y = ResidualUnit(256, 196, kernel_size=kernel_size,
+                            kernel_initializer=kernel_initializer)([x, y])
+        x, y = ResidualUnit(64, 256, kernel_size=kernel_size,
+                            kernel_initializer=kernel_initializer)([x, y])
+        x, _ = ResidualUnit(16, 320, kernel_size=kernel_size,
+                            kernel_initializer=kernel_initializer)([x, y])
+        x = Flatten()(x)
+        processed_channels.append(x)
+    combined = Concatenate()(processed_channels)
+    x = Dense(128, activation='relu', kernel_initializer=kernel_initializer)(combined)
     diagn = Dense(n_classes, activation=last_layer, kernel_initializer=kernel_initializer)(x)
-    model = Model(signal, diagn)
+    model = Model(inputs, diagn)
     return model
 
 
