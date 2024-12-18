@@ -16,7 +16,7 @@ class ECGSequence(Sequence):
 
     def __init__(self, path_to_hdf5, hdf5_dset, path_to_csv=None, batch_size=8,
                  start_idx=0, end_idx=None, labels = None, dataset_labels = 12, fill_with_zeroes=False):
-        self.labes = labels
+        self.labels = labels
         self.dataset_labels = dataset_labels
         self.fill_with_zeroes = fill_with_zeroes
         if path_to_csv is None:
