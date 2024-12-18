@@ -10,6 +10,17 @@ import tensorflow as tf
 
 perfect = json.load(open("out.json"))
 ETIQUETAS = ["CD", "HYP", "MI", "NORM", "STTC"]
+#Load the datasets
+test_x = h5py.File('./data/test.hdf5', 'r')["tracings"]
+# Load the labels from the CSV file
+df = pd.read_csv('./data/test_db.csv')
+test_y = df.drop(columns=['ecg_id']).to_numpy()
+#Load model
+model = load_model("./final_models/original_model.hdf5")
+
+strategy = tf.distribute.MirroredStrategy()
+print('Number of devices: {}'.format(strategy.num_replicas_in_sync))
+
 for label in ETIQUETAS:
     os.makedirs(f"./out/explanations/original_model/{label}", exist_ok=True)
     array = perfect[label][:5]
@@ -17,16 +28,9 @@ for label in ETIQUETAS:
         ITEM_IDX = item["linea"] - 2
         ecg_id = item["ecg_id"]
 
-        #Load the datasets
-        test_x = h5py.File('./data/test.hdf5', 'r')["tracings"]
-        # Load the labels from the CSV file
-        df = pd.read_csv('./data/test_db.csv')
-        test_y = df.drop(columns=['ecg_id']).to_numpy()
-        #Load model
-        model = load_model("./final_models/original_model.hdf5")
 
 
-        with tf.device('/GPU:0'):
+        with strategy.scope():
             explainer = TSR(model, test_x.shape[-2], test_x.shape[-1], mode="time", method="IG", device="cuda")
             item = test_x[ITEM_IDX:ITEM_IDX+1, :, :]
             prediction = model.predict(item)[0]

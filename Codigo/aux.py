@@ -8,6 +8,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    try:
+        tf.config.experimental.set_virtual_device_configuration(
+            gpus[0],
+            [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=4800)]
+        )
+    except RuntimeError as e:
+        print(e)
+
+
 perfect = json.load(open("out.json"))
 ETIQUETAS = ["CD", "HYP", "MI", "NORM", "STTC"]
 #Load the datasets
@@ -23,7 +34,7 @@ for label in ETIQUETAS:
     for item in array:
         ITEM_IDX = item["linea"] - 2
         ecg_id = item["ecg_id"]
-        with tf.device('/CPU:0'):
+        with tf.device('/GPU:0'):
             explainer = TSR(model, test_x.shape[-2], test_x.shape[-1], mode="time", method="IG", device="cuda")
             item = test_x[ITEM_IDX:ITEM_IDX+1, :, :]
             prediction = model.predict(item)[0]
