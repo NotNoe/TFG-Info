@@ -44,7 +44,7 @@ if __name__ == "__main__":
                                 min_delta=0.00001)]
 
         train_seq, valid_seq = ECGSequence.get_train_and_val(
-            args.path_to_hdf5_train, args.path_to_hdf5_val, args.dataset_name, args.path_to_csv_train, args.path_to_csv_val, batch_size, labels=LABELS, dataset_labels=12, fill_with_zeroes=args.fill_with_zeroes)
+            args.path_to_hdf5_train, args.path_to_hdf5_val, args.dataset_name, args.path_to_csv_train, args.path_to_csv_val, batch_size, labels=LABELS, fill_with_zeroes=args.fill_with_zeroes)
 
         # If you are continuing an interrupted section, uncomment line bellow:
         #   model = keras.models.load_model(PATH_TO_PREV_MODEL, compile=False)
