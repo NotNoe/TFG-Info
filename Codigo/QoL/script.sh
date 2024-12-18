@@ -1,7 +1,7 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-tracings=("stft" "cwt_morlet" "cwt_ricker")
+tracings=("cwt_morlet" "cwt_ricker")
 output_dir="./final_models"
 
 tmp_output=$(mktemp)
@@ -92,7 +92,7 @@ for tracing_name in "${tracings[@]}"; do
     ./QoL/send_telegram.sh "🚀 Iniciando entrenamiento para tracing: <code>${escaped_tracing_name}</code>"
 
     # Ejecutar el script de Python y capturar el código de salida
-    python "$python_script" "$tracing_name" --output_file "$output_path" 2>&1 | tee "$tmp_output"
+    python "$python_script" "$tracing_name" --output_file "$output_path" --fill_with_zeroes 2>&1 | tee "$tmp_output"
     exit_status=${PIPESTATUS[0]}
 
     # Verificar si el entrenamiento fue exitoso

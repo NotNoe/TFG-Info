@@ -6,6 +6,8 @@ from model import get_model
 import argparse
 from datasets import ECGSequence
 
+LABELS = [1,2,9]
+
 if __name__ == "__main__":
     # Get data and train
     parser = argparse.ArgumentParser(description='Train neural network.')
@@ -19,6 +21,7 @@ if __name__ == "__main__":
                         help='path to csv file containing train annotations', default='data/train_db.csv')
     parser.add_argument('--path_to_csv_val', type=str,
                         help='path to csv file containing validation annotations', default='data/validation_db.csv')
+    parser.add_argument('--fill_with_zeroes', action='store_true', help='Fill with zeroes the labels that are not in LABELS')
    
 
     args = parser.parse_args()
@@ -41,7 +44,7 @@ if __name__ == "__main__":
                                 min_delta=0.00001)]
 
         train_seq, valid_seq = ECGSequence.get_train_and_val(
-            args.path_to_hdf5_train, args.path_to_hdf5_val, args.dataset_name, args.path_to_csv_train, args.path_to_csv_val, batch_size)
+            args.path_to_hdf5_train, args.path_to_hdf5_val, args.dataset_name, args.path_to_csv_train, args.path_to_csv_val, batch_size, labels=LABELS, dataset_labels=12, fill_with_zeroes=args.fill_with_zeroes)
 
         # If you are continuing an interrupted section, uncomment line bellow:
         #   model = keras.models.load_model(PATH_TO_PREV_MODEL, compile=False)
