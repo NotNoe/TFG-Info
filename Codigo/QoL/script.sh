@@ -8,7 +8,7 @@ tmp_output=$(mktemp)
 
 cd "$DIR"
 cd ..
-source /home/mardia35/miniconda3/etc/profile.d/conda.sh
+source ~/miniconda3/etc/profile.d/conda.sh
 conda activate py38
 
 ./QoL/send_telegram.sh "🚀 Iniciando script."
