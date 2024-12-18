@@ -64,4 +64,4 @@ ESCAPED_METRICS=$(escape_html "$METRICS")
 message="📊 <b>Métricas para el modelo:</b> <code>${escaped_model_name}</code><pre>${ESCAPED_METRICS}</pre>"
 
 # Enviar el mensaje por Telegram
-./send_telegram.sh "$message"
+./QoL/send_telegram.sh "$message"

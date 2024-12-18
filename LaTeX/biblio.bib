@@ -171,3 +171,79 @@ doi = {10.1142/S0218001409007326}
 }
 
 
+Tú dijiste:
+Para mi TFG necesito una sección en la que explique qué es la transformada STFT, por qué es útil en contexto de ECGs, qué parámetros tiene y qué significa cada uno de estos.
+Quiero que esto me lo des directamente en latex, teniendo en cuenta que va a ir dentro de una subsección llamada STFT y que cuando la nombres quiero que utilices el comando \ac{STFT}, que utilizo para las siglas.
+Además. Quiero que el texto esté correctamente citado y me incluyas la bibliografía
+ChatGPT
+
+\subsection{\ac{STFT}}\label{sec:stft}
+
+La \ac{STFT} (Short-Time Fourier Transform) es una herramienta matemática utilizada para analizar la evolución espectral de una señal a lo largo del tiempo. A diferencia de la Transformada de Fourier convencional, que proporciona información global sobre la distribución de las frecuencias de una señal sin preservar la dimensión temporal, la \ac{STFT} incorpora una ventana que permite observar cómo las frecuencias van cambiando localmente en el tiempo [\cite{Allen1977, Oppenheim2009}].
+
+En el contexto del análisis de señales de electrocardiograma (ECG), la \ac{STFT} resulta particularmente útil ya que el ECG es una señal no estacionaria, cuyos componentes frecuenciales varían a lo largo del tiempo. Mediante la \ac{STFT} es posible estudiar eventos transitorios como arritmias, cambios en la morfología de las ondas P, QRS o T, y variaciones en la frecuencia cardíaca [\cite{Clifford2006}]. Esto facilita tanto la detección de patologías como la caracterización de la dinámica cardíaca a nivel frecuencial-temporal.
+
+La \ac{STFT} se define típicamente como:
+\[
+X(t, f) = \sum_{\tau=-\infty}^{\infty} x(\tau) w(\tau - t) e^{-j 2 \pi f \tau}
+\]
+donde:
+\begin{itemize}
+    \item $x(\tau)$ es la señal de entrada.
+    \item $w(\cdot)$ es la ventana (por ejemplo, de tipo Hamming, Hanning o rectangular) centrada alrededor de $t$.
+    \item $t$ corresponde al instante temporal en el que se centra la ventana.
+    \item $f$ es la frecuencia analizada.
+\end{itemize}
+
+A la hora de implementar la \ac{STFT}, existen varios parámetros importantes a ajustar:
+\begin{itemize}
+    \item **Tipo de ventana ($w(\cdot)$)**: Determina el compromiso entre resolución temporal y frecuencia. Ventanas más anchas ofrecen mejor resolución frecuencial pero empeoran la resolución temporal, y viceversa.
+    \item **Tamaño de la ventana ($N_w$)**: El número de muestras de la ventana. Un mayor $N_w$ mejora la resolución en frecuencia, mientras que un menor $N_w$ permite una mejor localización temporal.
+    \item **Desplazamiento (hop size, $H$)**: El número de muestras que se avanza entre cálculos sucesivos de la \ac{STFT} determina el solapamiento entre ventanas. Un desplazamiento menor implica mayor solapamiento, resultando en una mayor redundancia temporal pero una mejor representación de eventos transitorios.
+    \item **Frecuencia de muestreo ($f_s$)**: La relación entre las frecuencias analizadas y las muestras depende directamente de la frecuencia de muestreo. Un muestreo más alto permite analizar frecuencias más elevadas.
+\end{itemize}
+
+En el caso de las ECG, la elección de estos parámetros debe ser cuidadosa, buscando un equilibrio que permita capturar con detalle tanto los eventos rápidos (como el complejo QRS) como las variaciones lentas (por ejemplo, en la onda T).
+
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{99}
+    \bibitem{Allen1977}
+    J.~B.~Allen and L.~R.~Rabiner, ``A Unified Approach to Short-Time Fourier Analysis and Synthesis,'' \emph{Proceedings of the IEEE}, vol. 65, no. 11, pp. 1558--1564, 1977.
+
+    \bibitem{Oppenheim2009}
+    A.~V.~Oppenheim and R.~W.~Schafer, \emph{Discrete-Time Signal Processing}, 3rd ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
+
+    \bibitem{Clifford2006}
+    G.~D.~Clifford, F.~Azuaje, and P.~E.~McSharry, \emph{Advanced Methods and Tools for ECG Data Analysis}. Artech House, 2006.
+\end{thebibliography}
+
+Tú dijiste:
+La bibliografía damela a parte en formato bibtex
+ChatGPT
+
+@article{Allen1977,
+  author    = {Allen, J. B. and Rabiner, L. R.},
+  title     = {A Unified Approach to Short-Time Fourier Analysis and Synthesis},
+  journal   = {Proceedings of the IEEE},
+  volume    = {65},
+  number    = {11},
+  pages     = {1558--1564},
+  year      = {1977}
+}
+
+@book{Oppenheim2009,
+  author    = {Oppenheim, Alan V. and Schafer, Ronald W.},
+  title     = {Discrete-Time Signal Processing},
+  edition   = {3rd},
+  publisher = {Prentice Hall},
+  address   = {Upper Saddle River, NJ, USA},
+  year      = {2009}
+}
+
+@book{Clifford2006,
+  author    = {Clifford, G. D. and Azuaje, F. and McSharry, P. E.},
+  title     = {Advanced Methods and Tools for ECG Data Analysis},
+  publisher = {Artech House},
+  year      = {2006}
+}
+

@@ -22,27 +22,22 @@ export TF_CPP_MIN_LOG_LEVEL=3
 #rm QoL/index.html
 
 
-# Primero corremos preprocess_records.py
-./QoL/send_telegram.sh "🚀 Iniciando preprocesamiento de registros."
-python scripts/preprocess_records.py 2>&1 | tee "$tmp_output"
-./QoL/send_telegram.sh "🚀 Preprocesamiento de registros completado."
-./QoL/send_telegram.sh "🚀 Iniciando preprocesamiento de datos."
-python scripts/preprocess_data.py 2>&1 | tee "$tmp_output"
-./QoL/send_telegram.sh "🚀 Preprocesamiento de datos completado."
+# # Primero corremos preprocess_records.py
+# ./QoL/send_telegram.sh "🚀 Iniciando preprocesamiento de registros."
+# python scripts/preprocess_records.py 2>&1 | tee "$tmp_output"
+# ./QoL/send_telegram.sh "🚀 Preprocesamiento de registros completado."
+# ./QoL/send_telegram.sh "🚀 Iniciando preprocesamiento de datos."
+# python scripts/preprocess_data.py 2>&1 | tee "$tmp_output"
+# ./QoL/send_telegram.sh "🚀 Preprocesamiento de datos completado."
 
-#Hacemos las transformaciones
-./QoL/send_telegram.sh "🚀 Iniciando transformaciones."
-python scripts/transform_data_stft.py 2>&1 | tee "$tmp_output"
-./QoL/send_telegram.sh "🚀 Stft completada."
-python scripts/transform_data_cwt_morlet.py 2>&1 | tee "$tmp_output"
-./QoL/send_telegram.sh "🚀 Cwt morlet completada."
-python scripts/transform_data_cwt_ricker.py 2>&1 | tee "$tmp_output"
-./QoL/send_telegram.sh "🚀 Cwt ricker completada."
-
-#Hacemos aux para sacar las explicaciones que queriamos
-./QoL/send_telegram.sh "🚀 Iniciando explicaciones."
-python QoL/explain.py 2>&1 | tee "$tmp_output"
-./QoL/send_telegram.sh "🚀 Explicaciones completadas."
+# #Hacemos las transformaciones
+# ./QoL/send_telegram.sh "🚀 Iniciando transformaciones."
+# python scripts/transform_data_stft.py 2>&1 | tee "$tmp_output"
+# ./QoL/send_telegram.sh "🚀 Stft completada."
+# python scripts/transform_data_cwt_morlet.py 2>&1 | tee "$tmp_output"
+# ./QoL/send_telegram.sh "🚀 Cwt morlet completada."
+# python scripts/transform_data_cwt_ricker.py 2>&1 | tee "$tmp_output"
+# ./QoL/send_telegram.sh "🚀 Cwt ricker completada."
 
 ./QoL/send_telegram.sh "🚀 Iniciando entrenamiento de modelos transformados."
 

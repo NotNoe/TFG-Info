@@ -132,3 +132,26 @@ La fórmula concreta de la métrica sería:
 
 
 \section{Transformaciones}
+
+Pueden aplicarse gran cantidad de transformaciones a una señal antes de procesarla. En nuestro caso concreto, aplicamos una transformada \ac{STFT} y otra \ac{CWT}, ambas en sus versiones discretas. En este trabajo no entraremos en la definición formal de estas transformadas (pues escapa a los objetivos del mismo). Para una definición formal, así como un estudio más detallado de sus propiedades y aplicaciones, pueden consultarse \cite{Oppenheim2009, Allen1977}.
+
+\subsection{\ac{STFT}}
+
+La \ac{STFT} es una herramienta matemática utilizada para analizar la evolución espectral de una señal a lo largo del tiempo. A diferencia de la Transformada de Fourier convencional, que proporciona información global sobre la distribución de las frecuencias de una señal sin preservar la dimensión temporal, la \ac{STFT} incorpora una ventana que permite observar cómo las frecuencias van cambiando localmente en el tiempo \citep{Allen1977, Oppenheim2009}.
+
+En nuestro contexto, la \ac{STFT} resulta particularmente útil ya que el \ac{ECG} es una señal no estacionaria con una frecuencia variable a lo largo del tiempo. Mediante la \ac{STFT} es posible estudiar eventos transitorios como arritmias, cambios en la onda, y variaciones en la frecuencia cardíaca \citep{Clifford2006}.
+
+A la hora de implementar la \ac{STFT}, existen varios parámetros importantes a ajustar:
+
+\begin{itemize}
+	\item \textbf{Ventana (window)}: Se utiliza una ventana de tipo Hann. La ventana Hann es una función suavemente limitada que reduce el efecto de discontinuidades en los bordes del segmento.
+	
+	\item \textbf{Frecuencia de muestreo}: La señal original se encuentra muestreada a 400 Hz. Esta frecuencia de muestreo determina la resolución temporal que se logra.
+	
+	\item \textbf{Longitud del segmento}: Se utiliza 256 muestras. El segmento de datos tomado para cada ventana afecta la resolución en frecuencia. Un mayor número de puntos mejora la resolución en frecuencia, pero empeora la resolución temporal.
+	
+	\item \textbf{Solapamiento}: Se emplea 128 muestras. Esto significa que cada ventana se solapa con la mitad (128 muestras) de la ventana anterior. Un solapamiento mayor permite detectar eventos transitorios con mayor detalle temporal, a costa de un mayor costo computacional.
+	
+\end{itemize}
+
+La elección de estos parámetros busca un equilibrio entre la resolución temporal y frecuencial, adecuado para el análisis de señales cardíacas.El tamaño de 256 muestras por segmento, junto con la frecuencia de muestreo de 400 Hz, ofrece una resolución en frecuencia suficiente para el rango de interés cardiológico; y el solapamiento de 128 muestras asegura una adecuada continuidad y capacidad de capturar eventos transitorios.
