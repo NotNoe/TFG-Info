@@ -568,3 +568,5 @@ FodyWeavers.xsd
 data/
 ptbxl/
 logs/
+.nfs*
+final_models/cwt_morlet_model.hdf5
