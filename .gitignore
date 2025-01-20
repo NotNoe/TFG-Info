@@ -304,7 +304,3 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
-/Codigo/.vscode
-Codigo/backup_model_best.hdf5
-Codigo/backup_model_last.hdf5
-/Codigo/reduced_data

@@ -20,8 +20,12 @@
 % tienes ninguno  referenciado, basta con que no  definas la constante
 % \acronimosEnRelease en config.tex
 
-@entry{STFT, , \emph{Short-Time Fourier Transform}, Transformada de Fourier de tiempo reducido}
+@entry{STFT, , Transformada de Fourier de tiempo reducido, \emph{Short-Time Fourier Transform}}
 
-@entry{CWT, , \emph{Continuous Wavelet Transform}, Transformada de ondícula continua}
+@entry{CWT, , \emph{Continuous Wavelet Transform}, Transformada de onda continua}
 
 @entry{ECG, , Electrocardiograma}
+
+@entry{IA, , Inteligencia Artificial}
+
+@entry{OMS, , Organizaci\'on Mundial de la Salud}

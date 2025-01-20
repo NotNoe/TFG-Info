@@ -28,6 +28,7 @@
 % ---------------------------------------------------------------------
 
 \documentclass[12pt,a4paper,twoside]{book}
+\interfootnotelinepenalty=10000
 
 %
 % Definimos  el   comando  \compilaCapitulo,  que   luego  se  utiliza
@@ -83,9 +84,37 @@ constantes,guionado,Cascaras/bibliografia,config%
 \usepackage{threeparttable}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{titletoc}
+\usepackage{caption}
 
 
+\usepackage{booktabs} % Para tablas más bonitas
+\usepackage{multirow} % Para combinar filas
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{xcolor}
 
+\lstset{
+	language=Python,                 % Lenguaje del código
+	basicstyle=\ttfamily\footnotesize, % Estilo básico (tipo monoespaciado)
+	keywordstyle=\color{blue},       % Color para palabras clave
+	stringstyle=\color{orange},      % Color para cadenas
+	commentstyle=\color{green!60!black}, % Color para comentarios
+	numbers=left,                    % Numeración a la izquierda
+	numberstyle=\tiny\color{gray},   % Estilo de números de línea
+	stepnumber=1,                    % Cada línea numerada
+	frame=single,                    % Marco alrededor del código
+	breaklines=true,                 % Permitir líneas largas divididas
+	captionpos=b,                    % Posición de la leyenda (abajo)
+	showspaces=false,                % No mostrar espacios
+	showstringspaces=false,          % No mostrar espacios en cadenas
+	tabsize=4,                       % Tamaño de tabulación
+	literate=                        % Configurar caracteres especiales
+		{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+		{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+		{ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¡}{{\textexclamdown}}1 {¿}{{\textquestiondown}}1
+		{±}{{$\pm$}}1                
+}
 
 % Incluimos el fichero con comandos de constantes
 \include{constantes}
@@ -146,8 +175,8 @@ constantes,guionado,Cascaras/bibliografia,config%
 \include{Capitulos/Introduccion}
 \include{Capitulos/EstadoDeLaCuestion}
 \include{Capitulos/DescripcionTrabajo}
-%\include{Capitulos/Capitulo4}
-%\include{Capitulos/Capitulo5}
+\include{Capitulos/Entrenamiento}
+\include{Capitulos/Explicabilidad}
 \include{Capitulos/ConclusionesTrabajoFuturo}
 
 
@@ -199,8 +228,30 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Lista de acrónimos
 %
 
+
+
 % Sólo  lo  generamos  si  está declarada  \generaacronimos.  Consulta
 % TeXiS.sty para más información.
+\ifx\release\undefined
+\else
+	\newcommand{\acr}[2]{%
+	\noindent\textbf{#1}\dots.\dotfill #2\\ \\
+	}
+
+	\newpage
+	\thispagestyle{empty}
+	\begin{large}
+		\section*{Lista de acrónimos}
+		\addcontentsline{toc}{chapter}{Lista de acrónimos}
+		\acr{STFT}{Transformada de Fourier de tiempo reducido (\emph{Short-Time Fourier Transform})}
+		\acr{CWT}{Transformada de onda continua (\emph{Continuous Wavelet Transform})}
+		\acr{ECG}{Electrocardiograma}
+		\acr{IA}{Inteligencia Artificial}
+		\acr{OMS}{Organización Mundial de la Salud}
+	\end{large}	
+	
+\fi
+
 
 
 \ifx\generaacronimos\undefined

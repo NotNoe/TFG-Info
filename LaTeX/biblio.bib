@@ -64,31 +64,20 @@ year = {2024},
 note = {No Publicado},
 school = {ETSI\_Informatica},
 month = {Junio},
-abstract = {Las enfermedades cardiovasculares causaron 17,9 millones de muertes en todo el mundo, seg{\'u}n la Organizaci{\'o}n Mundial de la Salud. La detecci{\'o}n temprana y precisa de las enfermedades cardiovasculares es vital para una intervenci{\'o}n oportuna, un tratamiento eficaz y mejor desenlace para los pacientes. Una de las herramientas de diagn{\'o}stico primarias utilizadas en la evaluaci{\'o}n de la salud cardiovascular es el electrocardiograma (ECG). Las muestras de ECG capturan la actividad el{\'e}ctrica del coraz{\'o}n. Al analizar la morfolog{\'i}a de las ondas dentro de una se{\~n}al de ECG, los profesionales de la salud pueden identificar diversas anomal{\'i}as card{\'i}acas y tomar decisiones informadas sobre la condici{\'o}n del paciente. Sin embargo, obtener un ECG de 12 derivaciones con equipo profesional no es viable en muchas situaciones en tiempo real, por lo que debemos recurrir a ECGs de derivaciones reducidas. 
-
-Siguiendo el trabajo de un grupo de m{\'e}dicos espa{\~n}oles que estudiaron la eficacia cl{\'i}nica del diagn{\'o}stico del s{\'i}ndrome coronario agudo con smartwatches, utilizando solo tres derivaciones para el diagn{\'o}stico, la pregunta a abordar en esta investigaci{\'o}n es: "?Pueden los modelos de deep learning de clasificaci{\'o}n de ECG de 3 derivaciones alcanzar un rendimiento similar al de los modelos de clasificaci{\'o}n de ECG de 12 derivaciones?". La hip{\'o}tesis inicial es que la clasificaci{\'o}n de ECG de 3 derivaciones puede, de hecho, tener un rendimiento similar al de sus hom{\'o}logos de 12 derivaciones. 
-
-Para este trabajo, se utiliz{\'o} un modelo de clasificaci{\'o}n de ECG de 12 derivaciones publicado en Nature Communications y entrenado originalmente con m{\'a}s de 2 millones de ECG como modelo de 12 derivaciones y LightX3ECG como modelo b{\'a}sico de 3 derivaciones. Ambos se entrenaron en el conjunto de datos PTB-XL para disponer de una base com{\'u}n de comparaci{\'o}n. Una vez establecidas las l{\'i}neas de base, el modelo de 12 derivaciones se modific{\'o} para trabajar con s{\'o}lo 3 derivaciones y se entren{\'o} con el conjunto de datos PTB-XL. Adem{\'a}s, se utilizaron t{\'e}cnicas de aprendizaje por transferencia y de uno contra todos para reducir la diferencia de rendimiento entre los modelos de 12 y 3 derivaciones. 
-
-Los resultados de esta investigaci{\'o}n muestran que el modelo de 12 derivaciones estudiado puede adaptarse a 3 derivaciones cambiando {\'u}nicamente la capa de entrada y perdiendo s{\'o}lo un 4\% de rendimiento con un 75\% menos de entrada. Adem{\'a}s, el aprendizaje por transferencia y el enfoque "uno contra todos" pueden utilizarse para minimizar la variaci{\'o}n de rendimiento entre los modelos de 12 y 3 derivaciones, lo que se traduce en una ca{\'i}da del rendimiento de tan solo un 1\%. 
-
-Este trabajo tiene algunas limitaciones, como la disponibilidad de datos y el hecho de que esta comparaci{\'o}n se haya realizado en un dise{\~n}o de arquitectura {\'u}nica. No obstante, a pesar de estas limitaciones, la conclusi{\'o}n de este estudio es que, en ausencia de un ECG de 12 derivaciones, podr{\'i}a utilizarse un ECG de 3 derivaciones para obtener un diagn{\'o}stico con una precisi{\'o}n casi equivalente. Este hallazgo prepara el terreno para futuras investigaciones que estudien la generalizabilidad de esta conclusi{\'o}n para diferentes conjuntos de datos y arquitecturas de modelos. Adem{\'a}s, abre la oportunidad de realizar diagn{\'o}sticos autom{\'a}ticos y sistemas de monitorizaci{\'o}n continua con dispositivos de ECG de derivaci{\'o}n reducida y otros dispositivos sanitarios port{\'a}tiles.
-
-ABSTRACT
-
-Cardiovascular diseases were responsible for 17.9 million deaths worldwide according to the World Health Organization in 2019. Early and accurate detection of cardiovascular diseases is crucial for timely intervention, effective treatment, and improved patient outcomes. One of the primary diagnostic tools used in the assessment of cardiovascular health is the electrocardiogram (ECG). ECG recordings capture the electrical activity of the heart. By analyzing the waveforms within an ECG signal, healthcare professionals can identify various cardiac abnormalities and make informed decisions about the patient's condition. However, obtaining a 12-lead ECG with professional equipment is not viable in many real-time situations so we must resort to reduced-lead ECGs. 
-
-Following the work of a group of Spanish doctors that studied the clinical effectiveness of diagnosing acute coronary syndrome with smartwatches, using only three leads for the diagnosis, the question to be addressed in this research is: "Can 3-lead ECG classification deep learning models achieve a similar performance to 12-lead ECG classification models?". The initial hypothesis is that 3-lead ECG classification can in fact perform similarly to their 12-lead counterparts. 
-
-For this work, a 12-lead ECG classification model published in Nature Communications and originally trained on over 2 million ECGs, was used as the 12-lead model and LightX3ECG was used as a base 3-lead model. Both were trained on the PTB-XL dataset to have a common ground for comparison. Once baselines were established the 12-lead model was modified to work with only 3 leads and trained on the PTB-XL dataset. Additionally, transfer learning and a one vs. all techniques were used to reduce the performance difference between the 12-lead and 3-lead models. 
-
-The results of this research show that the 12-lead model studied can be adapted to 3 leads by only changing the input layer and only losing 4\% in performance with 75\% less input. Furthermore, transfer learning and a one vs. all approach can be used to minimise the performance variation between the 12-lead and 3-lead models resulting in a mere 1\% drop in performance. 
-
-There are some limitations to this work such as the data availability and the fact that this comparison was done on a single architecture design. Nevertheless, in spite of these limitations, the conclusion of this study is that in the absence of a 12-lead ECG a 3-lead ECG could potentially be used to obtain a diagnosis with almost equivalent accuracy. This finding sets the stage for future research to study the generalizability of this conclusion for different datasets and model architectures. Additionally, it opens up the opportunity of automatic diagnosis and continuous monitoring systems with reduced-lead ECG devices and other health wearables.},
 author = {Gonz{\'a}lez Cabeza, Sergio},
 url = {https://oa.upm.es/82828/}
 }
 
+
+@unpublished{TFGMario,
+year = {2024},
+school = {ETSI\_Informatica},
+note = {No Publicado},
+month = {Julio},
+title = {Peak Attention U-Net: attention-enhanced ECG delineation model for Peak Detection},
+url = {https://oa.upm.es/82826/},
+author = {Sanz Guerrero, Mario},
+}
 
 
 
@@ -170,57 +159,6 @@ doi = {10.1142/S0218001409007326}
   url       = {https://doi.org/10.1186/s40537-018-0151-6}
 }
 
-
-Tú dijiste:
-Para mi TFG necesito una sección en la que explique qué es la transformada STFT, por qué es útil en contexto de ECGs, qué parámetros tiene y qué significa cada uno de estos.
-Quiero que esto me lo des directamente en latex, teniendo en cuenta que va a ir dentro de una subsección llamada STFT y que cuando la nombres quiero que utilices el comando \ac{STFT}, que utilizo para las siglas.
-Además. Quiero que el texto esté correctamente citado y me incluyas la bibliografía
-ChatGPT
-
-\subsection{\ac{STFT}}\label{sec:stft}
-
-La \ac{STFT} (Short-Time Fourier Transform) es una herramienta matemática utilizada para analizar la evolución espectral de una señal a lo largo del tiempo. A diferencia de la Transformada de Fourier convencional, que proporciona información global sobre la distribución de las frecuencias de una señal sin preservar la dimensión temporal, la \ac{STFT} incorpora una ventana que permite observar cómo las frecuencias van cambiando localmente en el tiempo [\cite{Allen1977, Oppenheim2009}].
-
-En el contexto del análisis de señales de electrocardiograma (ECG), la \ac{STFT} resulta particularmente útil ya que el ECG es una señal no estacionaria, cuyos componentes frecuenciales varían a lo largo del tiempo. Mediante la \ac{STFT} es posible estudiar eventos transitorios como arritmias, cambios en la morfología de las ondas P, QRS o T, y variaciones en la frecuencia cardíaca [\cite{Clifford2006}]. Esto facilita tanto la detección de patologías como la caracterización de la dinámica cardíaca a nivel frecuencial-temporal.
-
-La \ac{STFT} se define típicamente como:
-\[
-X(t, f) = \sum_{\tau=-\infty}^{\infty} x(\tau) w(\tau - t) e^{-j 2 \pi f \tau}
-\]
-donde:
-\begin{itemize}
-    \item $x(\tau)$ es la señal de entrada.
-    \item $w(\cdot)$ es la ventana (por ejemplo, de tipo Hamming, Hanning o rectangular) centrada alrededor de $t$.
-    \item $t$ corresponde al instante temporal en el que se centra la ventana.
-    \item $f$ es la frecuencia analizada.
-\end{itemize}
-
-A la hora de implementar la \ac{STFT}, existen varios parámetros importantes a ajustar:
-\begin{itemize}
-    \item **Tipo de ventana ($w(\cdot)$)**: Determina el compromiso entre resolución temporal y frecuencia. Ventanas más anchas ofrecen mejor resolución frecuencial pero empeoran la resolución temporal, y viceversa.
-    \item **Tamaño de la ventana ($N_w$)**: El número de muestras de la ventana. Un mayor $N_w$ mejora la resolución en frecuencia, mientras que un menor $N_w$ permite una mejor localización temporal.
-    \item **Desplazamiento (hop size, $H$)**: El número de muestras que se avanza entre cálculos sucesivos de la \ac{STFT} determina el solapamiento entre ventanas. Un desplazamiento menor implica mayor solapamiento, resultando en una mayor redundancia temporal pero una mejor representación de eventos transitorios.
-    \item **Frecuencia de muestreo ($f_s$)**: La relación entre las frecuencias analizadas y las muestras depende directamente de la frecuencia de muestreo. Un muestreo más alto permite analizar frecuencias más elevadas.
-\end{itemize}
-
-En el caso de las ECG, la elección de estos parámetros debe ser cuidadosa, buscando un equilibrio que permita capturar con detalle tanto los eventos rápidos (como el complejo QRS) como las variaciones lentas (por ejemplo, en la onda T).
-
-\bibliographystyle{IEEEtran}
-\begin{thebibliography}{99}
-    \bibitem{Allen1977}
-    J.~B.~Allen and L.~R.~Rabiner, ``A Unified Approach to Short-Time Fourier Analysis and Synthesis,'' \emph{Proceedings of the IEEE}, vol. 65, no. 11, pp. 1558--1564, 1977.
-
-    \bibitem{Oppenheim2009}
-    A.~V.~Oppenheim and R.~W.~Schafer, \emph{Discrete-Time Signal Processing}, 3rd ed. Upper Saddle River, NJ, USA: Prentice Hall, 2009.
-
-    \bibitem{Clifford2006}
-    G.~D.~Clifford, F.~Azuaje, and P.~E.~McSharry, \emph{Advanced Methods and Tools for ECG Data Analysis}. Artech House, 2006.
-\end{thebibliography}
-
-Tú dijiste:
-La bibliografía damela a parte en formato bibtex
-ChatGPT
-
 @article{Allen1977,
   author    = {Allen, J. B. and Rabiner, L. R.},
   title     = {A Unified Approach to Short-Time Fourier Analysis and Synthesis},
@@ -246,4 +184,182 @@ ChatGPT
   publisher = {Artech House},
   year      = {2006}
 }
+
+%-------------------------------------------------------------------------------------------------------------------
+@misc{whocvd,
+  title        = {Cardiovascular diseases (CVDs)},
+  author       = {{World Health Organization}},
+  howpublished = {\url{https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)}},
+  year         = {2021},
+  note         = "[Online; accessed 2023-10-10]"
+}
+
+@article{hannun_cardiologist_2019,
+  title   = {Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network},
+  author  = {Hannun, Awni Y. and Rajpurkar, Pranav and Haghpanahi, Masoumeh and Tison, Geoffrey H. and Bourn, Colby and Turakhia, Mintu P. and Ng, Andrew Y.},
+  journal = {Nature Medicine},
+  volume  = {25},
+  number  = {1},
+  pages   = {65--69},
+  year    = {2019},
+  doi     = {10.1038/s41591-018-0268-3}
+}
+
+@online{latido_img,
+    author = "{Wikimedia Commons}",
+  title        = {Sinus Rhythm Labels},
+  note         = {Accedido: 2024-12-26, licensed under CC BY-SA 3.0 URL: \url{https://commons.wikimedia.org/wiki/File:SinusRhythmLabels.svg}},
+  year         = {2023}
+}
+
+%Articulo sobre WFDB
+@misc{wfdb_spec,
+  author       = {Xie, Cheng and McCullum, Laurel and Johnson, Alistair and Pollard, Tom and Gow, Brandon and Moody, Benjamin},
+  title        = {Waveform Database Software Package (WFDB) for Python (version 4.1.0)},
+  year         = {2023},
+  howpublished = {PhysioNet},
+  doi          = {10.13026/9njx-6322},
+  url          = {https://doi.org/10.13026/9njx-6322}
+}
+
+
+@article{kiranyaz_2016,
+  title   = {Personalized long-term ECG classification: A systematic review},
+  author  = {Kiranyaz, Serkan and Ince, Turker and Gabbouj, Moncef},
+  journal = {Applied Soft Computing},
+  volume  = {41},
+  pages   = {269--280},
+  year    = {2016},
+  doi     = {10.1016/j.asoc.2016.02.012}
+}
+
+@article{acharya_2017,
+  title   = "Automated diagnosis of arrhythmia using different intervals of {ECG} segments with {Convolutional Neural Network}",
+  author  = {Acharya, U. Rajendra and Fujita, Hamido and Lih, Oh Shu and Hagiwara, Yoshito and Tan, Jen Hong and Chua, C.K.},
+  journal = {Information Sciences},
+  volume  = {405},
+  pages   = {81--90},
+  year    = {2017},
+  doi     = {10.1016/j.ins.2017.04.012}
+}
+
+@book{Molnar2019,
+  title       = {Interpretable Machine Learning},
+  author      = {Molnar, Christoph},
+  year        = {2019},
+  publisher   = {Lulu.com},
+  isbn        = {9780244768522},
+  chapter     = {3}
+}
+
+@article{Goodman2017,
+   title={European Union Regulations on Algorithmic Decision Making and a “Right to Explanation”},
+   volume={38},
+   ISSN={2371-9621},
+   url={http://dx.doi.org/10.1609/aimag.v38i3.2741},
+   DOI={10.1609/aimag.v38i3.2741},
+   number={3},
+   journal={AI Magazine},
+   publisher={Wiley},
+   author={Goodman, Bryce and Flaxman, Seth},
+   year={2017},
+   month=sep, pages={50–57} }
+
+@article{Rudin2019,
+  title     = {Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead},
+  author    = {Rudin, Cynthia},
+  journal   = {Nature Machine Intelligence},
+  volume    = {1},
+  number    = {5},
+  pages     = {206--215},
+  year      = {2019}
+}
+
+@book{Mann2021,
+  title={Braunwald's Heart Disease: A Textbook of Cardiovascular Medicine},
+  author={Libby, P. and Bonow, R.O. and Mann, D.L. and Tomaselli, G.F. and Bhatt, D.L. and Solomon, S.D. and Braunwald, E.},
+  isbn={9780323824712},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@article{gustafsson2022deep,
+  title={Development and validation of deep learning ECG-based prediction of myocardial infarction in emergency department patients},
+  author={Gustafsson, S. and Gedon, D. and Lampa, E. and Ribeiro, A. H. and Holzmann, M. J. and Sch{\"o}n, T. B. and Sundstr{\"o}m, J.},
+  journal={Scientific Reports},
+  volume={12},
+  year={2022},
+  publisher={Nature Publishing Group},
+  doi={10.1038/s41598-022-24254-x}
+}
+
+@article{lu2024decoding,
+  title={Decoding 2.3 million ECGs: interpretable deep learning for advancing cardiovascular diagnosis and mortality risk stratification},
+  author={Lu, Lianrui and Zhu, Tingting and Ribeiro, Ant{\'o}nio Henrique and others},
+  journal={European Heart Journal - Digital Health},
+  volume={5},
+  number={3},
+  pages={247--259},
+  year={2024},
+  publisher={Oxford University Press},
+  doi={10.1093/ehjdh/ztae014}
+}
+
+@article{manualelectro,
+  title={Comprehensive Electrocardiology},
+  author={Macfarlane, Peter W. and van Oosterom, Adriaan and Pahlm, Olle and Kligfield, Paul and Janse, Michiel and Camm, A. John},
+  journal={Springer},
+  year={2010},
+  volume={1},
+  pages={1-1040},
+  doi={10.1007/978-1-84882-045-9}
+}
+
+@article{guo2023machine,
+  title={Machine Learning-Based Automatic Cardiovascular Disease Diagnosis Using Two ECG Leads},
+  author={Guo, Chen and Ahmed, Syed and Alouini, Mohamed-Slim},
+  journal={arXiv preprint arXiv:2305.16055},
+  year={2023},
+  url={https://arxiv.org/abs/2305.16055}
+}
+
+@article{backpropagation,
+  title     = {Learning representations by back-propagating errors},
+  author    = {Rumelhart, David E. and Hinton, Geoffrey E. and Williams, Ronald J.},
+  journal   = {Nature},
+  volume    = {323},
+  number    = {6088},
+  pages     = {533--536},
+  year      = {1986},
+  publisher = {Nature Publishing Group},
+  doi       = {doi.org/10.1038/323533a0}
+}
+
+@book{Goodfellow-et-al-2016,
+  title     = {Deep Learning},
+  author    = {Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
+  publisher = {MIT Press},
+  year      = {2016},
+  url       = {http://www.deeplearningbook.org}
+}
+
+@inproceedings{he2008adasyn,
+  title={ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning},
+  author={He, Haibo and Bai, Yang and Garcia, Edwardo A. and Li, Shutao},
+  booktitle={Proceedings of the IEEE International Joint Conference on Neural Networks (IEEE World Congress on Computational Intelligence)},
+  pages={1322--1328},
+  year={2008},
+  organization={IEEE},
+  doi={10.1109/IJCNN.2008.4633969},
+  address={Hong Kong, China}
+}
+
+@article{koziarski2019radial,
+  title={Radial-Based Undersampling for Imbalanced Data Classification},
+  author={Koziarski, Michał},
+  journal={arXiv preprint arXiv:1906.00452},
+  year={2019},
+  url={https://arxiv.org/abs/1906.00452}
+}
+
 

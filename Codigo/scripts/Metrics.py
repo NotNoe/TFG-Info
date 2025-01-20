@@ -1,6 +1,6 @@
 import numpy as np
 import json
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, fbeta_score
 
 class Metrics:
     def __init__(self, y_true, y_pred, class_names=None):
@@ -48,39 +48,19 @@ class Metrics:
         precision_dict = {}
         recall_dict = {}
         f1_dict = {}
-        precision_list = []
-        recall_list = []
-        f1_list = []
-
-        for i in range(self.n_classes):
+        
+        precision_list, recall_list, f1_list, _ = precision_recall_fscore_support(self.y_true, self.y_pred, zero_division=np.nan)
+        for i in range(self.n_classes): #Para cada clase
             if self.class_names:
                 class_name = self.class_names[i]
             else:
                 class_name = f'Clase_{i}'
+            precision_dict[class_name] = precision_list[i]
+            recall_dict[class_name] = recall_list[i]
+            f1_dict[class_name] = f1_list[i]
 
-            y_true_class = self.y_true[:, i]
-            y_pred_class = self.y_pred[:, i]
 
-            if class_name in self.classes_with_no_samples:
-                precision = None
-                recall = None
-                f1 = None
-            else:
-                precision, recall, f1, _ = precision_recall_fscore_support(
-                    y_true_class, y_pred_class, average='binary', zero_division=0)
-
-                precision_list.append(precision)
-                recall_list.append(recall)
-                f1_list.append(f1)
-
-            precision_dict[class_name] = precision
-            recall_dict[class_name] = recall
-            f1_dict[class_name] = f1
-
-        # Calcular promedios globales (ignorando valores None)
-        global_precision = np.mean([p for p in precision_list if p is not None]) if precision_list else None
-        global_recall = np.mean([r for r in recall_list if r is not None]) if recall_list else None
-        global_f1 = np.mean([f for f in f1_list if f is not None]) if f1_list else None
+        global_precision, global_recall, global_f1, _ = precision_recall_fscore_support(self.y_true, self.y_pred, average='micro', zero_division=np.nan)
 
         metrics = {
             'precision': {
@@ -106,32 +86,20 @@ class Metrics:
         Returns:
         float or None: Valor de la métrica personalizada.
         """
-        if not self.class_names:
-            print("Advertencia: No se proporcionaron nombres de clases. No se puede calcular la métrica 'adjusted_f_score'.")
-            return None
-
-        custom_metric_values = []
-        for i in range(self.n_classes):
-            class_name = self.class_names[i]
-            y_true_class = self.y_true[:, i]
-            y_pred_class = self.y_pred[:, i]
-
-            if class_name in self.classes_with_no_samples:
-                continue  # Omitir esta clase en el cálculo de la métrica personalizada
-            else:
-                if class_name == 'NORM':
-                    _, _, metric_value, _ = precision_recall_fscore_support(
-                        y_true_class, y_pred_class, average='binary', beta=0.5, zero_division=0)
-                else:
-                    _, _, metric_value, _ = precision_recall_fscore_support(
-                        y_true_class, y_pred_class, average='binary', beta=2, zero_division=0)
-
-                custom_metric_values.append(metric_value)
-
-        if custom_metric_values:
-            adjusted_f_score = np.mean(custom_metric_values)
+        if self.class_names is None:
+            clase_especial = 3
+            print("Warning: No se han proporcionado los nombres de las clases. Se asumirá que la clase NORM es la clase 3.")
         else:
-            adjusted_f_score = None
+            clase_especial = self.class_names.index('NORM')
+        metricas = []
+        for cls in range(self.n_classes):
+            if cls == clase_especial:
+                beta = 0.5
+            else:
+                beta = 2
+            f_score = fbeta_score(self.y_true[:,cls], self.y_pred[:,cls], beta=beta)
+            metricas.append(f_score)
+        adjusted_f_score = np.mean(metricas)
 
         return adjusted_f_score
 
