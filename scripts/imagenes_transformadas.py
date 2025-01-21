@@ -1,4 +1,4 @@
-from scripts.Transformaciones import Transformaciones
+from Transformaciones import Transformaciones
 import numpy as np
 import h5py
 import matplotlib.pyplot as plt 
@@ -27,21 +27,31 @@ for clase in ["CD", "HYP", "MI", "NORM", "STTC"]:
     os.makedirs(f"out/trans_clases/{clase}", exist_ok=True)
     plt.imshow(stft[0:batch_stft,:], extent=[t_stft[0], t_stft[-1], f_stft[0], f_stft[-1]], origin='lower', aspect='auto', cmap='viridis')
     plt.title(f"ECG_ID: {ids[clase]} ({clase})")
+    plt.gca().axes.set_ylabel("Frecuencia (Hz)")
+    plt.gca().axes.set_xlabel("Tiempo (s)")
     plt.savefig(f"out/trans_clases/{clase}/stft.png")
-    plt.title(f"ECG_ID: {ids[clase]} ({clase})")
+
     plt.imshow(cwt_ricker[0:batch_cwt_ricker,:], extent=[t_cwt_ricker[0], t_cwt_ricker[-1], f_cwt_ricker[0], f_cwt_ricker[-1]], origin='lower', aspect='auto', cmap='viridis')
-    plt.savefig(f"out/trans_clases/{clase}/cwt_ricker.png")
     plt.title(f"ECG_ID: {ids[clase]} ({clase})")
+    plt.gca().axes.set_ylabel("Escalas")
+    plt.gca().axes.set_xlabel("Tiempo (s)")
+    plt.savefig(f"out/trans_clases/{clase}/cwt_ricker.png")
+    
+
     plt.imshow(cwt_morlet[0:batch_cwt_morlet,:], extent=[t_cwt_morlet[0], t_cwt_morlet[-1], f_cwt_morlet[0], f_cwt_morlet[-1]], origin='lower', aspect='auto', cmap='viridis')
+    plt.title(f"ECG_ID: {ids[clase]} ({clase})")
+    plt.gca().axes.set_ylabel("Escalas")
+    plt.gca().axes.set_xlabel("Tiempo (s)")
     plt.savefig(f"out/trans_clases/{clase}/cwt_morlet.png")
+
     ecg_plot.plot(np.array([ecg.T[0]]), sample_rate=400, columns=1, title="")
     fig = plt.gcf()
     plt.title(f"ECG_ID: {ids[clase]} ({clase})")
     fig.subplots_adjust(
         left = 0.05,
         right=0.95,
-        bottom=0.2,
-        top=0.8
+        bottom=0.25,
+        top=0.75
     )
     ax = fig.axes[0]
     ax.tick_params(
@@ -51,4 +61,6 @@ for clase in ["CD", "HYP", "MI", "NORM", "STTC"]:
         left=False,
         length=0
     )
+    ax.set_xlabel("Tiempo (s)")
+    ax.set_ylabel("Amplitud (mV)")
     plt.savefig(f"out/trans_clases/{clase}/ecg.png")
